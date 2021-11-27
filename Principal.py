@@ -743,7 +743,7 @@ h = h + [his22]
 
 def his23(p, enc, ite):
     print('Você abre a porta e sai em uma passagem que continua direto para frente por algum tempo. Vira\npara a esquerda, depois para a direita, até que você chega a um arco à sua frente que dá para um\ngrande aposento. Você caminha na direção do aposento e entra nele.') 
-    n = 169
+    n = 170
     return [p, enc, ite, n]
 
 h = h + [his23]
