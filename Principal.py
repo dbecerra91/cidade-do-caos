@@ -277,7 +277,7 @@ print('seu nível Inicial Portanto, se você lançar dois encantos da SORTE junt
 print('voltará apenas a ser igual a seu nível Inicial.\n')
 print('Quantos encantos de Sorte você quer?')
 #S = int(input('Restam {}\n'.format(MAGIA)))
-S = 1
+S = 0
 S = numcerto(S,0,MAGIA)
 MAGIA = MAGIA - S
 
@@ -291,7 +291,7 @@ print('evidentemente, se nada fora dele pode tocar em você, você também não 
 print('dele.\n')
 print('Quantos encantos de Escudo você quer?')
 #Es = int(input('Restam {}\n'.format(MAGIA)))
-Es = 0
+Es = 1
 Es = numcerto(Es,0,MAGIA)
 MAGIA = MAGIA - Es
 
@@ -748,7 +748,24 @@ def his23(p, enc, ite):
 
 h = h + [his23]
 
+def his24(p, enc, ite):
+    print('''Você prova o vinho e, enquanto está apreciando o seu sabor, ouve um ruído tilintante. Você se vira
+para olhar na direção de onde o ruído está vindo e fica horrorizado ao ver que as garrafas nas
+prateleiras estão se mexendo sozinhas. Uma garrafa voa do lugar onde está e se projeta na sua
+direção, errando por pouco a sua cabeça e se espatifando na parede atrás de você. Uma outra voa na
+sua direção, depois outra, até que você está recebendo uma chuva de garrafas vindas de todas as
+direções. Você toma consciência de que sua única defesa é usar o Encanto do Escudo. Lance este
+encanto, se você puder.\n''')
+    if enc[7] > 0:
+        enc[7] = enc[7] - 1
+        input('Você possui agora {} Encantos de escudo'.format(enc[7]))
+        n = 372
+    else:
+        input('Você não possui encantos de escudo')
+        n = 219
+    return [p, enc, ite, n]
 
+h = h + [his24]
 
 
 
