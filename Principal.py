@@ -758,7 +758,7 @@ direções. Você toma consciência de que sua única defesa é usar o Encanto d
 encanto, se você puder.\n''')
     if enc[7] > 0:
         enc[7] = enc[7] - 1
-        input('Você possui agora {} Encantos de escudo'.format(enc[7]))
+        input('Você possui agora {} Encantos de escudo.'.format(enc[7]))
         n = 372
     else:
         input('Você não possui encantos de escudo')
@@ -767,6 +767,35 @@ encanto, se você puder.\n''')
 
 h = h + [his24]
 
+def his25(p, enc, ite):
+    print('''A porta abre, dando para um aposento grande e circular. Você coça a cabeça, intrigado. No centro
+do aposento, vê uma pequena "ilha", cercada por um fosso largo, na qual está uma arca, trancada
+por ferrolhos metálicos. O fosso é largo demais para ser pulado e é muito fundo. Logo na entrada,
+há um pedaço de corda. Existe uma outra porta do outro lado do aposento, dando para fora dele. Você\n''')
+
+    if enc[10] == 0:
+        n = int(input('''1. Ignora a caixa e contorna o fosso até a outra porta?
+2. Pega a corda e formula um plano?
+
+Digite sua opção: '''))
+        n = numcerto(n, 1, 2)
+    else:
+        n = int(input('''1. Ignora a caixa e contorna o fosso até a outra porta?
+2. Pega a corda e formula um plano?
+3. Lança um Encanto da Força e salta sobre o fosso?
+
+Digite sua opção: '''))
+        n = numcerto(n, 1, 3)
+    if n == 1:
+        n = 206
+    elif n == 2:
+        n = 239
+    else:
+        enc[10] = enc[10] - 1
+        n = 133
+    return [p, enc, ite, n]
+
+h = h + [his25]
 
 
 
