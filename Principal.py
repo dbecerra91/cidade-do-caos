@@ -28,7 +28,7 @@ def sino(str: str):
 
 def numcerto(n: int, min: int, max: int):
     while (n in range(min,max+1)) == False:
-        n = int(input('Opção inválida, digite um numero entre {} e {}: '.format(min, max)))
+        n = int(input('Opção inválida, digite um número entre {} e {}: '.format(min, max)))
     return n
 
 def escolcerta(num,lis):
@@ -191,7 +191,7 @@ print('mesmos poderes do original. Mas a réplica estará sob seu controle, e vo
 print('instruí-la para que ataque a criatura original e ficar assistindo a batalha de camarote!\n')
 print('Quantos encantos de Copia de criatura você quer?')
 #CDC = int(input('Restam {}\n'.format(MAGIA)))
-CDC = 0
+CDC = 1
 CDC = numcerto(CDC,0,MAGIA)
 MAGIA = MAGIA - CDC
 
@@ -260,7 +260,7 @@ print('recebe dos efeitos da gravidade e assim fará com que tudo que esteja sob
 print('livremente no ar, sob o seu controle.\n')
 print('Quantos encantos de Levitação você quer?')
 #L = int(input('Restam {}\n'.format(MAGIA)))
-L = MAGIA - 3
+L = 1
 L = numcerto(L,0,MAGIA)
 MAGIA = MAGIA - L
 
@@ -342,7 +342,7 @@ print('Criaturas fortes são reduzidas por este encanto a miseráveis fracotes. 
 print('criaturas, mas, quando tem efeito, a criatura se torna frágil e muito menos perigosa em uma batalha.\n')
 print('Quantos encantos de Fraqueza você quer?')
 #Fr = int(input('Restam {}\n'.format(MAGIA)))
-Fr = 0
+Fr = MAGIA
 Fr = numcerto(Fr,0,MAGIA)
 MAGIA = MAGIA - Fr
 
@@ -797,9 +797,54 @@ Digite sua opção: '''))
 
 h = h + [his25]
 
+def his26(p, enc, ite):
+    if (enc[2] + enc[11] + enc[0]) == 0:
+        input('Você não pode aplicar nenhum encanto, volte e escolha outra opção.')
+        n = 304
+    else:
+        n = int(input('''Você lançará:
+        
+1. Um encanto de Fogo?              (possui {})
+2. Um encanto de Fraqueza?          (possui {})
+3. Um encanto de Cópia de Criatura? (possui {})
 
+Digite sua opção: '''.format(enc[2], enc[11], enc[0])))
+        n = numcerto(n, 1, 3)
+    l = True
+    while l:
+        if n == 1 and enc[2] > 0:
+            enc[2] = enc[2] - 1
+            n = 87
+            l = False
+        elif n == 2 and enc[11] > 0:
+            enc[11] = enc[11] - 1
+            n = 345
+            l = False
+        elif n == 3 and enc[0] > 0:
+            enc[0] = enc[0] - 1
+            n = 101
+            l = False
+        else:
+            n = int(input('Você não possui esse encanto, digite outra opção: '))
+            n = numcerto(n, 1, 3)
+    return [p, enc, ite, n]
 
+h = h + [his26]
 
+def his27(p, enc, ite):
+    print('''Quando você mostra as Peças de Ouro, as três criaturas interrompem seu caminho. Eles engasgam
+ao olhar para suas moedas. Uma mão invisível as agarra e coloca no chão. Elas olham para você, e
+uma voz pede mais. Você pega todas as suas Peças de Ouro e joga no centro do aposento. Uma voz
+soa, dizendo: "Bem, estranho, você é realmente bem-vindo na casa dos MIKS. Agradecemos o seu
+presente. Se está seguindo adiante, vá pela porta à sua frente, mas tome cuidado com os Ganjees.
+Desejamos sorte para você na sua jornada." Você pode acrescentar um ponto de SORTE pelos votos
+de sucesso dos Miks e sair pela porta à sua frente.\n''')
+    p[3] = p[3] + 1
+    input('Sua sorte é {}'.format(p[3]))
+    n = 206
+    return [p, enc, ite, n]
+
+h = h + [his27]
 
 
 #n = 1
