@@ -605,7 +605,7 @@ GARK        HABILIDADE 7        ENERGIA 11
     
 Depois de quatro Séries de Ataques, você poderá Fugir por uma das portas na extremidade mais distante do aposento.
 ''')
-    c = CRIATURA[0]
+    c = CRIATURA[0].copy()
     cont = 0
     while p[2] > 0 and c[2] > 0:
         if ite[3][1] > 0:
@@ -668,12 +668,10 @@ Depois de quatro Séries de Ataques, você poderá Fugir por uma das portas na e
                 n = 99
                 if p[2] < 1:
                     input('{} não conseguiu fugir e perde a batalha. A aventura acaba por aqui.')
-                    exit()
         elif c[2] < 1:
             n = 180
         elif p[2] < 1:
             input('{} perdeu a batalha. A aventura acaba por aqui\n'.format(p[0]))
-            exit()
     return [p, enc, ite, n]
 
 h = h + [his16]
@@ -896,7 +894,7 @@ def his30(p, enc, ite):
     print('''A fera é imensamente poderosa. Você desembainha a sua espada e a batalha começa:
 
 FERA DAS GARRAS         HABILIDADE: 9       ENERGIA: 14''')
-    c = CRIATURA[1]
+    c = CRIATURA[1].copy()
     cont = 0
     while p[2] > 0 and c[2] > 0 and cont < 4:
         if ite[3][1] > 0:
@@ -954,7 +952,6 @@ FERA DAS GARRAS         HABILIDADE: 9       ENERGIA: 14''')
             n = 241
         elif p[2] < 1:
             input('{} perdeu a batalha. A aventura acaba por aqui\n'.format(p[0]))
-            exit()
     return [p, enc, ite, n]
 
 h = h + [his30]
@@ -965,31 +962,6 @@ h = h + [his30]
 while perso[2] > 0:
     limpa()
     estado(perso)
-#    if ENCANTOS[8] + ENCANTOS[9] + ENCANTOS[6] > 0: # Encanto Habilidade, Energia ou Sorte
-#        sn = 'S'
-#        while sn in ['S', 'SIM']:
-#            sn = input('\nDesejar usar um encantamento agora? [s/n] ')
-#            sn = sino(sn)
-#            if sn in ['S', 'SIM']:
-#                n = int(input('1. Encantos de habilidade = {}\n2. Encantos de energia = {}\n3. Encantos de sorte = {}\n4. Não usar encantoa\n\nDigite sua opção: '.format(ENCANTOS[8], ENCANTOS[9], ENCANTOS[6])))
-#                n = numcerto(n,1,4)
-#                enc = [ENCANTOS[8], ENCANTOS[9], ENCANTOS[6], 1]
-#                while enc[n - 1] == 0:
-#                    n = int(input('Você não posue esse encantamento, por favor escolha de novo: '))
-#                    n = numcerto(n,1,3)
-#                if n == 1:
-#                    perso, ENCANTOS[8] = HABILIDADE(perso,pers0), ENCANTOS[8] - 1
-#                    print('Nova Habilidade de Dennis = {}'.format(perso[1]))
-#                elif n == 2:
-#                    perso, ENCANTOS[9] = ENERGIA(perso,pers0), ENCANTOS[9] - 1
-#                    print('Nova Energia de Dennis = {}'.format(perso[2]))            
-#                elif n == 3:
-#                    perso, ENCANTOS[6] = SORTE(perso,pers0), ENCANTOS[6] - 1
-#                    print('Nova Sorte de Dennis = {}'.format(perso[3]))
-#                else :
-#                    sn = 'N'
-
-
     print(n)
     n = int(input('A cual capitulo vamos? '))
 
@@ -997,7 +969,12 @@ while perso[2] > 0:
     limpa()
     estado(perso)
     print('')
-
-
     [perso, ENCANTOS, ITEM, n] = h[n-1](perso,ENCANTOS,ITEM)
-
+    if perso[2] < 1:
+        sn = str(input('Quer continuar a aventura? [s/n]'))
+        sn = sino(sn)
+        if sn == 'S' or sn == 'SIM':
+            perso[2] = pers0.copy()
+            print('Sua energia foi restaurada')
+        else:
+            break
