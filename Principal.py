@@ -351,7 +351,7 @@ ENCANTOS = [CDC, PES, Fog, ODT, I, L, S, Es, H, En, For,Fr]
 #ITEMS
 
 ITEM = [['Miríade de bolso', 0], ['Aranha em um vidro', 0], ['Pequenas amoras', 0], ['Adaga', 0]]
-CRIATURA = [['GARK', 7, 11, 0], ['Mané', 5, 13, 0]]
+CRIATURA = [['GARK', 7, 11, 0], ['FERA DAS GARRAS', 9, 14, 0]]
 
 #ADAGA: Ela causará automaticamente a perda de dois pontos de ENERGIA sem necessidade de jogar dados para conhecer a Força de Ataque. Mas você só poderá usá-la uma vez.
 
@@ -599,7 +599,12 @@ def his15(p, enc, ite):
 h = h + [his15]
 
 def his16(p, enc, ite):
-    input('Resolva esta batalha:\n\nGARK    HABILIDADE 7    ENERGIA 11\n\nDepois de quatro Séries de Ataques, você poderá Fugir por uma das portas na extremidade mais distante do aposento.\n')
+    input('''Resolva esta batalha:
+    
+GARK        HABILIDADE 7        ENERGIA 11
+    
+Depois de quatro Séries de Ataques, você poderá Fugir por uma das portas na extremidade mais distante do aposento.
+''')
     c = CRIATURA[0]
     cont = 0
     while p[2] > 0 and c[2] > 0:
@@ -845,6 +850,115 @@ de sucesso dos Miks e sair pela porta à sua frente.\n''')
     return [p, enc, ite, n]
 
 h = h + [his27]
+
+def his28(p, enc, ite):
+    n = int(input('''Você lança o Encanto e faz aparecer uma bola de fogo nas suas mãos. Eles interrompem seu
+caminho e observam você atentamente. Você joga a bola na direção deles, e eles gritam de medo,
+rolando aterrorizados para longe de você, com medo de seus óbvios poderes. Enquanto você ainda
+tem controle sobre o Encanto, cria mais três bolas de fogo menores e as arremessa sobre cada um
+deles. Eles uivam e se dispersam, rolando pelo corredor para longe de você. Você pode agora
+prosseguir
+
+1. pela passagem da esquerda ou
+2. pela passagem da direita.
+
+Digite sua opção: '''))
+    n = numcerto(n, 1, 2)
+    if n == 1:
+        n = 243
+    else:
+        n = 2
+    return [p, enc, ite, n]
+    
+h = h + [his28]
+
+def his29(p, enc, ite):
+    n = int(input('''Cautelosamente, você se aproxima do homenzinho. Ao chegar perto, um único olho se abre e olha
+diretamente no seu rosto. Um sorriso largo se espalha de orelha a orelha na criatura e ela
+desaparece! "Bom dia para você!" diz uma vozinha chilreante atrás de você, e, ao voltar-se, você o
+vê ali, ainda sorrindo. "Sou O'Seamus, o Duende!", ele diz, dando risinhos, e estende a mão para
+você. Ele parece suficientemente amigável
+
+1. Você aperta a mão dele e tenta fazer amizade ou
+2. Você desembainha sua espada.
+
+Digite sua opção: '''))
+    n = numcerto(n, 1, 2)
+    if n == 1:
+        n = 271
+    else:
+        n = 131
+    return [p, enc, ite, n]
+    
+h = h + [his29]
+
+def his30(p, enc, ite):
+    print('''A fera é imensamente poderosa. Você desembainha a sua espada e a batalha começa:
+
+FERA DAS GARRAS         HABILIDADE: 9       ENERGIA: 14''')
+    c = CRIATURA[1]
+    cont = 0
+    while p[2] > 0 and c[2] > 0 and cont < 4:
+        if ite[3][1] > 0:
+            sn = str(input('Deseja utilizar a Adaga do cinto? [s/n]'))
+            sn = sino(sn)
+            if sn in ['S', 'SIM']:
+                ite[3][1] = ite[3][1] - 1
+                c[2] = c[2] - 2
+                input('{} perde {} pontos de energia'.format(c[0], 2))
+        limpa()
+        estado(p)
+        print('{:10} HABILIDADE {:2}    ENERGIA {:2}'.format(c[0], c[1], c[2]))
+        input('\nEnter para jogar dois dados da criatura.')
+        n = rodar(2)
+        print('{} tem força de ataque {}'.format(c[0], n + c[1]))
+        gc = n + c[1]
+        input('\nEnter para jogar dois dados para {}'.format(p[0]))
+        n = rodar(2)
+        print('{} tem força de ataque {}'.format(p[0], n + p[1]))
+        gp = n + p[1]
+        if gc < gp:
+            print('\n{} feriu a criatura'.format(p[0]))
+            s = 0
+            if p[3] > 1:
+                sn = str(input('Deseja testar sorte para tentar aumentar o dano? [s/n]'))
+                sn = sino(sn) 
+                if sn in ['S', 'SIM']:
+                    so = sorte(p)
+                    p[3] = p[3] - 1
+                    if so:
+                        s = 2
+                    else:
+                        s = - 1
+            input('{} perde {} pontos de energia'.format(c[0], 2 + s))
+            c[2] = c[2] - 2 - s
+            cont = cont + 1
+        elif gp < gc:
+            print('\n{} feriu a {}'.format(c[0], p[0]))
+            s = 0
+            if p[3] > 0:
+                sn = str(input('Deseja testar sorte para tentar diminuir o dano? [s/n]'))
+                sn = sino(sn)
+                if sn in ['S', 'SIM']:
+                    so = sorte(p)
+                    p[3] = p[3] - 1
+                    if so:
+                        s = 1
+                    else:
+                        s = - 1
+            input('{} perde {} pontos de energia'.format(p[0], 2 - s))
+            p[2] = p[2] - 2 + s
+        else:
+            input('\nAmbos se defenderam dos golpes')
+        if cont ==4 or c[2] == 0:
+            n = 241
+        elif p[2] < 1:
+            input('{} perdeu a batalha. A aventura acaba por aqui\n'.format(p[0]))
+            exit()
+    return [p, enc, ite, n]
+
+h = h + [his30]
+
 
 
 #n = 1
