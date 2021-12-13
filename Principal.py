@@ -956,12 +956,101 @@ FERA DAS GARRAS         HABILIDADE: 9       ENERGIA: 14''')
 
 h = h + [his30]
 
+def his31(p, enc, ite):
+    input('''Você sai do aposento pela porta do outro lado, a qual abre para uma passagem curta que termina em
+uma grande porta de madeira. A maçaneta desta porta gira, deixando que você entre em uma grande
+câmara.
+
+Enter para continuar: ''')
+    n = 169
+    return [p, enc, ite, n]
+    
+h = h + [his31]
+
+def his32(p, enc, ite):
+    input('''Passando por sobre os corpos, você se aproxima do portão e chama o porteiro, para em seguida se
+esconder na escuridão quando ele se aproxima. Ele vê os corpos e sai para investigar, e, enquanto
+isso, você aproveita para esgueirar-se rapidamente pelo portão e trancá-lo do lado de fora.
+
+Enter para continuar: ''')
+    n = 251
+    return [p, enc, ite, n]
+    
+h = h + [his32]
+
+def his33(p, enc, ite):
+    input('''Quando você tenta se levantar, o Orca e o Goblin agarram você e o seguram no chão, enquanto o
+Anão avança com sua clava.
+
+Enter para continuar: ''')
+    n = 213
+    return [p, enc, ite, n]
+    
+h = h + [his33]
+
+def his34(p, enc, ite):
+    n = int(input('''A chave gira e, retirando a tranca, você abre a caixa, encontrando outra chave, dessa vez talhada em
+um metal verde cintilante. Você
+
+1. Experimentará esta nova chave na terceira caixa.
+2. Sairá do aposento com as duas chaves.
+
+Digite sua opção: '''))
+    n = numcerto(n, 1, 2)
+    if n == 1:
+        n = 89
+    else:
+        n = 237
+    return [p, enc, ite, n]
+    
+h = h + [his34]
+
+def his35(p, enc, ite):
+    n = int(input('''Você se concentra na sua Ilusão.
+    
+1. Você pode convencê-lo de que ele está sendo atacado por um inimigo.
+2. Você pode fazer com que você desapareça, na esperança de que ele virá procurar por você.
+
+Digite sua opção: '''))
+    n = numcerto(n, 1, 2)
+    if n == 1:
+        n = 364
+    else:
+        n = 246
+    return [p, enc, ite, n]
+    
+h = h + [his35]
 
 
 #n = 1
 while perso[2] > 0:
     limpa()
     estado(perso)
+
+#    if ENCANTOS[8] + ENCANTOS[9] + ENCANTOS[6] > 0: # Encanto Habilidade, Energia ou Sorte
+#        sn = 'S'
+#        while sn in ['S', 'SIM']:
+#            sn = input('\nDesejar usar um encantamento agora? [s/n] ')
+#            sn = sino(sn)
+#            if sn in ['S', 'SIM']:
+#                n = int(input('1. Encantos de habilidade = {}\n2. Encantos de energia = {}\n3. Encantos de sorte = {}\n4. Não usar encantoa\n\nDigite sua opção: '.format(ENCANTOS[8], ENCANTOS[9], ENCANTOS[6])))
+#                n = numcerto(n,1,4)
+#                enc = [ENCANTOS[8], ENCANTOS[9], ENCANTOS[6], 1]
+#                while enc[n - 1] == 0:
+#                    n = int(input('Você não posue esse encantamento, por favor escolha de novo: '))
+#                    n = numcerto(n,1,3)
+#                if n == 1:
+#                    perso, ENCANTOS[8] = HABILIDADE(perso,pers0), ENCANTOS[8] - 1
+#                    print('Nova Habilidade de Dennis = {}'.format(perso[1]))
+#                elif n == 2:
+#                    perso, ENCANTOS[9] = ENERGIA(perso,pers0), ENCANTOS[9] - 1
+#                    print('Nova Energia de Dennis = {}'.format(perso[2]))            
+#                elif n == 3:
+#                    perso, ENCANTOS[6] = SORTE(perso,pers0), ENCANTOS[6] - 1
+#                    print('Nova Sorte de Dennis = {}'.format(perso[3]))
+#                else :
+#                    sn = 'N'
+
     print(n)
     n = int(input('A cual capitulo vamos? '))
 
