@@ -729,7 +729,12 @@ def his20(p, enc, ite):
 h = h + [his20]
 
 def his21(p, enc, ite):
-    print('"O que traz você a estas paragens?" ela pergunta. Você conta a ela sua história, evitando\ncuidadosamente revelar a sua verdadeira missão. Ela aconselha você a afastar-se desse lugar, caso\nconheça alguma magia. As criaturas que você encontrou até agora não se comparam com as que\nhabitam o interior da Torre da Cidadela propriamente dita. Ela diz que você jamais encontrará o\nsenhor sem conseguir primeiro o Velo e deseja sorte para você em sua missão.\n')
+    print('''"O que traz você a estas paragens?" ela pergunta. Você conta a ela sua história, evitando
+    cuidadosamente revelar a sua verdadeira missão. Ela aconselha você a afastar-se desse lugar, caso
+    conheça alguma magia. As criaturas que você encontrou até agora não se comparam com as que
+    habitam o interior da Torre da Cidadela propriamente dita. Ela diz que você jamais encontrará o
+    senhor sem conseguir primeiro o Velo e deseja sorte para você em sua missão.
+    ''')
     p[3] = p[3] + 2
     input('{} ganhou 2 pts de SORTE'.format(p[0]))    
     n = 6
@@ -745,7 +750,9 @@ def his22(p, enc, ite):
 h = h + [his22]
 
 def his23(p, enc, ite):
-    print('Você abre a porta e sai em uma passagem que continua direto para frente por algum tempo. Vira\npara a esquerda, depois para a direita, até que você chega a um arco à sua frente que dá para um\ngrande aposento. Você caminha na direção do aposento e entra nele.') 
+    print('''Você abre a porta e sai em uma passagem que continua direto para frente por algum tempo. Vira
+    para a esquerda, depois para a direita, até que você chega a um arco à sua frente que dá para um
+    grande aposento. Você caminha na direção do aposento e entra nele.''') 
     n = 169
     return [p, enc, ite, n]
 
