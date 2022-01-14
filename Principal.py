@@ -350,8 +350,8 @@ ENCANTOS = [CDC, PES, Fog, ODT, I, L, S, Es, H, En, For,Fr]
 
 #ITEMS
 
-ITEM = [['Miríade de bolso', 0], ['Aranha em um vidro', 0], ['Pequenas amoras', 0], ['Adaga', 0]]
-CRIATURA = [['GARK', 7, 11, 0], ['FERA DAS GARRAS', 9, 14, 0]]
+ITEM = [['Miríade de bolso', 0], ['Aranha em um vidro', 0], ['Pequenas amoras', 0], ['Adaga', 0], ['Velo de Ouro', 0]]
+CRIATURA = [['GARK', 7, 11, 0], ['FERA DAS GARRAS', 9, 14, 0], ['HOMEM-ARANHA', 7, 5, 0]]
 
 #ADAGA: Ela causará automaticamente a perda de dois pontos de ENERGIA sem necessidade de jogar dados para conhecer a Força de Ataque. Mas você só poderá usá-la uma vez.
 
@@ -948,10 +948,10 @@ FERA DAS GARRAS         HABILIDADE: 9       ENERGIA: 14''')
             p[2] = p[2] - 2 + s
         else:
             input('\nAmbos se defenderam dos golpes')
-        if cont ==4 or c[2] == 0:
-            n = 241
-        elif p[2] < 1:
-            input('{} perdeu a batalha. A aventura acaba por aqui\n'.format(p[0]))
+    if cont == 4 or c[2] < 1:
+        n = 241
+    elif p[2] < 1:
+        input('{} perdeu a batalha. A aventura acaba por aqui\n'.format(p[0]))
     return [p, enc, ite, n]
 
 h = h + [his30]
@@ -1020,6 +1020,172 @@ Digite sua opção: '''))
     return [p, enc, ite, n]
     
 h = h + [his35]
+
+def his36(p, enc, ite):
+    input('''"Bah!", diz o Gark," não é tão fácil me enganar. Jogue fora estes pedaços de latão." A criatura tem a
+idéia de que, se você está oferecendo um suborno, deve ser um invasor, o que - para um Gark - é
+uma demonstração assombrosa de raciocínio lógico! Ele dá um tapa em você com sua mão enorme,
+jogando você sem sentidos no chão. As últimas palavras que você se lembra antes de desmaiar são
+ditas pelo Gark orgulhoso: "Para a cadeia com esse aqui!".
+
+Enter para continuar: ''')
+    n = 234
+    return [p, enc, ite, n]
+    
+h = h + [his36]
+
+def his37(p, enc, ite):
+    input('''Você puxa a pele e a criatura solta silvos altos. Todas as suas cabeças recuam,e ela permanece
+quieta, observando você. Há uma porta do outro lado do aposento, e você lentamente se desloca na
+direção dela. Quando você está na metade do caminho, uma das cabeças se projeta e arranca o velo
+das suas mãos. Mas, ao invés de atacar você, a Hidra se encolhe de volta em um dos cantos. Você
+segue para a porta cautelosamente.
+
+Enter para continuar: ''')
+    ite[4][1] = ite[4][1] - 1
+    n = 229
+    return [p, enc, ite, n]
+    
+h = h + [his37]
+
+def his38(p, enc, ite):
+    n = int(input('''A porta abre para uma passagem curta, calçada com pedras pequenas. A uma pequena distância
+mais adiante, uma porta elaboradamente entalhada assinala o fim da passagem. Mas, logo antes da
+porta, uma passagem lateral sai para a esquerda. Você se aproximada porta, tentando escutar
+quaisquer sinais de vida do lado de dentro. Quando sua mão toca a maçaneta, uma voz diz: "Não
+bata; simplesmente entre!" vinda de dentro.
+    
+1. Você entrará no aposento, conforme as instruções.
+2. Você resolverá desistir desse aposento e tomar a passagem que sai para a esquerda.
+
+Digite sua opção: '''))
+    n = numcerto(n, 1, 2)
+    if n == 1:
+        n = 132
+    else:
+        n = 306
+    return [p, enc, ite, n]
+    
+h = h + [his38]
+
+def his39(p, enc, ite):
+    print('''Você pega o Vidro e, ao fazer isso, os Ganjees ficam ofegantes. "Racknee!" diz uma voz. "Você
+voltou!" E com estas palavras; uma mão invisível arranca o vidro das suas mãos, coloca-o no chão e
+abre a tampa. O Homem-Aranha volta-se na sua direção e solta um pequeno grunhido. Você
+desembainha a sua espada quando a fera avança a passos rápidos para você, furiosamente. Você terá
+que lutar contra esta criatura:
+
+HOMEM-ARANHA        HABILIDADE: 9       ENERGIA: 14''')
+    ite[1][1] = ite[1][1] - 1
+    c = CRIATURA[1].copy()
+    cont = 0
+    while c[2] > 0 and cont < 1:
+        if ite[3][1] > 0:
+            sn = str(input('Deseja utilizar a Adaga do cinto? [s/n]'))
+            sn = sino(sn)
+            if sn in ['S', 'SIM']:
+                ite[3][1] = ite[3][1] - 1
+                c[2] = c[2] - 2
+                input('{} perde {} pontos de energia'.format(c[0], 2))
+        limpa()
+        estado(p)
+        print('{:10} HABILIDADE {:2}    ENERGIA {:2}'.format(c[0], c[1], c[2]))
+        input('\nEnter para jogar dois dados da criatura.')
+        n = rodar(2)
+        print('{} tem força de ataque {}'.format(c[0], n + c[1]))
+        gc = n + c[1]
+        input('\nEnter para jogar dois dados para {}'.format(p[0]))
+        n = rodar(2)
+        print('{} tem força de ataque {}'.format(p[0], n + p[1]))
+        gp = n + p[1]
+        if gc < gp:
+            print('\n{} feriu a criatura'.format(p[0]))
+            s = 0
+            if p[3] > 1:
+                sn = str(input('Deseja testar sorte para tentar aumentar o dano? [s/n]'))
+                sn = sino(sn) 
+                if sn in ['S', 'SIM']:
+                    so = sorte(p)
+                    p[3] = p[3] - 1
+                    if so:
+                        s = 2
+                    else:
+                        s = - 1
+            input('{} perde {} pontos de energia'.format(c[0], 2 + s))
+            c[2] = c[2] - 2 - s
+        elif gp < gc:
+            print('\n{} feriu a {}'.format(c[0], p[0]))
+            s = 0
+            '''if p[3] > 0:
+                sn = str(input('Deseja testar sorte para tentar diminuir o dano? [s/n]'))
+                sn = sino(sn)
+                if sn in ['S', 'SIM']:
+                    so = sorte(p)
+                    p[3] = p[3] - 1
+                    if so:
+                        s = 1
+                    else:
+                        s = - 1
+            input('{} perde {} pontos de energia'.format(p[0], 2 - s))
+            p[2] = p[2] - 2 + s'''
+            cont = cont + 1
+        else:
+            input('\nAmbos se defenderam dos golpes')
+    if cont == 1:
+        n = 208
+    elif c[2] < 1:
+        input('{} ganhou a batalha.\n'.format(p[0]))
+        n = 248
+    return [p, enc, ite, n]
+
+h = h + [his39]
+
+def his40(p, enc, ite):
+    n = int(input('''Depois de vários minutos, a porta se abre lentamente, e uma criatura corcunda e deformada, com
+dentes podres, cabelos desgrenhados e roupas esfarrapadas, aparece na sua frente. "Sim senhor (heh,
+heh) - o que posso fazer pelo senhor?" rosna a criatura semi-humana."Estou sendo esperado", você
+responde e passa por ele, atravessando a porta com confiança. Ele fica um pouco surpreso com seu
+comportamento e gagueja, sem saber se entra em conflito com você ou não. "Onde é a recepção?"
+você pergunta. Ele olha para você de soslaio com um dos olhos e faz um gesto na direção de uma
+bifurcação para a esquerda, a pouca distância dali.
+    
+1. Você acreditará nele e tomará a bifurcação para a esquerda. (vá para 243)
+2. não confiará nesta criatura imprevisível e tomará a bifurcação da direita.
+
+Digite sua opção: '''))
+    n = numcerto(n, 1, 2)
+    if n == 1:
+        n = 243
+    else:
+        n = 2
+    return [p, enc, ite, n]
+    
+h = h + [his40]
+
+def his41(p, enc, ite):
+    input('''As três mulheres se juntam, fazendo um círculo, e sussurram umas com as outras. Com um risinho,
+uma delas volta-se para você e diz: "Está bem, estranho, nós vamos ajudá-lo no seu caminho." Ela
+fita você com olhos frios de pedra e aponta primeiro para você, e depois para a parede atrás dela. O
+aposento fica escuro, você sente uma sensação de movimento e, quando a escuridão clareia, você
+está em outro aposento.
+
+Digite Enter para continuar: ''')
+    n = 257
+    return [p, enc, ite, n]
+    
+h = h + [his41]
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 #n = 1
