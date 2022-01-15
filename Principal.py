@@ -350,7 +350,7 @@ ENCANTOS = [CDC, PES, Fog, ODT, I, L, S, Es, H, En, For,Fr]
 
 #ITEMS
 
-ITEM = [['Miríade de bolso', 0], ['Aranha em um vidro', 0], ['Pequenas amoras', 0], ['Adaga', 0], ['Velo de Ouro', 0]]
+ITEM = [['Miríade de bolso', 0], ['Aranha em um vidro', 1], ['Pequenas amoras', 0], ['Adaga', 0], ['Velo de Ouro', 0], ['Espelho de Prata', 1], ['Escova de Cabelo', 0]]
 CRIATURA = [['GARK', 7, 11, 0], ['FERA DAS GARRAS', 9, 14, 0], ['HOMEM-ARANHA', 7, 5, 0]]
 
 #ADAGA: Ela causará automaticamente a perda de dois pontos de ENERGIA sem necessidade de jogar dados para conhecer a Força de Ataque. Mas você só poderá usá-la uma vez.
@@ -1182,9 +1182,97 @@ Digite Enter para continuar: ''')
     
 h = h + [his41]
 
+def his42(p, enc, ite):
+    print('''Ela pisca, e os jatos de fogo desaparecem. O que você oferecerá a ela?
+    
+1. Um Espelho de prata (Possui {})
+2. Uma Escova de Cabelo (Possui {})
+3. Um vidro contendo o Homem-Aranha (Possui {})
+'''.format(ite[5][1], ite[6][1], ite[1][1]))
+    if ite[5][1] + ite[6][1] + ite[1][1] > 0 :
+        n = int(input('Digite sua opção: '))
+        n = numcerto(n,1,3)
+        while (n == 1 and ite[5][1] == 0) or (n == 2 and ite[6][1] == 0) or (n == 3 and ite[1][1] == 0):
+            n = int(input('Não possui esse item, digite novamente: '))
+            n = numcerto(n,1,3)
+        if n == 1 :
+            ite[5][1] = ite[5][1] - 1
+            n = 138
+        elif n == 2 :
+            ite[6][1] = ite[6][1] - 1
+            n = 91
+        else :
+            ite[1][1] = ite[1][1] - 1
+            n = 223
+    else :
+        n = int(input('''Você não tem nenhuma dessas coisas, terá que dar alguma desculpa, dizendo que perdeu o
+presente, e voltar para a sacada, onde pode escolher
 
+1. a porta do meio.
+2. a porta mais distante.
 
+Digite sua opção: '''))
+        n = numcerto(n,1,2)
+        if n == 1:
+            n = 64
+        else:
+            n = 304
+    return [p, enc, ite, n]
+    
+h = h + [his42]
 
+def his43(p, enc, ite):
+    input('''Quando você lança o encanto, ele afrouxa o aperto. Gradualmente, sua força diminui, até que ele
+acaba por soltar o aperto e cai para trás, ofegante, no chão. Desconte mais um ponto de ENERGIA
+enquanto trata de seu braço ferido. Você pode prosseguir no seu caminho.
+
+ENERGIA = {}
+
+Digite Enter para continuar: '''.format(p(2) - 1))
+    p[2] = p[2] - 1
+    n = 14
+    return [p, enc, ite, n]
+    
+h = h + [his43]
+
+def his44(p, enc, ite):
+    n = int(input('''O aposento pára de sacudir e você cai no chão. O armário das armas está trancado, mas você pode
+arrebentar a fechadura. Ou pode tirar a sua mochila e procurar uma arma para usar. O que você fará:
+
+1. Escolher uma arma do armário?
+2. Pegar um artefato na mochila?
+
+Digite sua opção: '''))
+    n = numcerto(n,1,2)
+    if n == 1:
+        n = 353
+    else:
+        n = 277
+    return [p, enc, ite, n]
+    
+h = h + [his44]
+
+def his45(p, enc, ite):
+    n = int(input('''Se seu estômago aguentar, você poderá experimentar:
+
+1. Um pouco de carne pendurada.
+2. Um pedaço de fruta.
+3. Uma fatia de queijo.
+4. Um naco de pão.
+
+Digite sua opção: '''))
+    n = numcerto(n,1,4)
+    if n == 1:
+        n = 166
+    elif n == 2:
+        n = 313
+    elif n == 3:
+        n = 253
+    else:
+        n = 97
+    return [p, enc, ite, n]
+    
+h = h + [his45]
 
 
 
