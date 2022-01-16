@@ -451,7 +451,7 @@ def his3(p,enc,ite):
     1. Desembainhar a sua espada.
     2. Se dirigir para a porta mais distante.
     
-    Digite sua opção'''))
+Digite sua opção'''))
         n = numcerto(n, 1, 2)
         if n == 1:
             n = 286
@@ -698,7 +698,21 @@ def his17(p, enc, ite):
 h = h + [his17]
 
 def his18(p, enc, ite):
-    n= int(input('Ele aponta para uma seção logo acima do chão, que você examina. Finalmente, você escolhe um\nvolume e senta para ler. Balthus Dire aparentemente é o terceiro de uma linhagem de Feiticeiros\nSenhores da Guerra que governa a Torre Negra e o Reino da Rocha Escarpada. Chegou ao poder\ndepois da morte de seu pai, Craggen Dire, há alguns anos atrás. Os Dires são mestres de Magia\nNegra há gerações, mas sua força e poder duram somente no período noturno; a luz do sol é uma\nespécie de veneno para eles. Pouco tempo depois da morte de seu pai, Balthus Dire casou-se com\nLady Lucretia, ela também uma Feiticeira de Magia Negra, e desde então eles vem reinando juntos\nsobre o Reino da Rocha Escarpada. Ao terminar o livro, você repara que o bibliotecário está com a\nmão junto ao ouvido, aparentemente escutando alguma coisa. Ele dirige a você um olhar\ninquisitivo. Você pode\n\n1. Procurar outro livro útil, que possa ajudá-lo na sua empreitada\n2. Tentar sair da biblioteca pela porta atrás dele.\n\nDigite sua opção: '))
+    n= int(input('''Ele aponta para uma seção logo acima do chão, que você examina. Finalmente, você escolhe um
+volume e senta para ler. Balthus Dire aparentemente é o terceiro de uma linhagem de Feiticeiros
+Senhores da Guerra que governa a Torre Negra e o Reino da Rocha Escarpada. Chegou ao poder
+depois da morte de seu pai, Craggen Dire, há alguns anos atrás. Os Dires são mestres de Magia
+Negra há gerações, mas sua força e poder duram somente no período noturno; a luz do sol é uma
+espécie de veneno para eles. Pouco tempo depois da morte de seu pai, Balthus Dire casou-se com
+Lady Lucretia, ela também uma Feiticeira de Magia Negra, e desde então eles vem reinando juntos
+sobre o Reino da Rocha Escarpada. Ao terminar o livro, você repara que o bibliotecário está com a
+mão junto ao ouvido, aparentemente escutando alguma coisa. Ele dirige a você um olhar
+inquisitivo. Você pode
+
+1. Procurar outro livro útil, que possa ajudá-lo na sua empreitada
+2. Tentar sair da biblioteca pela porta atrás dele.
+
+Digite sua opção: '''))
     n = numcerto(n, 1, 2)
     if n == 1:
         n = 84
@@ -709,7 +723,13 @@ def his18(p, enc, ite):
 h = h + [his18]
 
 def his19(p, enc, ite):
-    print('A escada geme quando você põe o pé nela. Você tenta subir o mais silenciosamente possível, mas a\nmadeira velha range sob o seu peso. De repente, um dos degraus estala, como se acionasse um\ndispositivo de algum tipo. Para sua surpresa, todos os degraus: viram para baixo! Você está agora\nde pé em uma rampa lisa e inclinadíssima! Por mais que você tente, não consegue manter o\nequilíbrio e acaba escorregando pela rampa, rolando de ponta cabeça. Se você quiser usar um\nEncanto da Levitação, poderá voar e descer, fora de perigo, na sacada em cima.\n')
+    print('''A escada geme quando você põe o pé nela. Você tenta subir o mais silenciosamente possível, mas a
+madeira velha range sob o seu peso. De repente, um dos degraus estala, como se acionasse um
+dispositivo de algum tipo. Para sua surpresa, todos os degraus: viram para baixo! Você está agora
+de pé em uma rampa lisa e inclinadíssima! Por mais que você tente, não consegue manter o
+equilíbrio e acaba escorregando pela rampa, rolando de ponta cabeça. Se você quiser usar um
+Encanto da Levitação, poderá voar e descer, fora de perigo, na sacada em cima.
+''')
     if enc[5] == 0:
         input('Você não possui o encanto de Levitação')
         n = 254
@@ -731,14 +751,15 @@ Você terá que procurar abrigo em outro lugar. Você pode:
 
 1. Se resignar a lutar.
 2. Pegar uma pedra e lançar um Encanto do Ouro dos Tolos sobre ela, oferecendo-a como uma pepita
-   de ouro, para suborná-los, convencendo-os a deixar você entrar.''')
+   de ouro, para suborná-los, convencendo-os a deixar você entrar.
+''')
     if enc[3] == 0:
-        input('Você não possui o encanto de Ouro dos Tolos! Enter para continuar.')
+        input('Você não possui o encanto de Ouro dos Tolos! Vai ter que lutar.')
         n = 288
     else:
         n = int(input('Digite sua opção: '))
         n = numcerto(n, 1, 2)
-        if n == 1:
+        if n == 2:
             enc[3] = enc[3] - 1
             n = 96
         else:
