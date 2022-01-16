@@ -448,8 +448,8 @@ def his3(p,enc,ite):
     else :
         n = int(input('''Você não pode oferecer nenhuma dessas coisas, Você poderá
     
-    1. Desembainhar a sua espada (escolha 4)
-    2. Se dirigir para a porta mais distante (escolha 5).
+    1. Desembainhar a sua espada.
+    2. Se dirigir para a porta mais distante.
     
     Digite sua opção'''))
         n = numcerto(n, 1, 2)
@@ -726,13 +726,18 @@ def his19(p, enc, ite):
 h = h + [his19]
 
 def his20(p, enc, ite):
-    print('O Macaco-Cachorro diz que não é permitido a ninguém entrar na Torre Negra depois que anoitece - \nVocê terá que procurar abrigo em outro lugar. Você pode:\n\n1. Se resignar a lutar.\n2. Pegar uma pedra e lançar um Encanto do Ouro dos Tolos sobre ela, oferecendo-a como uma pepita\nde ouro, para suborná-los, convencendo-os a deixar você entrar.\n')
+    print('''O Macaco-Cachorro diz que não é permitido a ninguém entrar na Torre Negra depois que anoitece - 
+Você terá que procurar abrigo em outro lugar. Você pode:
+
+1. Se resignar a lutar.
+2. Pegar uma pedra e lançar um Encanto do Ouro dos Tolos sobre ela, oferecendo-a como uma pepita
+   de ouro, para suborná-los, convencendo-os a deixar você entrar.''')
     if enc[3] == 0:
-        input('Você não possui o encanto de Ouro dos Tolos! ')
+        input('Você não possui o encanto de Ouro dos Tolos! Enter para continuar.')
         n = 288
     else:
         n = int(input('Digite sua opção: '))
-        n = numcerto(n)
+        n = numcerto(n, 1, 2)
         if n == 1:
             enc[3] = enc[3] - 1
             n = 96
