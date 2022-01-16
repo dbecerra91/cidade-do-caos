@@ -350,7 +350,7 @@ ENCANTOS = [CDC, PES, Fog, ODT, I, L, S, Es, H, En, For,Fr]
 
 #ITEMS
 
-ITEM = [['Miríade de bolso', 0], ['Aranha em um vidro', 1], ['Pequenas amoras', 0], ['Adaga', 0], ['Velo de Ouro', 0], ['Espelho de Prata', 1], ['Escova de Cabelo', 0]]
+ITEM = [['Miríade de bolso', 0], ['Aranha em um vidro', 0], ['Pequenas amoras', 0], ['Adaga', 0], ['Velo de Ouro', 0], ['Espelho de Prata', 0], ['Escova de Cabelo', 0]]
 CRIATURA = [['GARK', 7, 11, 0], ['FERA DAS GARRAS', 9, 14, 0], ['HOMEM-ARANHA', 7, 5, 0]]
 
 #ADAGA: Ela causará automaticamente a perda de dois pontos de ENERGIA sem necessidade de jogar dados para conhecer a Força de Ataque. Mas você só poderá usá-la uma vez.
@@ -424,25 +424,39 @@ def his2(p,enc,ite):
 h = h + [his2]
 
 def his3(p,enc,ite):
-    n = int(input('O que você oferecerá a eles?\n\n1. Uma Miríade de Bolso? (Possui {})\n2. Uma Aranha em um Vidro? (Possui {})\n3. Um punhado de Pequenas Amoras? (Possui {})\n\nSe você não puder oferecer nenhuma dessas coisas, poderá desembainhar a sua espada (escolha 4)ou se dirigir para a porta mais distante (escolha 5).\n'.format(ite[0][1], ite[1][1], ite[2][1])))
-    c = [ite[0][1], ite[1][1], ite[2][1], 1, 1]
-    n = numcerto(n, 1, 5)
-    while c[n - 1] == 0:
-        n = int(input('Não possui esse item, tente novamente: '))
-        n = numcerto(n, 1, 5)
-    if n == 1:
-        ite[0][1] = ite[0][1] - 1
-        n = 327
-    elif n == 2:
-        ite[1][1] = ite[1][1] - 1
-        n = 59
-    elif n == 3:
-        ite[1][1] = ite[1][1] - 1
-        n = 236
-    elif n == 4:
-        n = 286
-    else:
-        n = 366
+    print('''O que você oferecerá a eles?
+
+1. Uma Miríade de Bolso? (Possui {})
+2. Uma Aranha em um Vidro? (Possui {})
+3. Um punhado de Pequenas Amoras? (Possui {})
+'''.format(ite[0][1], ite[1][1], ite[2][1]))
+    if ite[0][1] + ite[1][1] + ite[2][1] > 0:
+        n = int(input('Digite sua opção: '))
+        n = numcerto(n, 1, 3)
+        while (n == 1 and ite[0][1] == 0) or (n == 2 and ite[1][1] == 0) or (n == 3 and ite[2][1] == 0):
+            n = int(input('Você não possui esse item, tente outra opção: '))
+            n = numcerto(n, 1, 3)
+        if n == 1:
+            ite[0][1] = ite[0][1] - 1
+            n = 327
+        elif n == 2:
+            ite[1][1] = ite[1][1] - 1
+            n = 59
+        elif n == 3:
+            ite[1][1] = ite[1][1] - 1
+            n = 236
+    else :
+        n = int(input('''Você não pode oferecer nenhuma dessas coisas, Você poderá
+    
+    1. Desembainhar a sua espada (escolha 4)
+    2. Se dirigir para a porta mais distante (escolha 5).
+    
+    Digite sua opção'''))
+        n = numcerto(n, 1, 2)
+        if n == 1:
+            n = 286
+        else:
+            n = 366
     return [p, enc, ite, n]
 
 h = h + [his3]
@@ -1185,8 +1199,8 @@ h = h + [his41]
 def his42(p, enc, ite):
     print('''Ela pisca, e os jatos de fogo desaparecem. O que você oferecerá a ela?
     
-1. Um Espelho de prata (Possui {})
-2. Uma Escova de Cabelo (Possui {})
+1. Um Espelho de prata              (Possui {})
+2. Uma Escova de Cabelo             (Possui {})
 3. Um vidro contendo o Homem-Aranha (Possui {})
 '''.format(ite[5][1], ite[6][1], ite[1][1]))
     if ite[5][1] + ite[6][1] + ite[1][1] > 0 :
@@ -1274,14 +1288,125 @@ Digite sua opção: '''))
     
 h = h + [his45]
 
+def his46(p, enc, ite):
+    n = int(input('''Com um gesto, você estica a mão para frente e aponta o chão sob os pés do feiticeiro. Fumaça e
+chamas irrompem do chão. Balthus Dire salta para trás, um pouco admirado, e em seguida fecha os
+olhos para se concentrar. Ao se abrirem, você vê um fogo que queima dentro das próprias pupilas, e
+ele avança por entre as chamas que você criou. Pegando um punhado de pedras em brasa, ele atira
+isso em você.
 
+1. Você se abaixa para se desviar.
+2. Você pula para o lado.
 
+Digite sua opção: '''))
+    n = numcerto(n,1,2)
+    if n == 1:
+        n = 195
+    else:
+        n = 74
+    return [p, enc, ite, n]
 
+h = h + [his46]
 
+def his47(p, enc, ite):
+    print('''Que Encanto você usará:
+    
+1. Encanto de Cópia de Criatura     (Possui {})
+2. Encanto da Ilusão                (Possui {})
+3. Encanto de Levitação             (Possui {})
+'''.format(enc[0], enc[4], enc[5]))
+    if enc[0] + enc[4] + enc[5] > 0 :
+        n = int(input('Digite sua opção: '))
+        n = numcerto(n,1,3)
+        while (n == 1 and enc[0] == 0) or (n == 2 and enc[4] == 0) or (n == 3 and enc[5] == 0):
+            n = int(input('Não possui esse Encanto, digite novamente: '))
+            n = numcerto(n,1,3)
+        if n == 1 :
+            enc[0] = enc[0] - 1
+            n = 8
+        elif n == 2 :
+            enc[4] = enc[4] - 1
+            n = 173
+        else :
+            enc[5] = enc[5] - 1
+            n = 259
+    else :
+        n = input('''Você não possui nenhum desses encantos, terá que recuar na direção do monumento no centro do
+pátio e se esconder dela.
 
+Enter para continuar.''')
+        n = 209
+    return [p, enc, ite, n]
+    
+h = h + [his47]
 
+def his48(p, enc, ite):
+    n = int(input('''"Nunca!" grita o feiticeiro, voltando das sombras para enfrentar você. Dessa vez, é você quem sente
+o tremor do medo, ao ver que ele também se transformou - mas em uma criatura que poderia fazer
+com que um Demônio do Fogo ficasse paralisado. O rosto de Balthus Dire tornou-se feio e com
+feições de bruxa, e seus cabelos agora são pequenas serpentes que se contorcem e soltam silvos.
 
+1. Você fugirá desta criatura.
+2. Você avançará com seu Tridente.
 
+Digite sua opção: '''))
+    n = numcerto(n,1,2)
+    if n == 1:
+        n = 232
+    else:
+        n = 199
+    return [p, enc, ite, n]
+
+h = h + [his48]
+
+def his49(p, enc, ite):
+    input('''A criatura fica olhando fixamente para você com ar inquisitivo, como se estivesse insegura em
+relação a você.
+
+Enter para continuar. ''')
+    n = 255
+    return [p, enc, ite, n]
+
+h = h + [his49]
+
+def his50(p, enc, ite):
+    n = 164
+    return [p, enc, ite, n]
+
+h = h + [his50]
+
+def his51(p, enc, ite):
+    print('''Você distribui loucamente golpes com sua espada, mas não consegue atingir a criatura. Ou ela é
+extremamente rápida, ou não possui um corpo sólido que possa ser atingido. Seus dentes estão
+agora rasgando a sua carne, e você sente sangue na perna. Você terá que se proteger com sua
+mágica ou enfrentar uma morte certa, trazida por esta criatura que não se vê. Você
+
+1. Lançará um Encanto da Força      (Possui {})
+2. Lançará um Encanto da Fraqueza   (Possui {})'''.format(enc[10], enc[11]))
+    if enc[10] + enc[11] > 0 :
+        n = int(input('''3. Não quer lançar nenhum dos dois. 
+        
+Digite sua opção: '''))
+        n = numcerto(n,1,3)
+        while (n == 1 and enc[10] == 0) or (n == 2 and enc[11] == 0):
+            n = int(input('Não possui esse Encanto, digite novamente: '))
+            n = numcerto(n,1,3)
+        if n == 1 :
+            enc[10] = enc[10] - 1
+            n = 301
+        elif n == 2 :
+            enc[11] = enc[11] - 1
+            n = 159
+        else :
+            n = 280
+    else :
+        n = input('''Você não possui nenhum desses encantos
+
+Enter para continuar.''')
+        n = 280
+    return [p, enc, ite, n]
+    
+h = h + [his51]
 
 #n = 1
 while perso[2] > 0:
