@@ -350,7 +350,7 @@ ENCANTOS = [CDC, PES, Fog, ODT, I, L, S, Es, H, En, For,Fr]
 
 #ITEMS
 
-ITEM = [['Miríade de bolso', 0], ['Aranha em um vidro', 0], ['Pequenas amoras', 0], ['Adaga', 0], ['Velo de Ouro', 0], ['Espelho de Prata', 0], ['Escova de Cabelo', 0]]
+ITEM = [['Miríade de bolso', 0], ['Aranha em um vidro', 0], ['Pequenas amoras', 0], ['Adaga', 0], ['Velo de Ouro', 0], ['Espelho de Prata', 0], ['Escova de Cabelo', 0], ['Vidro de Unguento', 0], ['Peças de Ouro', 0]]
 CRIATURA = [['GARK', 7, 11, 0], ['FERA DAS GARRAS', 9, 14, 0], ['HOMEM-ARANHA', 7, 5, 0]]
 
 #ADAGA: Ela causará automaticamente a perda de dois pontos de ENERGIA sem necessidade de jogar dados para conhecer a Força de Ataque. Mas você só poderá usá-la uma vez.
@@ -1433,6 +1433,88 @@ Enter para continuar.''')
     return [p, enc, ite, n]
     
 h = h + [his51]
+
+def his52(p, enc, ite):
+    n= int(input('''A porta abre e você segue adiante, batendo-a para que se feche atrás de você. Pouca distância à
+frente, você chega a um cruzamento de três caminhos, no qual você toma a passagem que vai na
+direção norte. Ela continua por vários metros, conduzindo a uma outra porta. Você pode ouvir risos
+e vozes alegres do outro lado. Cautelosamente, você abre a porta que dá para um grande aposento,
+onde um grupo de mais ou menos doze criaturas, de todas as formas, tamanhos e cores, estão se
+divertindo com jogos. Quando você entra no aposento, uma voz grita: "Olhem esse deve ser Glaz-
+Doz-Fut!", com o que todos eles cumprimentam você, convidando-o para juntar-se à brincadeira.
+Evidentemente eles estão esperando alguém e confundiram você com o convidado que está
+faltando.
+
+1. Você continua fingindo e junta-se a eles
+2. Você dirá a eles que estão enganados e tentará chegar até a porta do outro lado do aposento?
+
+Digite sua opção: '''))
+    n = numcerto(n,1,2)
+    if n == 1 :
+        n = 385
+    else :
+        n = 227
+    return [p, enc, ite, n]
+    
+h = h + [his52]
+
+def his53(p, enc, ite):
+    print('''"Para que eu quero suas amoras?" ela ri. "Meu apetite morreu com meu corpo!" E, quando você
+olha mais de perto, pode ver que ela também não é nada além de um Fantasma. Ela flutua no ar,
+vindo na sua direção.''')
+    n = 194
+    return [p, enc, ite, n]
+    
+h = h + [his53]
+
+def his54(p, enc, ite):
+    print('''Você procura dentro de sua mochila. O que você pegará:
+
+1. Um Vidro de Unguento?            (Possui {})
+2. Uma Miríade de Bolso?            (Possui {})
+3. Peças de ouro?                   (Possui {})
+'''.format(ite[7][1], ite[0][1], ite[8][1]))
+    if ite[7][1] + ite[0][1] + ite[8][1] > 0 :
+        n = int(input('Digite sua opção: '))
+        n = numcerto(n,1,3)
+        while (n == 1 and ite[7][1] == 0) or (n == 2 and ite[0][1] == 0) or (n == 3 and ite[8][1] == 0):
+            n = int(input('Não possui esse item, digite novamente: '))
+            n = numcerto(n,1,3)
+        if n == 1 :
+            ite[7][1] = ite[7][1] - 1
+            n = 287
+        elif n == 2 :
+            ite[0][1] = ite[0][1] - 1
+            n = 160
+        else :
+            ite[8][1] = ite[8][1] - 1
+            n = 27
+    else :
+        input('''Você não tem nenhuma dessas coisas, terá que retornar e escolher de novo.
+
+Enter para continuar: ''')
+        n = 104
+    return [p, enc, ite, n]
+    
+h = h + [his54]
+
+def his55(p, enc, ite):
+    n= int(input('''Você segue a passagem por algum tempo. Ela vira para a direita e acaba chegando a um beco sem
+saída. Você pode: 
+
+1. Retornar para a bifurcação e tomar a outra passagem.
+2. Procurar passagens secretas.
+
+Digite sua opção: '''))
+    n = numcerto(n,1,2)
+    if n == 1 :
+        n = 249
+    else :
+        n = 10
+    return [p, enc, ite, n]
+    
+h = h + [his55]
+
 
 #n = 1
 while perso[2] > 0:
