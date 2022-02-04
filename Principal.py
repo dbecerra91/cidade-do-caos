@@ -1435,7 +1435,7 @@ Enter para continuar.''')
 h = h + [his51]
 
 def his52(p, enc, ite):
-    n= int(input('''A porta abre e você segue adiante, batendo-a para que se feche atrás de você. Pouca distância à
+    n = int(input('''A porta abre e você segue adiante, batendo-a para que se feche atrás de você. Pouca distância à
 frente, você chega a um cruzamento de três caminhos, no qual você toma a passagem que vai na
 direção norte. Ela continua por vários metros, conduzindo a uma outra porta. Você pode ouvir risos
 e vozes alegres do outro lado. Cautelosamente, você abre a porta que dá para um grande aposento,
@@ -1499,7 +1499,7 @@ Enter para continuar: ''')
 h = h + [his54]
 
 def his55(p, enc, ite):
-    n= int(input('''Você segue a passagem por algum tempo. Ela vira para a direita e acaba chegando a um beco sem
+    n = int(input('''Você segue a passagem por algum tempo. Ela vira para a direita e acaba chegando a um beco sem
 saída. Você pode: 
 
 1. Retornar para a bifurcação e tomar a outra passagem.
@@ -1515,6 +1515,2075 @@ Digite sua opção: '''))
     
 h = h + [his55]
 
+def his56(p, enc, ite):
+    n = 56
+    return [p, enc, ite, n]
+    
+h = h + [his56]
+
+def his57(p, enc, ite):
+    n = 57
+    return [p, enc, ite, n]
+    
+h = h + [his57]
+
+def his58(p, enc, ite):
+    n = 58
+    return [p, enc, ite, n]
+    
+h = h + [his58]
+
+def his59(p, enc, ite):
+    n = 59
+    return [p, enc, ite, n]
+    
+h = h + [his59]
+
+def his60(p, enc, ite):
+    n = 60
+    return [p, enc, ite, n]
+    
+h = h + [his60]
+
+def his61(p, enc, ite):
+    n = 61
+    return [p, enc, ite, n]
+    
+h = h + [his61]
+
+def his62(p, enc, ite):
+    n = 62
+    return [p, enc, ite, n]
+    
+h = h + [his62]
+
+def his63(p, enc, ite):
+    n = 63
+    return [p, enc, ite, n]
+    
+h = h + [his63]
+
+def his64(p, enc, ite):
+    n = 64
+    return [p, enc, ite, n]
+    
+h = h + [his64]
+
+def his65(p, enc, ite):
+    n = 65
+    return [p, enc, ite, n]
+    
+h = h + [his65]
+
+def his66(p, enc, ite):
+    n = 66
+    return [p, enc, ite, n]
+    
+h = h + [his66]
+
+def his67(p, enc, ite):
+    n = 67
+    return [p, enc, ite, n]
+    
+h = h + [his67]
+
+def his68(p, enc, ite):
+    n = 68
+    return [p, enc, ite, n]
+    
+h = h + [his68]
+
+def his69(p, enc, ite):
+    n = 69
+    return [p, enc, ite, n]
+    
+h = h + [his69]
+
+def his70(p, enc, ite):
+    n = 70
+    return [p, enc, ite, n]
+    
+h = h + [his70]
+
+def his71(p, enc, ite):
+    n = 71
+    return [p, enc, ite, n]
+    
+h = h + [his71]
+
+def his72(p, enc, ite):
+    n = 72
+    return [p, enc, ite, n]
+    
+h = h + [his72]
+
+def his73(p, enc, ite):
+    n = 73
+    return [p, enc, ite, n]
+    
+h = h + [his73]
+
+def his74(p, enc, ite):
+    n = 74
+    return [p, enc, ite, n]
+    
+h = h + [his74]
+
+def his75(p, enc, ite):
+    n = 75
+    return [p, enc, ite, n]
+    
+h = h + [his75]
+
+def his76(p, enc, ite):
+    n = 76
+    return [p, enc, ite, n]
+    
+h = h + [his76]
+
+def his77(p, enc, ite):
+    n = 77
+    return [p, enc, ite, n]
+    
+h = h + [his77]
+
+def his78(p, enc, ite):
+    n = 78
+    return [p, enc, ite, n]
+    
+h = h + [his78]
+
+def his79(p, enc, ite):
+    n = 79
+    return [p, enc, ite, n]
+    
+h = h + [his79]
+
+def his80(p, enc, ite):
+    n = 80
+    return [p, enc, ite, n]
+    
+h = h + [his80]
+
+def his81(p, enc, ite):
+    n = 81
+    return [p, enc, ite, n]
+    
+h = h + [his81]
+
+def his82(p, enc, ite):
+    n = 82
+    return [p, enc, ite, n]
+    
+h = h + [his82]
+
+def his83(p, enc, ite):
+    n = 83
+    return [p, enc, ite, n]
+    
+h = h + [his83]
+
+def his84(p, enc, ite):
+    n = 84
+    return [p, enc, ite, n]
+    
+h = h + [his84]
+
+def his85(p, enc, ite):
+    n = 85
+    return [p, enc, ite, n]
+    
+h = h + [his85]
+
+def his86(p, enc, ite):
+    n = 86
+    return [p, enc, ite, n]
+    
+h = h + [his86]
+
+def his87(p, enc, ite):
+    n = 87
+    return [p, enc, ite, n]
+    
+h = h + [his87]
+
+def his88(p, enc, ite):
+    n = 88
+    return [p, enc, ite, n]
+    
+h = h + [his88]
+
+def his89(p, enc, ite):
+    n = 89
+    return [p, enc, ite, n]
+    
+h = h + [his89]
+
+def his90(p, enc, ite):
+    n = 90
+    return [p, enc, ite, n]
+    
+h = h + [his90]
+
+def his91(p, enc, ite):
+    n = 91
+    return [p, enc, ite, n]
+    
+h = h + [his91]
+
+def his92(p, enc, ite):
+    n = 92
+    return [p, enc, ite, n]
+    
+h = h + [his92]
+
+def his93(p, enc, ite):
+    n = 93
+    return [p, enc, ite, n]
+    
+h = h + [his93]
+
+def his94(p, enc, ite):
+    n = 94
+    return [p, enc, ite, n]
+    
+h = h + [his94]
+
+def his95(p, enc, ite):
+    n = 95
+    return [p, enc, ite, n]
+    
+h = h + [his95]
+
+def his96(p, enc, ite):
+    n = 96
+    return [p, enc, ite, n]
+    
+h = h + [his96]
+
+def his97(p, enc, ite):
+    n = 97
+    return [p, enc, ite, n]
+    
+h = h + [his97]
+
+def his98(p, enc, ite):
+    n = 98
+    return [p, enc, ite, n]
+    
+h = h + [his98]
+
+def his99(p, enc, ite):
+    n = 99
+    return [p, enc, ite, n]
+    
+h = h + [his99]
+
+def his100(p, enc, ite):
+    n = 100
+    return [p, enc, ite, n]
+    
+h = h + [his100]
+
+def his101(p, enc, ite):
+    n = 101
+    return [p, enc, ite, n]
+    
+h = h + [his101]
+
+def his102(p, enc, ite):
+    n = 102
+    return [p, enc, ite, n]
+    
+h = h + [his102]
+
+def his103(p, enc, ite):
+    n = 103
+    return [p, enc, ite, n]
+    
+h = h + [his103]
+
+def his104(p, enc, ite):
+    n = 104
+    return [p, enc, ite, n]
+    
+h = h + [his104]
+
+def his105(p, enc, ite):
+    n = 105
+    return [p, enc, ite, n]
+    
+h = h + [his105]
+
+def his106(p, enc, ite):
+    n = 106
+    return [p, enc, ite, n]
+    
+h = h + [his106]
+
+def his107(p, enc, ite):
+    n = 107
+    return [p, enc, ite, n]
+    
+h = h + [his107]
+
+def his108(p, enc, ite):
+    n = 108
+    return [p, enc, ite, n]
+    
+h = h + [his108]
+
+def his109(p, enc, ite):
+    n = 109
+    return [p, enc, ite, n]
+    
+h = h + [his109]
+
+def his110(p, enc, ite):
+    n = 110
+    return [p, enc, ite, n]
+    
+h = h + [his110]
+
+def his111(p, enc, ite):
+    n = 111
+    return [p, enc, ite, n]
+    
+h = h + [his111]
+
+def his112(p, enc, ite):
+    n = 112
+    return [p, enc, ite, n]
+    
+h = h + [his112]
+
+def his113(p, enc, ite):
+    n = 113
+    return [p, enc, ite, n]
+    
+h = h + [his113]
+
+def his114(p, enc, ite):
+    n = 114
+    return [p, enc, ite, n]
+    
+h = h + [his114]
+
+def his115(p, enc, ite):
+    n = 115
+    return [p, enc, ite, n]
+    
+h = h + [his115]
+
+def his116(p, enc, ite):
+    n = 116
+    return [p, enc, ite, n]
+    
+h = h + [his116]
+
+def his117(p, enc, ite):
+    n = 117
+    return [p, enc, ite, n]
+    
+h = h + [his117]
+
+def his118(p, enc, ite):
+    n = 118
+    return [p, enc, ite, n]
+    
+h = h + [his118]
+
+def his119(p, enc, ite):
+    n = 119
+    return [p, enc, ite, n]
+    
+h = h + [his119]
+
+def his120(p, enc, ite):
+    n = 120
+    return [p, enc, ite, n]
+    
+h = h + [his120]
+
+def his121(p, enc, ite):
+    n = 121
+    return [p, enc, ite, n]
+    
+h = h + [his121]
+
+def his122(p, enc, ite):
+    n = 122
+    return [p, enc, ite, n]
+    
+h = h + [his122]
+
+def his123(p, enc, ite):
+    n = 123
+    return [p, enc, ite, n]
+    
+h = h + [his123]
+
+def his124(p, enc, ite):
+    n = 124
+    return [p, enc, ite, n]
+    
+h = h + [his124]
+
+def his125(p, enc, ite):
+    n = 125
+    return [p, enc, ite, n]
+    
+h = h + [his125]
+
+def his126(p, enc, ite):
+    n = 126
+    return [p, enc, ite, n]
+    
+h = h + [his126]
+
+def his127(p, enc, ite):
+    n = 127
+    return [p, enc, ite, n]
+    
+h = h + [his127]
+
+def his128(p, enc, ite):
+    n = 128
+    return [p, enc, ite, n]
+    
+h = h + [his128]
+
+def his129(p, enc, ite):
+    n = 129
+    return [p, enc, ite, n]
+    
+h = h + [his129]
+
+def his130(p, enc, ite):
+    n = 130
+    return [p, enc, ite, n]
+    
+h = h + [his130]
+
+def his131(p, enc, ite):
+    n = 131
+    return [p, enc, ite, n]
+    
+h = h + [his131]
+
+def his132(p, enc, ite):
+    n = 132
+    return [p, enc, ite, n]
+    
+h = h + [his132]
+
+def his133(p, enc, ite):
+    n = 133
+    return [p, enc, ite, n]
+    
+h = h + [his133]
+
+def his134(p, enc, ite):
+    n = 134
+    return [p, enc, ite, n]
+    
+h = h + [his134]
+
+def his135(p, enc, ite):
+    n = 135
+    return [p, enc, ite, n]
+    
+h = h + [his135]
+
+def his136(p, enc, ite):
+    n = 136
+    return [p, enc, ite, n]
+    
+h = h + [his136]
+
+def his137(p, enc, ite):
+    n = 137
+    return [p, enc, ite, n]
+    
+h = h + [his137]
+
+def his138(p, enc, ite):
+    n = 138
+    return [p, enc, ite, n]
+    
+h = h + [his138]
+
+def his139(p, enc, ite):
+    n = 139
+    return [p, enc, ite, n]
+    
+h = h + [his139]
+
+def his140(p, enc, ite):
+    n = 140
+    return [p, enc, ite, n]
+    
+h = h + [his140]
+
+def his141(p, enc, ite):
+    n = 141
+    return [p, enc, ite, n]
+    
+h = h + [his141]
+
+def his142(p, enc, ite):
+    n = 142
+    return [p, enc, ite, n]
+    
+h = h + [his142]
+
+def his143(p, enc, ite):
+    n = 143
+    return [p, enc, ite, n]
+    
+h = h + [his143]
+
+def his144(p, enc, ite):
+    n = 144
+    return [p, enc, ite, n]
+    
+h = h + [his144]
+
+def his145(p, enc, ite):
+    n = 145
+    return [p, enc, ite, n]
+    
+h = h + [his145]
+
+def his146(p, enc, ite):
+    n = 146
+    return [p, enc, ite, n]
+    
+h = h + [his146]
+
+def his147(p, enc, ite):
+    n = 147
+    return [p, enc, ite, n]
+    
+h = h + [his147]
+
+def his148(p, enc, ite):
+    n = 148
+    return [p, enc, ite, n]
+    
+h = h + [his148]
+
+def his149(p, enc, ite):
+    n = 149
+    return [p, enc, ite, n]
+    
+h = h + [his149]
+
+def his150(p, enc, ite):
+    n = 150
+    return [p, enc, ite, n]
+    
+h = h + [his150]
+
+def his151(p, enc, ite):
+    n = 151
+    return [p, enc, ite, n]
+    
+h = h + [his151]
+
+def his152(p, enc, ite):
+    n = 152
+    return [p, enc, ite, n]
+    
+h = h + [his152]
+
+def his153(p, enc, ite):
+    n = 153
+    return [p, enc, ite, n]
+    
+h = h + [his153]
+
+def his154(p, enc, ite):
+    n = 154
+    return [p, enc, ite, n]
+    
+h = h + [his154]
+
+def his155(p, enc, ite):
+    n = 155
+    return [p, enc, ite, n]
+    
+h = h + [his155]
+
+def his156(p, enc, ite):
+    n = 156
+    return [p, enc, ite, n]
+    
+h = h + [his156]
+
+def his157(p, enc, ite):
+    n = 157
+    return [p, enc, ite, n]
+    
+h = h + [his157]
+
+def his158(p, enc, ite):
+    n = 158
+    return [p, enc, ite, n]
+    
+h = h + [his158]
+
+def his159(p, enc, ite):
+    n = 159
+    return [p, enc, ite, n]
+    
+h = h + [his159]
+
+def his160(p, enc, ite):
+    n = 160
+    return [p, enc, ite, n]
+    
+h = h + [his160]
+
+def his161(p, enc, ite):
+    n = 161
+    return [p, enc, ite, n]
+    
+h = h + [his161]
+
+def his162(p, enc, ite):
+    n = 162
+    return [p, enc, ite, n]
+    
+h = h + [his162]
+
+def his163(p, enc, ite):
+    n = 163
+    return [p, enc, ite, n]
+    
+h = h + [his163]
+
+def his164(p, enc, ite):
+    n = 164
+    return [p, enc, ite, n]
+    
+h = h + [his164]
+
+def his165(p, enc, ite):
+    n = 165
+    return [p, enc, ite, n]
+    
+h = h + [his165]
+
+def his166(p, enc, ite):
+    n = 166
+    return [p, enc, ite, n]
+    
+h = h + [his166]
+
+def his167(p, enc, ite):
+    n = 167
+    return [p, enc, ite, n]
+    
+h = h + [his167]
+
+def his168(p, enc, ite):
+    n = 168
+    return [p, enc, ite, n]
+    
+h = h + [his168]
+
+def his169(p, enc, ite):
+    n = 169
+    return [p, enc, ite, n]
+    
+h = h + [his169]
+
+def his170(p, enc, ite):
+    n = 170
+    return [p, enc, ite, n]
+    
+h = h + [his170]
+
+def his171(p, enc, ite):
+    n = 171
+    return [p, enc, ite, n]
+    
+h = h + [his171]
+
+def his172(p, enc, ite):
+    n = 172
+    return [p, enc, ite, n]
+    
+h = h + [his172]
+
+def his173(p, enc, ite):
+    n = 173
+    return [p, enc, ite, n]
+    
+h = h + [his173]
+
+def his174(p, enc, ite):
+    n = 174
+    return [p, enc, ite, n]
+    
+h = h + [his174]
+
+def his175(p, enc, ite):
+    n = 175
+    return [p, enc, ite, n]
+    
+h = h + [his175]
+
+def his176(p, enc, ite):
+    n = 176
+    return [p, enc, ite, n]
+    
+h = h + [his176]
+
+def his177(p, enc, ite):
+    n = 177
+    return [p, enc, ite, n]
+    
+h = h + [his177]
+
+def his178(p, enc, ite):
+    n = 178
+    return [p, enc, ite, n]
+    
+h = h + [his178]
+
+def his179(p, enc, ite):
+    n = 179
+    return [p, enc, ite, n]
+    
+h = h + [his179]
+
+def his180(p, enc, ite):
+    n = 180
+    return [p, enc, ite, n]
+    
+h = h + [his180]
+
+def his181(p, enc, ite):
+    n = 181
+    return [p, enc, ite, n]
+    
+h = h + [his181]
+
+def his182(p, enc, ite):
+    n = 182
+    return [p, enc, ite, n]
+    
+h = h + [his182]
+
+def his183(p, enc, ite):
+    n = 183
+    return [p, enc, ite, n]
+    
+h = h + [his183]
+
+def his184(p, enc, ite):
+    n = 184
+    return [p, enc, ite, n]
+    
+h = h + [his184]
+
+def his185(p, enc, ite):
+    n = 185
+    return [p, enc, ite, n]
+    
+h = h + [his185]
+
+def his186(p, enc, ite):
+    n = 186
+    return [p, enc, ite, n]
+    
+h = h + [his186]
+
+def his187(p, enc, ite):
+    n = 187
+    return [p, enc, ite, n]
+    
+h = h + [his187]
+
+def his188(p, enc, ite):
+    n = 188
+    return [p, enc, ite, n]
+    
+h = h + [his188]
+
+def his189(p, enc, ite):
+    n = 189
+    return [p, enc, ite, n]
+    
+h = h + [his189]
+
+def his190(p, enc, ite):
+    n = 190
+    return [p, enc, ite, n]
+    
+h = h + [his190]
+
+def his191(p, enc, ite):
+    n = 191
+    return [p, enc, ite, n]
+    
+h = h + [his191]
+
+def his192(p, enc, ite):
+    n = 192
+    return [p, enc, ite, n]
+    
+h = h + [his192]
+
+def his193(p, enc, ite):
+    n = 193
+    return [p, enc, ite, n]
+    
+h = h + [his193]
+
+def his194(p, enc, ite):
+    n = 194
+    return [p, enc, ite, n]
+    
+h = h + [his194]
+
+def his195(p, enc, ite):
+    n = 195
+    return [p, enc, ite, n]
+    
+h = h + [his195]
+
+def his196(p, enc, ite):
+    n = 196
+    return [p, enc, ite, n]
+    
+h = h + [his196]
+
+def his197(p, enc, ite):
+    n = 197
+    return [p, enc, ite, n]
+    
+h = h + [his197]
+
+def his198(p, enc, ite):
+    n = 198
+    return [p, enc, ite, n]
+    
+h = h + [his198]
+
+def his199(p, enc, ite):
+    n = 199
+    return [p, enc, ite, n]
+    
+h = h + [his199]
+
+def his200(p, enc, ite):
+    n = 200
+    return [p, enc, ite, n]
+    
+h = h + [his200]
+
+def his201(p, enc, ite):
+    n = 201
+    return [p, enc, ite, n]
+    
+h = h + [his201]
+
+def his202(p, enc, ite):
+    n = 202
+    return [p, enc, ite, n]
+    
+h = h + [his202]
+
+def his203(p, enc, ite):
+    n = 203
+    return [p, enc, ite, n]
+    
+h = h + [his203]
+
+def his204(p, enc, ite):
+    n = 204
+    return [p, enc, ite, n]
+    
+h = h + [his204]
+
+def his205(p, enc, ite):
+    n = 205
+    return [p, enc, ite, n]
+    
+h = h + [his205]
+
+def his206(p, enc, ite):
+    n = 206
+    return [p, enc, ite, n]
+    
+h = h + [his206]
+
+def his207(p, enc, ite):
+    n = 207
+    return [p, enc, ite, n]
+    
+h = h + [his207]
+
+def his208(p, enc, ite):
+    n = 208
+    return [p, enc, ite, n]
+    
+h = h + [his208]
+
+def his209(p, enc, ite):
+    n = 209
+    return [p, enc, ite, n]
+    
+h = h + [his209]
+
+def his210(p, enc, ite):
+    n = 210
+    return [p, enc, ite, n]
+    
+h = h + [his210]
+
+def his211(p, enc, ite):
+    n = 211
+    return [p, enc, ite, n]
+    
+h = h + [his211]
+
+def his212(p, enc, ite):
+    n = 212
+    return [p, enc, ite, n]
+    
+h = h + [his212]
+
+def his213(p, enc, ite):
+    n = 213
+    return [p, enc, ite, n]
+    
+h = h + [his213]
+
+def his214(p, enc, ite):
+    n = 214
+    return [p, enc, ite, n]
+    
+h = h + [his214]
+
+def his215(p, enc, ite):
+    n = 215
+    return [p, enc, ite, n]
+    
+h = h + [his215]
+
+def his216(p, enc, ite):
+    n = 216
+    return [p, enc, ite, n]
+    
+h = h + [his216]
+
+def his217(p, enc, ite):
+    n = 217
+    return [p, enc, ite, n]
+    
+h = h + [his217]
+
+def his218(p, enc, ite):
+    n = 218
+    return [p, enc, ite, n]
+    
+h = h + [his218]
+
+def his219(p, enc, ite):
+    n = 219
+    return [p, enc, ite, n]
+    
+h = h + [his219]
+
+def his220(p, enc, ite):
+    n = 220
+    return [p, enc, ite, n]
+    
+h = h + [his220]
+
+def his221(p, enc, ite):
+    n = 221
+    return [p, enc, ite, n]
+    
+h = h + [his221]
+
+def his222(p, enc, ite):
+    n = 222
+    return [p, enc, ite, n]
+    
+h = h + [his222]
+
+def his223(p, enc, ite):
+    n = 223
+    return [p, enc, ite, n]
+    
+h = h + [his223]
+
+def his224(p, enc, ite):
+    n = 224
+    return [p, enc, ite, n]
+    
+h = h + [his224]
+
+def his225(p, enc, ite):
+    n = 225
+    return [p, enc, ite, n]
+    
+h = h + [his225]
+
+def his226(p, enc, ite):
+    n = 226
+    return [p, enc, ite, n]
+    
+h = h + [his226]
+
+def his227(p, enc, ite):
+    n = 227
+    return [p, enc, ite, n]
+    
+h = h + [his227]
+
+def his228(p, enc, ite):
+    n = 228
+    return [p, enc, ite, n]
+    
+h = h + [his228]
+
+def his229(p, enc, ite):
+    n = 229
+    return [p, enc, ite, n]
+    
+h = h + [his229]
+
+def his230(p, enc, ite):
+    n = 230
+    return [p, enc, ite, n]
+    
+h = h + [his230]
+
+def his231(p, enc, ite):
+    n = 231
+    return [p, enc, ite, n]
+    
+h = h + [his231]
+
+def his232(p, enc, ite):
+    n = 232
+    return [p, enc, ite, n]
+    
+h = h + [his232]
+
+def his233(p, enc, ite):
+    n = 233
+    return [p, enc, ite, n]
+    
+h = h + [his233]
+
+def his234(p, enc, ite):
+    n = 234
+    return [p, enc, ite, n]
+    
+h = h + [his234]
+
+def his235(p, enc, ite):
+    n = 235
+    return [p, enc, ite, n]
+    
+h = h + [his235]
+
+def his236(p, enc, ite):
+    n = 236
+    return [p, enc, ite, n]
+    
+h = h + [his236]
+
+def his237(p, enc, ite):
+    n = 237
+    return [p, enc, ite, n]
+    
+h = h + [his237]
+
+def his238(p, enc, ite):
+    n = 238
+    return [p, enc, ite, n]
+    
+h = h + [his238]
+
+def his239(p, enc, ite):
+    n = 239
+    return [p, enc, ite, n]
+    
+h = h + [his239]
+
+def his240(p, enc, ite):
+    n = 240
+    return [p, enc, ite, n]
+    
+h = h + [his240]
+
+def his241(p, enc, ite):
+    n = 241
+    return [p, enc, ite, n]
+    
+h = h + [his241]
+
+def his242(p, enc, ite):
+    n = 242
+    return [p, enc, ite, n]
+    
+h = h + [his242]
+
+def his243(p, enc, ite):
+    n = 243
+    return [p, enc, ite, n]
+    
+h = h + [his243]
+
+def his244(p, enc, ite):
+    n = 244
+    return [p, enc, ite, n]
+    
+h = h + [his244]
+
+def his245(p, enc, ite):
+    n = 245
+    return [p, enc, ite, n]
+    
+h = h + [his245]
+
+def his246(p, enc, ite):
+    n = 246
+    return [p, enc, ite, n]
+    
+h = h + [his246]
+
+def his247(p, enc, ite):
+    n = 247
+    return [p, enc, ite, n]
+    
+h = h + [his247]
+
+def his248(p, enc, ite):
+    n = 248
+    return [p, enc, ite, n]
+    
+h = h + [his248]
+
+def his249(p, enc, ite):
+    n = 249
+    return [p, enc, ite, n]
+    
+h = h + [his249]
+
+def his250(p, enc, ite):
+    n = 250
+    return [p, enc, ite, n]
+    
+h = h + [his250]
+
+def his251(p, enc, ite):
+    n = 251
+    return [p, enc, ite, n]
+    
+h = h + [his251]
+
+def his252(p, enc, ite):
+    n = 252
+    return [p, enc, ite, n]
+    
+h = h + [his252]
+
+def his253(p, enc, ite):
+    n = 253
+    return [p, enc, ite, n]
+    
+h = h + [his253]
+
+def his254(p, enc, ite):
+    n = 254
+    return [p, enc, ite, n]
+    
+h = h + [his254]
+
+def his255(p, enc, ite):
+    n = 255
+    return [p, enc, ite, n]
+    
+h = h + [his255]
+
+def his256(p, enc, ite):
+    n = 256
+    return [p, enc, ite, n]
+    
+h = h + [his256]
+
+def his257(p, enc, ite):
+    n = 257
+    return [p, enc, ite, n]
+    
+h = h + [his257]
+
+def his258(p, enc, ite):
+    n = 258
+    return [p, enc, ite, n]
+    
+h = h + [his258]
+
+def his259(p, enc, ite):
+    n = 259
+    return [p, enc, ite, n]
+    
+h = h + [his259]
+
+def his260(p, enc, ite):
+    n = 260
+    return [p, enc, ite, n]
+    
+h = h + [his260]
+
+def his261(p, enc, ite):
+    n = 261
+    return [p, enc, ite, n]
+    
+h = h + [his261]
+
+def his262(p, enc, ite):
+    n = 262
+    return [p, enc, ite, n]
+    
+h = h + [his262]
+
+def his263(p, enc, ite):
+    n = 263
+    return [p, enc, ite, n]
+    
+h = h + [his263]
+
+def his264(p, enc, ite):
+    n = 264
+    return [p, enc, ite, n]
+    
+h = h + [his264]
+
+def his265(p, enc, ite):
+    n = 265
+    return [p, enc, ite, n]
+    
+h = h + [his265]
+
+def his266(p, enc, ite):
+    n = 266
+    return [p, enc, ite, n]
+    
+h = h + [his266]
+
+def his267(p, enc, ite):
+    n = 267
+    return [p, enc, ite, n]
+    
+h = h + [his267]
+
+def his268(p, enc, ite):
+    n = 268
+    return [p, enc, ite, n]
+    
+h = h + [his268]
+
+def his269(p, enc, ite):
+    n = 269
+    return [p, enc, ite, n]
+    
+h = h + [his269]
+
+def his270(p, enc, ite):
+    n = 270
+    return [p, enc, ite, n]
+    
+h = h + [his270]
+
+def his271(p, enc, ite):
+    n = 271
+    return [p, enc, ite, n]
+    
+h = h + [his271]
+
+def his272(p, enc, ite):
+    n = 272
+    return [p, enc, ite, n]
+    
+h = h + [his272]
+
+def his273(p, enc, ite):
+    n = 273
+    return [p, enc, ite, n]
+    
+h = h + [his273]
+
+def his274(p, enc, ite):
+    n = 274
+    return [p, enc, ite, n]
+    
+h = h + [his274]
+
+def his275(p, enc, ite):
+    n = 275
+    return [p, enc, ite, n]
+    
+h = h + [his275]
+
+def his276(p, enc, ite):
+    n = 276
+    return [p, enc, ite, n]
+    
+h = h + [his276]
+
+def his277(p, enc, ite):
+    n = 277
+    return [p, enc, ite, n]
+    
+h = h + [his277]
+
+def his278(p, enc, ite):
+    n = 278
+    return [p, enc, ite, n]
+    
+h = h + [his278]
+
+def his279(p, enc, ite):
+    n = 279
+    return [p, enc, ite, n]
+    
+h = h + [his279]
+
+def his280(p, enc, ite):
+    n = 280
+    return [p, enc, ite, n]
+    
+h = h + [his280]
+
+def his281(p, enc, ite):
+    n = 281
+    return [p, enc, ite, n]
+    
+h = h + [his281]
+
+def his282(p, enc, ite):
+    n = 282
+    return [p, enc, ite, n]
+    
+h = h + [his282]
+
+def his283(p, enc, ite):
+    n = 283
+    return [p, enc, ite, n]
+    
+h = h + [his283]
+
+def his284(p, enc, ite):
+    n = 284
+    return [p, enc, ite, n]
+    
+h = h + [his284]
+
+def his285(p, enc, ite):
+    n = 285
+    return [p, enc, ite, n]
+    
+h = h + [his285]
+
+def his286(p, enc, ite):
+    n = 286
+    return [p, enc, ite, n]
+    
+h = h + [his286]
+
+def his287(p, enc, ite):
+    n = 287
+    return [p, enc, ite, n]
+    
+h = h + [his287]
+
+def his288(p, enc, ite):
+    n = 288
+    return [p, enc, ite, n]
+    
+h = h + [his288]
+
+def his289(p, enc, ite):
+    n = 289
+    return [p, enc, ite, n]
+    
+h = h + [his289]
+
+def his290(p, enc, ite):
+    n = 290
+    return [p, enc, ite, n]
+    
+h = h + [his290]
+
+def his291(p, enc, ite):
+    n = 291
+    return [p, enc, ite, n]
+    
+h = h + [his291]
+
+def his292(p, enc, ite):
+    n = 292
+    return [p, enc, ite, n]
+    
+h = h + [his292]
+
+def his293(p, enc, ite):
+    n = 293
+    return [p, enc, ite, n]
+    
+h = h + [his293]
+
+def his294(p, enc, ite):
+    n = 294
+    return [p, enc, ite, n]
+    
+h = h + [his294]
+
+def his295(p, enc, ite):
+    n = 295
+    return [p, enc, ite, n]
+    
+h = h + [his295]
+
+def his296(p, enc, ite):
+    n = 296
+    return [p, enc, ite, n]
+    
+h = h + [his296]
+
+def his297(p, enc, ite):
+    n = 297
+    return [p, enc, ite, n]
+    
+h = h + [his297]
+
+def his298(p, enc, ite):
+    n = 298
+    return [p, enc, ite, n]
+    
+h = h + [his298]
+
+def his299(p, enc, ite):
+    n = 299
+    return [p, enc, ite, n]
+    
+h = h + [his299]
+
+def his300(p, enc, ite):
+    n = 300
+    return [p, enc, ite, n]
+    
+h = h + [his300]
+
+def his301(p, enc, ite):
+    n = 301
+    return [p, enc, ite, n]
+    
+h = h + [his301]
+
+def his302(p, enc, ite):
+    n = 302
+    return [p, enc, ite, n]
+    
+h = h + [his302]
+
+def his303(p, enc, ite):
+    n = 303
+    return [p, enc, ite, n]
+    
+h = h + [his303]
+
+def his304(p, enc, ite):
+    n = 304
+    return [p, enc, ite, n]
+    
+h = h + [his304]
+
+def his305(p, enc, ite):
+    n = 305
+    return [p, enc, ite, n]
+    
+h = h + [his305]
+
+def his306(p, enc, ite):
+    n = 306
+    return [p, enc, ite, n]
+    
+h = h + [his306]
+
+def his307(p, enc, ite):
+    n = 307
+    return [p, enc, ite, n]
+    
+h = h + [his307]
+
+def his308(p, enc, ite):
+    n = 308
+    return [p, enc, ite, n]
+    
+h = h + [his308]
+
+def his309(p, enc, ite):
+    n = 309
+    return [p, enc, ite, n]
+    
+h = h + [his309]
+
+def his310(p, enc, ite):
+    n = 310
+    return [p, enc, ite, n]
+    
+h = h + [his310]
+
+def his311(p, enc, ite):
+    n = 311
+    return [p, enc, ite, n]
+    
+h = h + [his311]
+
+def his312(p, enc, ite):
+    n = 312
+    return [p, enc, ite, n]
+    
+h = h + [his312]
+
+def his313(p, enc, ite):
+    n = 313
+    return [p, enc, ite, n]
+    
+h = h + [his313]
+
+def his314(p, enc, ite):
+    n = 314
+    return [p, enc, ite, n]
+    
+h = h + [his314]
+
+def his315(p, enc, ite):
+    n = 315
+    return [p, enc, ite, n]
+    
+h = h + [his315]
+
+def his316(p, enc, ite):
+    n = 316
+    return [p, enc, ite, n]
+    
+h = h + [his316]
+
+def his317(p, enc, ite):
+    n = 317
+    return [p, enc, ite, n]
+    
+h = h + [his317]
+
+def his318(p, enc, ite):
+    n = 318
+    return [p, enc, ite, n]
+    
+h = h + [his318]
+
+def his319(p, enc, ite):
+    n = 319
+    return [p, enc, ite, n]
+    
+h = h + [his319]
+
+def his320(p, enc, ite):
+    n = 320
+    return [p, enc, ite, n]
+    
+h = h + [his320]
+
+def his321(p, enc, ite):
+    n = 321
+    return [p, enc, ite, n]
+    
+h = h + [his321]
+
+def his322(p, enc, ite):
+    n = 322
+    return [p, enc, ite, n]
+    
+h = h + [his322]
+
+def his323(p, enc, ite):
+    n = 323
+    return [p, enc, ite, n]
+    
+h = h + [his323]
+
+def his324(p, enc, ite):
+    n = 324
+    return [p, enc, ite, n]
+    
+h = h + [his324]
+
+def his325(p, enc, ite):
+    n = 325
+    return [p, enc, ite, n]
+    
+h = h + [his325]
+
+def his326(p, enc, ite):
+    n = 326
+    return [p, enc, ite, n]
+    
+h = h + [his326]
+
+def his327(p, enc, ite):
+    n = 327
+    return [p, enc, ite, n]
+    
+h = h + [his327]
+
+def his328(p, enc, ite):
+    n = 328
+    return [p, enc, ite, n]
+    
+h = h + [his328]
+
+def his329(p, enc, ite):
+    n = 329
+    return [p, enc, ite, n]
+    
+h = h + [his329]
+
+def his330(p, enc, ite):
+    n = 330
+    return [p, enc, ite, n]
+    
+h = h + [his330]
+
+def his331(p, enc, ite):
+    n = 331
+    return [p, enc, ite, n]
+    
+h = h + [his331]
+
+def his332(p, enc, ite):
+    n = 332
+    return [p, enc, ite, n]
+    
+h = h + [his332]
+
+def his333(p, enc, ite):
+    n = 333
+    return [p, enc, ite, n]
+    
+h = h + [his333]
+
+def his334(p, enc, ite):
+    n = 334
+    return [p, enc, ite, n]
+    
+h = h + [his334]
+
+def his335(p, enc, ite):
+    n = 335
+    return [p, enc, ite, n]
+    
+h = h + [his335]
+
+def his336(p, enc, ite):
+    n = 336
+    return [p, enc, ite, n]
+    
+h = h + [his336]
+
+def his337(p, enc, ite):
+    n = 337
+    return [p, enc, ite, n]
+    
+h = h + [his337]
+
+def his338(p, enc, ite):
+    n = 338
+    return [p, enc, ite, n]
+    
+h = h + [his338]
+
+def his339(p, enc, ite):
+    n = 339
+    return [p, enc, ite, n]
+    
+h = h + [his339]
+
+def his340(p, enc, ite):
+    n = 340
+    return [p, enc, ite, n]
+    
+h = h + [his340]
+
+def his341(p, enc, ite):
+    n = 341
+    return [p, enc, ite, n]
+    
+h = h + [his341]
+
+def his342(p, enc, ite):
+    n = 342
+    return [p, enc, ite, n]
+    
+h = h + [his342]
+
+def his343(p, enc, ite):
+    n = 343
+    return [p, enc, ite, n]
+    
+h = h + [his343]
+
+def his344(p, enc, ite):
+    n = 344
+    return [p, enc, ite, n]
+    
+h = h + [his344]
+
+def his345(p, enc, ite):
+    n = 345
+    return [p, enc, ite, n]
+    
+h = h + [his345]
+
+def his346(p, enc, ite):
+    n = 346
+    return [p, enc, ite, n]
+    
+h = h + [his346]
+
+def his347(p, enc, ite):
+    n = 347
+    return [p, enc, ite, n]
+    
+h = h + [his347]
+
+def his348(p, enc, ite):
+    n = 348
+    return [p, enc, ite, n]
+    
+h = h + [his348]
+
+def his349(p, enc, ite):
+    n = 349
+    return [p, enc, ite, n]
+    
+h = h + [his349]
+
+def his350(p, enc, ite):
+    n = 350
+    return [p, enc, ite, n]
+    
+h = h + [his350]
+
+def his351(p, enc, ite):
+    n = 351
+    return [p, enc, ite, n]
+    
+h = h + [his351]
+
+def his352(p, enc, ite):
+    n = 352
+    return [p, enc, ite, n]
+    
+h = h + [his352]
+
+def his353(p, enc, ite):
+    n = 353
+    return [p, enc, ite, n]
+    
+h = h + [his353]
+
+def his354(p, enc, ite):
+    n = 354
+    return [p, enc, ite, n]
+    
+h = h + [his354]
+
+def his355(p, enc, ite):
+    n = 355
+    return [p, enc, ite, n]
+    
+h = h + [his355]
+
+def his356(p, enc, ite):
+    n = 356
+    return [p, enc, ite, n]
+    
+h = h + [his356]
+
+def his357(p, enc, ite):
+    n = 357
+    return [p, enc, ite, n]
+    
+h = h + [his357]
+
+def his358(p, enc, ite):
+    n = 358
+    return [p, enc, ite, n]
+    
+h = h + [his358]
+
+def his359(p, enc, ite):
+    n = 359
+    return [p, enc, ite, n]
+    
+h = h + [his359]
+
+def his360(p, enc, ite):
+    n = 360
+    return [p, enc, ite, n]
+    
+h = h + [his360]
+
+def his361(p, enc, ite):
+    n = 361
+    return [p, enc, ite, n]
+    
+h = h + [his361]
+
+def his362(p, enc, ite):
+    n = 362
+    return [p, enc, ite, n]
+    
+h = h + [his362]
+
+def his363(p, enc, ite):
+    n = 363
+    return [p, enc, ite, n]
+    
+h = h + [his363]
+
+def his364(p, enc, ite):
+    n = 364
+    return [p, enc, ite, n]
+    
+h = h + [his364]
+
+def his365(p, enc, ite):
+    n = 365
+    return [p, enc, ite, n]
+    
+h = h + [his365]
+
+def his366(p, enc, ite):
+    n = 366
+    return [p, enc, ite, n]
+    
+h = h + [his366]
+
+def his367(p, enc, ite):
+    n = 367
+    return [p, enc, ite, n]
+    
+h = h + [his367]
+
+def his368(p, enc, ite):
+    n = 368
+    return [p, enc, ite, n]
+    
+h = h + [his368]
+
+def his369(p, enc, ite):
+    n = 369
+    return [p, enc, ite, n]
+    
+h = h + [his369]
+
+def his370(p, enc, ite):
+    n = 370
+    return [p, enc, ite, n]
+    
+h = h + [his370]
+
+def his371(p, enc, ite):
+    n = 371
+    return [p, enc, ite, n]
+    
+h = h + [his371]
+
+def his372(p, enc, ite):
+    n = 372
+    return [p, enc, ite, n]
+    
+h = h + [his372]
+
+def his373(p, enc, ite):
+    n = 373
+    return [p, enc, ite, n]
+    
+h = h + [his373]
+
+def his374(p, enc, ite):
+    n = 374
+    return [p, enc, ite, n]
+    
+h = h + [his374]
+
+def his375(p, enc, ite):
+    n = 375
+    return [p, enc, ite, n]
+    
+h = h + [his375]
+
+def his376(p, enc, ite):
+    n = 376
+    return [p, enc, ite, n]
+    
+h = h + [his376]
+
+def his377(p, enc, ite):
+    n = 377
+    return [p, enc, ite, n]
+    
+h = h + [his377]
+
+def his378(p, enc, ite):
+    n = 378
+    return [p, enc, ite, n]
+    
+h = h + [his378]
+
+def his379(p, enc, ite):
+    n = 379
+    return [p, enc, ite, n]
+    
+h = h + [his379]
+
+def his380(p, enc, ite):
+    n = 380
+    return [p, enc, ite, n]
+    
+h = h + [his380]
+
+def his381(p, enc, ite):
+    n = 381
+    return [p, enc, ite, n]
+    
+h = h + [his381]
+
+def his382(p, enc, ite):
+    n = 382
+    return [p, enc, ite, n]
+    
+h = h + [his382]
+
+def his383(p, enc, ite):
+    n = 383
+    return [p, enc, ite, n]
+    
+h = h + [his383]
+
+def his384(p, enc, ite):
+    n = 384
+    return [p, enc, ite, n]
+    
+h = h + [his384]
+
+def his385(p, enc, ite):
+    n = 385
+    return [p, enc, ite, n]
+    
+h = h + [his385]
+
+def his386(p, enc, ite):
+    n = 386
+    return [p, enc, ite, n]
+    
+h = h + [his386]
+
+def his387(p, enc, ite):
+    n = 387
+    return [p, enc, ite, n]
+    
+h = h + [his387]
+
+def his388(p, enc, ite):
+    n = 388
+    return [p, enc, ite, n]
+    
+h = h + [his388]
+
+def his389(p, enc, ite):
+    n = 389
+    return [p, enc, ite, n]
+    
+h = h + [his389]
+
+def his390(p, enc, ite):
+    n = 390
+    return [p, enc, ite, n]
+    
+h = h + [his390]
+
+def his391(p, enc, ite):
+    n = 391
+    return [p, enc, ite, n]
+    
+h = h + [his391]
+
+def his392(p, enc, ite):
+    n = 392
+    return [p, enc, ite, n]
+    
+h = h + [his392]
+
+def his393(p, enc, ite):
+    n = 393
+    return [p, enc, ite, n]
+    
+h = h + [his393]
+
+def his394(p, enc, ite):
+    n = 394
+    return [p, enc, ite, n]
+    
+h = h + [his394]
+
+def his395(p, enc, ite):
+    n = 395
+    return [p, enc, ite, n]
+    
+h = h + [his395]
+
+def his396(p, enc, ite):
+    n = 396
+    return [p, enc, ite, n]
+    
+h = h + [his396]
+
+def his397(p, enc, ite):
+    n = 397
+    return [p, enc, ite, n]
+    
+h = h + [his397]
+
+def his398(p, enc, ite):
+    n = 398
+    return [p, enc, ite, n]
+    
+h = h + [his398]
+
+def his399(p, enc, ite):
+    n = 399
+    return [p, enc, ite, n]
+    
+h = h + [his399]
+
+def his400(p, enc, ite):
+    n = 400
+    return [p, enc, ite, n]
+    
+h = h + [his400]
 
 #n = 1
 while perso[2] > 0:
