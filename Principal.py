@@ -1516,25 +1516,72 @@ Digite sua opção: '''))
 h = h + [his55]
 
 def his56(p, enc, ite):
-    n = 56
+    n = int(input('''O ELFO NEGRO que se aproxima de você é raquítico e maltrapilho. Ele pergunta se você é um
+convidado ou um aventureiro. Você diz que é um convidado que veio até embaixo para provar o
+vinho que ele guarda em sua famosa Adega de Vinhos. Com um certo orgulho, ele mostra a você as
+garrafas de safras que ele guarda para seu Senhor, o Feiticeiro. Algumas delas, ele afirma, possuem
+poderes mágicos. Ele pergunta se você não quer experimentar o vinho. Você prefere provar:
+1. O Vinho Tinto?
+2. O Vinho Branco?
+3. O Vinho Rosé?
+4. Recusar a oferta dele e seguir adiante no seu caminho?
+
+Digite sua opção: '''))
+    n = numcerto(n,1,4)
+    if n == 1 :
+        n = 120
+    elif n == 2 :
+        n = 163
+    elif n == 3 :
+        n = 334
+    else :
+        n = 95
     return [p, enc, ite, n]
     
 h = h + [his56]
 
 def his57(p, enc, ite):
-    n = 57
+    so = sorte(p)
+    p[3] = p[3] - 1
+    if so :
+        n = 150
+    else :
+        n = 233
     return [p, enc, ite, n]
     
 h = h + [his57]
 
 def his58(p, enc, ite):
-    n = 58
+    n = int(input('''Quando você entra, os Gremlins esvoaçam e guincham excitados, depois voam, passando por você
+e saindo pela porta noite adentro. Você agora está sozinho com os cálices. Você se arriscará a beber
+alguma coisa? Se o fizer, escolherá:
+1. O líquido claro?
+2. O líquido vermelho?
+3. O líquido leitoso?
+
+4. Ou sairá e prosseguirá na direção da Cidadela?
+
+Digite sua opção: '''))
+    n = numcerto(n,1,4)
+    if n == 1 :
+        n = 298
+    elif n == 2 :
+        n = 267
+    elif n == 3 :
+        n = 92
+    else :
+        n = 156
     return [p, enc, ite, n]
     
 h = h + [his58]
 
 def his59(p, enc, ite):
-    n = 59
+    input('''Eles ficam revoltados com seu presente e correm para o canto do aposento, se escondendo embaixo
+das camas. Um tanto desconcertado com o comportamento deles, você deixa o vidro no chão e
+segue na direção da porta do outro lado do aposento.
+
+Enter para continuar.''')
+    n = 140
     return [p, enc, ite, n]
     
 h = h + [his59]
