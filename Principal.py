@@ -52,19 +52,19 @@ def sorte(p):
 def SORTE(p,i):
     p[3] = p[3] + i[3] // 2
     if p[3] > i[3]:
-        p[3] = i[3]
+        p[3] = i[3].copy()
     return p
 
 def HABILIDADE(p,i):
     p[1] = p[1] + i[1] // 2
     if p[1] > i[1]:
-        p[1] = i[1]
+        p[1] = i[1].copy()
     return p
 
 def ENERGIA(p,i):
     p[2] = p[2] + i[2] // 2
     if p[2] > i[2]:
-        p[2] = i[2]   
+        p[2] = i[2].copy()
     return p
 
 def batalCPD(p,c):
@@ -151,207 +151,214 @@ def fujasorte(p):
 #Criando personagem
 #-------------------
 
-limpa()
-print('Criando personagem')
-nome = 'Dennis'
-#nome = input('Digite seu nome: ')
-#input('\nEnter para jogar um dado.')
-n = rodar(1)
-print('Sua HABILIDADE inicial é {}'.format(n + 6))
-hab0 = 6 + n
-#input('\nEnter para jogar dois dados.')
-n = rodar(2)
-print('Sua ENERGIA inicial é {}'.format(n + 12))
-ene0 = 12 + n
-#input('\nEnter para jogar um dado.')
-n = rodar(1)
-print('Sua SORTE inicial é {}'.format(n + 6))
-sor0 = 6 + n
-pers0 = [nome, hab0, ene0, sor0]
-perso = pers0.copy()
-input('Enter para continuar.')
+def criarpersonagem():
+    limpa()
+    print('Criando personagem')
+    nome = 'Dennis'
+    #nome = input('Digite o nome do personagem: ')
+    #input('\nEnter para jogar um dado.')
+    n = rodar(1)
+    print('Sua HABILIDADE inicial é {}'.format(n + 6))
+    hab0 = 6 + n
+    #input('\nEnter para jogar dois dados.')
+    n = rodar(2)
+    print('Sua ENERGIA inicial é {}'.format(n + 12))
+    ene0 = 12 + n
+    #input('\nEnter para jogar um dado.')
+    n = rodar(1)
+    print('Sua SORTE inicial é {}'.format(n + 6))
+    sor0 = 6 + n
+    input('Enter para continuar.')
+    return [nome, hab0, ene0, sor0]
 
 #------------------
 # Escolhendo MAGIA
 #------------------
 
-limpa()
-estado(perso)
-#input('\nEnter para jogar dois dados e determinar a MAGIA')
-n = rodar(2)
-MAGIA0 = 6 + n
-MAGIA = MAGIA0
-print('MAGIA = {}'.format(MAGIA0))
-print('Você pode escolher um total de {} encantos mágicos.\nEscolha sabiamente:\n'.format(MAGIA))
-#sleep(2)
-print('Cópia de Criatura\n')
-print('Este encanto permitirá que você faça aparecer uma réplica perfeita de qualquer criatura contra a')
-print('qual você esteja lutando. A réplica terá os mesmos índices de HABILIDADE e ENERGIA e os')
-print('mesmos poderes do original. Mas a réplica estará sob seu controle, e você poderá, por exemplo,')
-print('instruí-la para que ataque a criatura original e ficar assistindo a batalha de camarote!\n')
-print('Quantos encantos de Copia de criatura você quer?')
-#CDC = int(input('Restam {}\n'.format(MAGIA)))
-CDC = 1
-CDC = numcerto(CDC,0,MAGIA)
-MAGIA = MAGIA - CDC
 
-limpa()
-estado(perso)
-print('\nMAGIA = {}'.format(MAGIA0))
-print('\nPercepção Extra-Sensorial\n')
-print('Com este encanto, você poderá sintonizar comprimentos de ondas psíquicas. Isso poderá ajudá-lo a')
-print('ler a mente de uma criatura ou descobrir o que está por trás de uma porta trancada. Porém, às vezes,')
-print('este encanto pode dar informações equivocadas, se houver mais de uma fonte psíquica perto de uma')
-print('outra.\n')
-print('Quantos encantos de Percepção Extra-Sensorial você quer?')
-#PES = int(input('Restam {}\n'.format(MAGIA)))
-PES = 0
-PES = numcerto(PES,0,MAGIA)
-MAGIA = MAGIA - PES
+def criarmagia() :
+    limpa()
+    estado(perso)
+    #input('\nEnter para jogar dois dados e determinar a MAGIA')
+    n = rodar(2)
+    MAGIA0 = 6 + n
+    MAGIA = MAGIA0
+    print('MAGIA = {}'.format(MAGIA0))
+    print('Você pode escolher um total de {} encantos mágicos.\nEscolha sabiamente:\n'.format(MAGIA))
+    #sleep(2)
+    print('Cópia de Criatura\n')
+    print('Este encanto permitirá que você faça aparecer uma réplica perfeita de qualquer criatura contra a')
+    print('qual você esteja lutando. A réplica terá os mesmos índices de HABILIDADE e ENERGIA e os')
+    print('mesmos poderes do original. Mas a réplica estará sob seu controle, e você poderá, por exemplo,')
+    print('instruí-la para que ataque a criatura original e ficar assistindo a batalha de camarote!\n')
+    print('Quantos encantos de Copia de criatura você quer?')
+    #CDC = int(input('Restam {}\n'.format(MAGIA)))
+    CDC = 1
+    CDC = numcerto(CDC,0,MAGIA)
+    MAGIA = MAGIA - CDC
 
-limpa()
-estado(perso)
-print('\nMAGIA = {}'.format(MAGIA0))
-print('\nFogo\n')
-print('Todas as criaturas têm medo do fogo, e este encanto dá o poder de fazer aparecer fogo segundo a')
-print('sua vontade. Você poderá causar uma pequena explosão no chão que queimará por vários segundos')
-print('ou criar uma barreira de fogo para manter criaturas à distância.\n')
-print('Quantos encantos de Fogo você quer?')
-#Fog = int(input('Restam {}\n'.format(MAGIA)))
-Fog = 0
-Fog = numcerto(Fog,0,MAGIA)
-MAGIA = MAGIA - Fog
+    limpa()
+    estado(perso)
+    print('\nMAGIA = {}'.format(MAGIA0))
+    print('\nPercepção Extra-Sensorial\n')
+    print('Com este encanto, você poderá sintonizar comprimentos de ondas psíquicas. Isso poderá ajudá-lo a')
+    print('ler a mente de uma criatura ou descobrir o que está por trás de uma porta trancada. Porém, às vezes,')
+    print('este encanto pode dar informações equivocadas, se houver mais de uma fonte psíquica perto de uma')
+    print('outra.\n')
+    print('Quantos encantos de Percepção Extra-Sensorial você quer?')
+    #PES = int(input('Restam {}\n'.format(MAGIA)))
+    PES = 0
+    PES = numcerto(PES,0,MAGIA)
+    MAGIA = MAGIA - PES
 
-limpa()
-estado(perso)
-print('\nMAGIA = {}'.format(MAGIA0))
-print('\nOuro dos Tolos\n')
-print('Este encanto transformará pedra comum em uma pilha do que parece ser ouro. Contudo, o encanto é')
-print('apenas uma forma de encanto da ilusão - embora mais confiável do que o Encanto da ilusão abaixo')
-print('- e a pilha de ouro logo voltará a ser pedra.\n')
-print('Quantos encantos de Ouro dos Tolos você quer?')
-#ODT = int(input('Restam {}\n'.format(MAGIA)))
-ODT = 0
-ODT = numcerto(ODT,0,MAGIA)
-MAGIA = MAGIA - ODT
+    limpa()
+    estado(perso)
+    print('\nMAGIA = {}'.format(MAGIA0))
+    print('\nFogo\n')
+    print('Todas as criaturas têm medo do fogo, e este encanto dá o poder de fazer aparecer fogo segundo a')
+    print('sua vontade. Você poderá causar uma pequena explosão no chão que queimará por vários segundos')
+    print('ou criar uma barreira de fogo para manter criaturas à distância.\n')
+    print('Quantos encantos de Fogo você quer?')
+    #Fog = int(input('Restam {}\n'.format(MAGIA)))
+    Fog = 0
+    Fog = numcerto(Fog,0,MAGIA)
+    MAGIA = MAGIA - Fog
 
-limpa()
-estado(perso)
-print('\nMAGIA = {}'.format(MAGIA0))
-print('\nIlusão\n')
-print('Este é um encanto poderoso, mas que não é muito confiável. Através deste encanto, você poderá')
-print('criar uma ilusão convincente (por exemplo, que você se transformou em serpente, ou que o chão')
-print('está coberto de carvão em brasa) para enganar uma criatura. O encanto ficará imediatamente sem')
-print('efeito se acontecer qualquer coisa que desfaça a ilusão (por exemplo, você convence uma criatura')
-print('que se transformou em uma serpente e então imediatamente atinge sua cabeça com um golpe de')
-print('espada!). É eficiente sobre tudo com criaturas inteligentes.\n')
-print('Quantos encantos de Ilusão você quer?')
-#I = int(input('Restam {}\n'.format(MAGIA)))
-I = 0
-I = numcerto(I,0,MAGIA)
-MAGIA = MAGIA - I
+    limpa()
+    estado(perso)
+    print('\nMAGIA = {}'.format(MAGIA0))
+    print('\nOuro dos Tolos\n')
+    print('Este encanto transformará pedra comum em uma pilha do que parece ser ouro. Contudo, o encanto é')
+    print('apenas uma forma de encanto da ilusão - embora mais confiável do que o Encanto da ilusão abaixo')
+    print('- e a pilha de ouro logo voltará a ser pedra.\n')
+    print('Quantos encantos de Ouro dos Tolos você quer?')
+    #ODT = int(input('Restam {}\n'.format(MAGIA)))
+    ODT = 0
+    ODT = numcerto(ODT,0,MAGIA)
+    MAGIA = MAGIA - ODT
 
-limpa()
-estado(perso)
-print('\nMAGIA = {}'.format(MAGIA0))
-print('\nLevitação\n')
-print('Você pode lançar este encanto sobre objetos, adversários ou até sobre você mesmo. Livra quem o')
-print('recebe dos efeitos da gravidade e assim fará com que tudo que esteja sob a sua influência flutue')
-print('livremente no ar, sob o seu controle.\n')
-print('Quantos encantos de Levitação você quer?')
-#L = int(input('Restam {}\n'.format(MAGIA)))
-L = 1
-L = numcerto(L,0,MAGIA)
-MAGIA = MAGIA - L
+    limpa()
+    estado(perso)
+    print('\nMAGIA = {}'.format(MAGIA0))
+    print('\nIlusão\n')
+    print('Este é um encanto poderoso, mas que não é muito confiável. Através deste encanto, você poderá')
+    print('criar uma ilusão convincente (por exemplo, que você se transformou em serpente, ou que o chão')
+    print('está coberto de carvão em brasa) para enganar uma criatura. O encanto ficará imediatamente sem')
+    print('efeito se acontecer qualquer coisa que desfaça a ilusão (por exemplo, você convence uma criatura')
+    print('que se transformou em uma serpente e então imediatamente atinge sua cabeça com um golpe de')
+    print('espada!). É eficiente sobre tudo com criaturas inteligentes.\n')
+    print('Quantos encantos de Ilusão você quer?')
+    #I = int(input('Restam {}\n'.format(MAGIA)))
+    I = 0
+    I = numcerto(I,0,MAGIA)
+    MAGIA = MAGIA - I
 
-limpa()
-estado(perso)
-print('\nMAGIA = {}'.format(MAGIA0))
-print('\nSorte\n')
-print('Este encanto, juntamente com os encantos de Habilidade e Energia, é especial porque pode ser')
-print('lançado a qualquer momento durante a sua aventura, a não ser durante uma batalha. Você não')
-print('precisa esperar que apareça a opção em uma página. Uma vez lançado, recuperará o seu índice de')
-print('SORTE em metade de seu índice de SORTE Inicial (se a sua SORTE inicial for um número ímpar,')
-print('subtraia o ½ de sobra). Este encanto nunca levará o seu índice de SORTE a um número superior a')
-print('seu nível Inicial Portanto, se você lançar dois encantos da SORTE juntos, o seu índice de SORTE')
-print('voltará apenas a ser igual a seu nível Inicial.\n')
-print('Quantos encantos de Sorte você quer?')
-#S = int(input('Restam {}\n'.format(MAGIA)))
-S = 0
-S = numcerto(S,0,MAGIA)
-MAGIA = MAGIA - S
+    limpa()
+    estado(perso)
+    print('\nMAGIA = {}'.format(MAGIA0))
+    print('\nLevitação\n')
+    print('Você pode lançar este encanto sobre objetos, adversários ou até sobre você mesmo. Livra quem o')
+    print('recebe dos efeitos da gravidade e assim fará com que tudo que esteja sob a sua influência flutue')
+    print('livremente no ar, sob o seu controle.\n')
+    print('Quantos encantos de Levitação você quer?')
+    #L = int(input('Restam {}\n'.format(MAGIA)))
+    L = 1
+    L = numcerto(L,0,MAGIA)
+    MAGIA = MAGIA - L
 
-limpa()
-estado(perso)
-print('\nMAGIA = {}'.format(MAGIA0))
-print('\nEscudo\n')
-print('Ao lançar este encanto, você cria um escudo invisível à sua frente que o protegerá de objetos')
-print('físicos, por exemplo flechas, espadas ou criaturas. O escudo não tem efeito contra a magia e,')
-print('evidentemente, se nada fora dele pode tocar em você, você também não poderá tocar em nada fora')
-print('dele.\n')
-print('Quantos encantos de Escudo você quer?')
-#Es = int(input('Restam {}\n'.format(MAGIA)))
-Es = 1
-Es = numcerto(Es,0,MAGIA)
-MAGIA = MAGIA - Es
+    limpa()
+    estado(perso)
+    print('\nMAGIA = {}'.format(MAGIA0))
+    print('\nSorte\n')
+    print('Este encanto, juntamente com os encantos de Habilidade e Energia, é especial porque pode ser')
+    print('lançado a qualquer momento durante a sua aventura, a não ser durante uma batalha. Você não')
+    print('precisa esperar que apareça a opção em uma página. Uma vez lançado, recuperará o seu índice de')
+    print('SORTE em metade de seu índice de SORTE Inicial (se a sua SORTE inicial for um número ímpar,')
+    print('subtraia o ½ de sobra). Este encanto nunca levará o seu índice de SORTE a um número superior a')
+    print('seu nível Inicial Portanto, se você lançar dois encantos da SORTE juntos, o seu índice de SORTE')
+    print('voltará apenas a ser igual a seu nível Inicial.\n')
+    print('Quantos encantos de Sorte você quer?')
+    #S = int(input('Restam {}\n'.format(MAGIA)))
+    S = 0
+    S = numcerto(S,0,MAGIA)
+    MAGIA = MAGIA - S
 
-limpa()
-estado(perso)
-print('\nMAGIA = {}'.format(MAGIA0))
-print('\nHabilidade\n')
-print('Este encanto restabelecerá o seu índice de HABILIDADE, aumentando-o em metade de seu valor')
-print('Inicial, e pode ser lançado a qualquer momento durante a sua aventura, a não ser em uma batalha.')
-print('O Encanto da Habilidade funciona exatamente da mesma maneira que a sorte.\n')
-print('Quantos encantos de Habilidade você quer?')
-#H = int(input('Restam {}\n'.format(MAGIA)))
-H = 1
-H = numcerto(H,0,MAGIA)
-MAGIA = MAGIA - H
+    limpa()
+    estado(perso)
+    print('\nMAGIA = {}'.format(MAGIA0))
+    print('\nEscudo\n')
+    print('Ao lançar este encanto, você cria um escudo invisível à sua frente que o protegerá de objetos')
+    print('físicos, por exemplo flechas, espadas ou criaturas. O escudo não tem efeito contra a magia e,')
+    print('evidentemente, se nada fora dele pode tocar em você, você também não poderá tocar em nada fora')
+    print('dele.\n')
+    print('Quantos encantos de Escudo você quer?')
+    #Es = int(input('Restam {}\n'.format(MAGIA)))
+    Es = 1
+    Es = numcerto(Es,0,MAGIA)
+    MAGIA = MAGIA - Es
 
-limpa()
-estado(perso)
-print('\nMAGIA = {}'.format(MAGIA0))
-print('\nEnergia\n')
-print('Este encanto recuperará o seu índice de Energia, aumentando-o em metade de seu valor Inicial, e')
-print('pode ser lançado a qualquer momento durante a sua aventura. Veja o Encanto da Sorte para')
-print('conhecer as regras completas.\n')
-print('Quantos encantos de Energia você quer?')
-#En = int(input('Restam {}\n'.format(MAGIA)))
-En = 1
-En = numcerto(En,0,MAGIA)
-MAGIA = MAGIA - En
+    limpa()
+    estado(perso)
+    print('\nMAGIA = {}'.format(MAGIA0))
+    print('\nHabilidade\n')
+    print('Este encanto restabelecerá o seu índice de HABILIDADE, aumentando-o em metade de seu valor')
+    print('Inicial, e pode ser lançado a qualquer momento durante a sua aventura, a não ser em uma batalha.')
+    print('O Encanto da Habilidade funciona exatamente da mesma maneira que a sorte.\n')
+    print('Quantos encantos de Habilidade você quer?')
+    #H = int(input('Restam {}\n'.format(MAGIA)))
+    H = 1
+    H = numcerto(H,0,MAGIA)
+    MAGIA = MAGIA - H
 
-limpa()
-estado(perso)
-print('\nMAGIA = {}'.format(MAGIA0))
-print('\nForça\n')
-print('Este encanto tem o efeito de aumentar muito a sua força, e é muito útil quando se luta contra')
-print('criaturas fortes. Porem, deve ser utilizado com cautela, já que é difícil controlar a sua própria força')
-print('quando ela aumenta demais.\n')
-print('Quantos encantos de Força você quer?')
-#For = int(input('Restam {}\n'.format(MAGIA)))
-For = 0
-For = numcerto(For,0,MAGIA)
-MAGIA = MAGIA - For
+    limpa()
+    estado(perso)
+    print('\nMAGIA = {}'.format(MAGIA0))
+    print('\nEnergia\n')
+    print('Este encanto recuperará o seu índice de Energia, aumentando-o em metade de seu valor Inicial, e')
+    print('pode ser lançado a qualquer momento durante a sua aventura. Veja o Encanto da Sorte para')
+    print('conhecer as regras completas.\n')
+    print('Quantos encantos de Energia você quer?')
+    #En = int(input('Restam {}\n'.format(MAGIA)))
+    En = 1
+    En = numcerto(En,0,MAGIA)
+    MAGIA = MAGIA - En
 
-limpa()
-estado(perso)
-print('\nMAGIA = {}'.format(MAGIA0))
-print('\nFraqueza\n')
-print('Criaturas fortes são reduzidas por este encanto a miseráveis fracotes. Não tem efeito contra todas as')
-print('criaturas, mas, quando tem efeito, a criatura se torna frágil e muito menos perigosa em uma batalha.\n')
-print('Quantos encantos de Fraqueza você quer?')
-#Fr = int(input('Restam {}\n'.format(MAGIA)))
-Fr = MAGIA
-Fr = numcerto(Fr,0,MAGIA)
-MAGIA = MAGIA - Fr
+    limpa()
+    estado(perso)
+    print('\nMAGIA = {}'.format(MAGIA0))
+    print('\nForça\n')
+    print('Este encanto tem o efeito de aumentar muito a sua força, e é muito útil quando se luta contra')
+    print('criaturas fortes. Porem, deve ser utilizado com cautela, já que é difícil controlar a sua própria força')
+    print('quando ela aumenta demais.\n')
+    print('Quantos encantos de Força você quer?')
+    #For = int(input('Restam {}\n'.format(MAGIA)))
+    For = 0
+    For = numcerto(For,0,MAGIA)
+    MAGIA = MAGIA - For
 
-ENCANTOS = [CDC, PES, Fog, ODT, I, L, S, Es, H, En, For,Fr]
+    limpa()
+    estado(perso)
+    print('\nMAGIA = {}'.format(MAGIA0))
+    print('\nFraqueza\n')
+    print('Criaturas fortes são reduzidas por este encanto a miseráveis fracotes. Não tem efeito contra todas as')
+    print('criaturas, mas, quando tem efeito, a criatura se torna frágil e muito menos perigosa em uma batalha.\n')
+    print('Quantos encantos de Fraqueza você quer?')
+    #Fr = int(input('Restam {}\n'.format(MAGIA)))
+    Fr = MAGIA
+    Fr = numcerto(Fr,0,MAGIA)
+    MAGIA = MAGIA - Fr
 
-#ITEMS
+    ENCANTOS = [CDC, PES, Fog, ODT, I, L, S, Es, H, En, For,Fr]
 
-ITEM = [['Miríade de bolso', 0], ['Aranha em um vidro', 0], ['Pequenas amoras', 0], ['Adaga', 0], ['Velo de Ouro', 0], ['Espelho de Prata', 0], ['Escova de Cabelo', 0], ['Vidro de Unguento', 0], ['Peças de Ouro', 0]]
+    return ENCANTOS
+
+ITEM0 = [['Miríade de bolso', 0], ['Aranha em um vidro', 0], ['Pequenas amoras', 0], ['Adaga', 0], ['Velo de Ouro', 0], ['Espelho de Prata', 0], ['Escova de Cabelo', 0], ['Vidro de Unguento', 0], ['Peças de Ouro', 0]]
 CRIATURA = [['GARK', 7, 11, 0], ['FERA DAS GARRAS', 9, 14, 0], ['HOMEM-ARANHA', 7, 5, 0]]
+
+pers0 = criarpersonagem()
+perso = pers0.copy()
+ENCANTOS = criarmagia()
+ITEM = ITEM0.copy()
 
 #ADAGA: Ela causará automaticamente a perda de dois pontos de ENERGIA sem necessidade de jogar dados para conhecer a Força de Ataque. Mas você só poderá usá-la uma vez.
 
@@ -1587,13 +1594,47 @@ Enter para continuar.''')
 h = h + [his59]
 
 def his60(p, enc, ite):
-    n = 60
+    print('''As criaturas ficam desconfiadas quando você as pressiona, buscando informações. O Anão salta
+rapidamente de pé, brandindo uma clava de madeira, enquanto o Goblin e o Orca pegam espadas e
+olham com raiva para você. A namorada do Goblin grita e recua vários passos, enquanto os outros
+avançam na sua direção. Você terá que lutar contra eles. Você pode usar um Encanto Mágico:
+
+1. Encanto da Levitação     (Possui {})
+2. Encanto da Ilusão        (Possui {})
+3. Ou poderá puxar a sua espada e lutar.
+'''.format(enc[5], enc[4]))
+    if enc[4] + enc[5] < 1 :
+        input('''Você não possui nenhúm desses encantos terá puxar sua espada e lutar.
+        
+Enter para continuar.''')
+        n = 213
+    else :
+        n = int(input('Digite sua opção: '))
+        n = numcerto(n,1,3)
+        while ( n == 1 and enc[5] < 1 ) or ( n == 2 and enc[4] < 1 ) :
+            n = int(input('Não possui esse encanto, Digite outra opção: '))
+            n = numcerto(n,1,3)
+        if n == 1 :
+            enc[5] = enc[5] - 1
+            n = 33
+        elif n == 2 :
+            enc[4] = enc[4] - 1
+            n = 295
+        else :
+            n = 295
     return [p, enc, ite, n]
     
 h = h + [his60]
 
 def his61(p, enc, ite):
-    n = 61
+    input('''Você avança com sua espada. O Devlin pára... e salta sobre você!. Você golpeia com sua espada,
+mas não consegue fazer nenhum mal à criatura, que está agora em cima de você. O corpo
+incandescente dele está queimando a sua carne e você está em grande agonia. Ainda assim, ele se
+mantém firme e você desmaia em choque. Você cai no chão para nunca mais acordar, e o Devlin só
+larga quando já tem certeza de que seu corpo está queimado além de qualquer possibilidade de
+recuperação. Afinal, você será mesmo a próxima refeição das criaturas da Torre Negra...''')
+    p[2] = 0
+    n = 1
     return [p, enc, ite, n]
     
 h = h + [his61]
@@ -3632,7 +3673,7 @@ def his400(p, enc, ite):
     
 h = h + [his400]
 
-#n = 1
+n = 1
 while perso[2] > 0:
     limpa()
     estado(perso)
@@ -3670,10 +3711,13 @@ while perso[2] > 0:
     print('')
     [perso, ENCANTOS, ITEM, n] = h[n-1](perso,ENCANTOS,ITEM)
     if perso[2] < 1:
-        sn = str(input('Quer continuar a aventura? [s/n]'))
+        sn = str(input('Quer jogar novamente? [s/n]'))
         sn = sino(sn)
         if sn == 'S' or sn == 'SIM':
-            perso[2] = pers0.copy()
-            print('Sua energia foi restaurada')
+            pers0 = criarpersonagem()
+            perso = pers0
+            ENCANTOS = criarmagia()
+            ITEM = ITEM0
+            n = 1
         else:
             break
