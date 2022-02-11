@@ -1702,13 +1702,20 @@ mantém firme e você desmaia em choque. Você cai no chão para nunca mais acor
 larga quando já tem certeza de que seu corpo está queimado além de qualquer possibilidade de
 recuperação. Afinal, você será mesmo a próxima refeição das criaturas da Torre Negra...''')
     p[2] = 0
-    n = 1
     return [p, enc, ite, n]
     
 h = h + [his61]
 
 def his62(p, enc, ite):
-    n = 62
+    print('Com o Gárgula fora de combate, você decide investigar a caixa no pedestal da criatura. Teste a sua Sorte.\n')
+    so = sorte(p)
+    p[3] = p[3] - 1
+    if so :
+        input('Pode levar a bolsa com dez Peças de Ouro trancada lá dentro.')
+        ite[8][1] = ite[8][1] + 10
+    else :
+        input('Não consegue abrir a caixa.')
+    n = 140
     return [p, enc, ite, n]
     
 h = h + [his62]
