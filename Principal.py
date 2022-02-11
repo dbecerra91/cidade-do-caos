@@ -469,7 +469,12 @@ Digite sua opção'''))
 h = h + [his3]
 
 def his4(p,enc,ite):
-    print('Você faz aparecer uma bola de fogo e a manda voando no rosto da criatura. Porém, fica assistindo\ndesanimado ao vê-la ricochetear sem nenhum efeito! Você pode lançar rapidamente um Encanto de\nCópia de Criatura, ou desembainhar a sua espada.\nEncantos de Copia Criatura = {}\n'.format(enc[0]))
+    print('''Você faz aparecer uma bola de fogo e a manda voando no rosto da criatura. Porém, fica assistindo
+desanimado ao vê-la ricochetear sem nenhum efeito! Você pode lançar rapidamente um Encanto de
+Cópia de Criatura, ou desembainhar a sua espada.
+
+Encantos de Copia Criatura = {}
+'''.format(enc[0]))
     if enc[0] == 0:
         input('Você não possui encantos de Copia de Criatura!')
         n = 303
@@ -486,7 +491,15 @@ def his4(p,enc,ite):
 h = h + [his4]    
 
 def his5(p, enc, ite):
-    n = int(input('Você experimenta a maçaneta da porta e ela gira, abrindo para um outro corredor. Logo adiante, a\npassagem vira para a direita e termina pouco depois em outra porta. Nesta porta há um letreiro que\ndiz "Por Favor Toque a Campainha para Chamar o Mordomo". Uma corda - evidentemente a\ncampainha - pende ao lado da porta. Você toca a campainha conforme indicado (escolha 1) ou\nexperimenta a maçaneta da porta (escolha 2)?\n\nDigite sua opção: '))
+    n = int(input('''Você experimenta a maçaneta da porta e ela gira, abrindo para um outro corredor. Logo adiante, a
+passagem vira para a direita e termina pouco depois em outra porta. Nesta porta há um letreiro que
+diz "Por Favor Toque a Campainha para Chamar o Mordomo". Uma corda - evidentemente a
+campainha - pende ao lado da porta.
+
+1. Você toca a campainha conforme indicado ou
+2. Você experimenta a maçaneta da porta?
+
+Digite sua opção: '''))
     n = numcerto(n, 1, 2)
     if n == 1:
         n = 40
@@ -497,14 +510,17 @@ def his5(p, enc, ite):
 h = h + [his5]
 
 def his6(p, enc, ite):
-    input('o caminho segue ao longo do rio por vários metros e depois volta a penetrar na rocha. Você segue o\ncaminho por algum tempo.')
+    input('''o caminho segue ao longo do rio por vários metros e depois volta a penetrar na rocha. Você segue o
+caminho por algum tempo.''')
     n = 367
     return [p, enc, ite, n]
 
 h = h + [his6]
 
 def his7(p, enc, ite):
-    print('A porta está trancada. Você pode tentar pô-la abaixo, batendo nela com o ombro, ou\npode lançar um Encanto da Força sobre você mesmo e tentar arrancar a porta das suas dobradiças.\n')
+    print('''A porta está trancada. Você pode tentar pô-la abaixo, batendo nela com o ombro, ou
+pode lançar um Encanto da Força sobre você mesmo e tentar arrancar a porta das suas dobradiças.
+''')
     if enc[10] == 0:
         input('Você não possui encantos de Força')
         n = 268
@@ -521,28 +537,47 @@ def his7(p, enc, ite):
 h = h + [his7]
 
 def his8(p, enc, ite):
-    input('Ela observa espantada o aparecimento de uma réplica perfeita dela mesma entre vocês dois. Ela\nrecua um pouco, e você orienta a sua criação para o ataque. Mas, quando elas se aproximam uma da\noutra, acontece uma coisa estranha. Elas parecem ser incapazes de chegar perto uma da outra, como\nduas extremidades giratórias, e sempre separam-se bruscamente de um salto. Porém, sua própria\ncópia pelo menos forçou a criatura a se afastar de você para uma certa distância, permitindo que\nvocê corra para a entrada principal da Cidadela.\n')
+    input('''Ela observa espantada o aparecimento de uma réplica perfeita dela mesma entre vocês dois. Ela
+recua um pouco, e você orienta a sua criação para o ataque. Mas, quando elas se aproximam uma da
+outra, acontece uma coisa estranha. Elas parecem ser incapazes de chegar perto uma da outra, como
+duas extremidades giratórias, e sempre separam-se bruscamente de um salto. Porém, sua própria
+cópia pelo menos forçou a criatura a se afastar de você para uma certa distância, permitindo que
+você corra para a entrada principal da Cidadela.
+''')
     n = 218
     return [p, enc, ite, n]
 
 h = h + [his8]
 
 def his9(p, enc, ite):
-    input('Sob o seu Encanto da Ilusão, a multidão de espectadores olha você começar a jogar. Você observa\numas duas rodadas e a tensão cresce. Você resolve que é melhor sair do aposento sem mais perda de\ntempo.\n')
+    input('''Sob o seu Encanto da Ilusão, a multidão de espectadores olha você começar a jogar. Você observa
+umas duas rodadas e a tensão cresce. Você resolve que é melhor sair do aposento sem mais perda de
+tempo.
+    ''')
     n = 31
     return [p, enc, ite, n]
 
 h = h + [his9]
 
 def his10(p, enc, ite):
-    input('Você tateia pela rocha e acaba por encontrar uma pequena alavanca. Ao puxar esta alavanca, a face\nda rocha esfarela um pouco e aparece uma pequena abertura. Você sobe por esta abertura e chega a\numa passagem. Descendo a passagem para a esquerda, você pode ver uma porta e resolve\ninvestigar.\n')
+    input('''Você tateia pela rocha e acaba por encontrar uma pequena alavanca. Ao puxar esta alavanca, a face
+da rocha esfarela um pouco e aparece uma pequena abertura. Você sobe por esta abertura e chega a
+uma passagem. Descendo a passagem para a esquerda, você pode ver uma porta e resolve
+investigar.
+''')
     n = 249
     return [p, enc, ite, n]
 
 h = h + [his10]
 
 def his11(p, enc, ite):
-    print('Você pode usar:\n\n1. Um Encanto do Ouro dos Tolos = {}\n2. Um Encanto de Cópia de Criatura = {}\n3. Um Encanto da Percepção Extra-Sensorial = {}\n4. Um Encanto da Fraqueza = {}\n'.format(enc[3], enc[0], enc[1], enc[11]))
+    print('''Você pode usar:
+
+1. Um Encanto do Ouro dos Tolos                 (Possui {)}
+2. Um Encanto de Cópia de Criatura              (Possui {})
+3. Um Encanto da Percepção Extra-Sensorial      (Possui {})
+4. Um Encanto da Fraqueza                       (Possui {})
+'''.format(enc[3], enc[0], enc[1], enc[11]))
     print('Se você não tiver nenhum desses encantos, terá que desembainhar a sua espada e lutar.')
     if (enc[3] + enc[0] + enc[1] + enc[11]) == 0:
         n = 249
@@ -571,7 +606,13 @@ def his11(p, enc, ite):
 h = h + [his11]
 
 def his12(p, enc, ite):
-    n = int(input('Ele fica parado diante de você, respirando pesadamente. O Encanto dele evidentemente foi bastante exaustivo. Você pode usar essa oportunidade para:\n\n1. Deslocar-se rapidamente para o armário das armas.\n2. Pular para debaixo da mesa.\n3. Correr para a janela.\n\nDigite sua opção: '))
+    n = int(input('''Ele fica parado diante de você, respirando pesadamente. O Encanto dele evidentemente foi bastante exaustivo. Você pode usar essa oportunidade para:
+    
+1. Deslocar-se rapidamente para o armário das armas.
+2. Pular para debaixo da mesa.
+3. Correr para a janela.
+
+Digite sua opção: '''))
     n = numcerto(n, 1, 3)
     if n == 1:
         n = 274
@@ -584,8 +625,19 @@ def his12(p, enc, ite):
 h = h + [his12]
 
 def his13(p, enc, ite):
-    print('A maçaneta gira e você abre a porta para um outro aposento, onde há bastante atividade. Três\nvelhas feias, com narizes e queixos compridos, circulam pelo aposento - que parece ser alguma\nespécie de cozinha - pegando vários ingredientes dos armários e acrescentando-os a um caldo\ndentro de um grande caldeirão. Há um pedaço de carne assando em um espeto, embaixo de uma\ngrande chaminé. Olhando mais atentamente, você descobre que a carne, na verdade, não é de um\nanimal, mas sim um Anão inteiro que escurece ao fogo. Uma das mulheres olha para você e diz:\n"Ah, você deve ser o novo empregado...ou é a próxima refeição?", com o que todas as três\ncomeçam a dar gargalhadas e gritos enquanto riem.')
-    n = int(input('1. Você deixará que elas acreditem que você é o novo empregado que elas estão esperando; ou\n2. Quer investigar o aposento com mais vagar.\n\nDigite sua opção: '))
+    n = int(input('''A maçaneta gira e você abre a porta para um outro aposento, onde há bastante atividade. Três
+velhas feias, com narizes e queixos compridos, circulam pelo aposento - que parece ser alguma
+espécie de cozinha - pegando vários ingredientes dos armários e acrescentando-os a um caldo
+dentro de um grande caldeirão. Há um pedaço de carne assando em um espeto, embaixo de uma
+grande chaminé. Olhando mais atentamente, você descobre que a carne, na verdade, não é de um
+animal, mas sim um Anão inteiro que escurece ao fogo. Uma das mulheres olha para você e diz:
+"Ah, você deve ser o novo empregado...ou é a próxima refeição?", com o que todas as três
+começam a dar gargalhadas e gritos enquanto riem.
+
+1. Você deixará que elas acreditem que você é o novo empregado que elas estão esperando; ou
+2. Quer investigar o aposento com mais vagar.
+
+Digite sua opção: '''))
     n = numcerto(n, 1, 2)
     if n == 1:
         n = 302
@@ -596,7 +648,11 @@ def his13(p, enc, ite):
 h = h + [his13]
 
 def his14(p, enc, ite):
-    print('A sombra do muro dificulta muito a visão. Uma pedra solta desliza, e você perde o equilíbrio,\noscilando à beira do que você tem consciência de que deve ser um poço profundo. Teste a sua\nSorte. Se você tiver sorte, recupera o equilíbrio e caminha em segurança. Você pode então dar a\nvolta no poço e continuar. Se você não tiver sorte, cai lá dentro.')
+    print('''A sombra do muro dificulta muito a visão. Uma pedra solta desliza, e você perde o equilíbrio,
+    oscilando à beira do que você tem consciência de que deve ser um poço profundo. Teste a sua
+    Sorte. Se você tiver sorte, recupera o equilíbrio e caminha em segurança. Você pode então dar a
+    volta no poço e continuar. Se você não tiver sorte, cai lá dentro.
+    ''')
     if p[3] == 0:
         so = False
         input('Você não tem sorte!')
@@ -612,7 +668,13 @@ def his14(p, enc, ite):
 h = h + [his14]
 
 def his15(p, enc, ite):
-    input('A adaga é realmente uma obra de arte e sem dúvida valia um bom preço. A lâmina é feita de metal\nbrilhante, e o cabo é de um couro verde peculiar, com pedras incrustadas. Você lê uma inscrição\nque diz que esta é uma adaga de arremesso encantada que nunca erra. Em um combate futuro, você\npoderá usar esta adaga para arremessar em um adversário. Ela causará automaticamente a perda de\ndois pontos de ENERGIA sem necessidade de jogar dados para conhecer a Força de Ataque. Mas\nvocê só poderá usá-la uma vez. Você põe a adaga em seu cinturão e parte na direção da Cidadela.\n')
+    input('''A adaga é realmente uma obra de arte e sem dúvida valia um bom preço. A lâmina é feita de metal
+brilhante, e o cabo é de um couro verde peculiar, com pedras incrustadas. Você lê uma inscrição
+que diz que esta é uma adaga de arremesso encantada que nunca erra. Em um combate futuro, você
+poderá usar esta adaga para arremessar em um adversário. Ela causará automaticamente a perda de
+dois pontos de ENERGIA sem necessidade de jogar dados para conhecer a Força de Ataque. Mas
+você só poderá usá-la uma vez. Você põe a adaga em seu cinturão e parte na direção da Cidadela.
+''')
     ite[3][1] = ite[3][1] + 1
     n = 245
     return [p, enc, ite, n]
@@ -698,7 +760,13 @@ Depois de quatro Séries de Ataques, você poderá Fugir por uma das portas na e
 h = h + [his16]
 
 def his17(p, enc, ite):
-    input('Todo tipo de alimentos estranhos podem ser encontrados nos armários. Globos oculares, línguas,\nlagartixas, frascos de líquidos, ervas e frutos silvestres de diferentes formas e tamanhos. Uma\ngarrafa em especial, contendo um líquido verde transparente, chama a sua atenção. Você não tem\ntempo para ler o rótulo no momento, por isso você a põe no bolso rapidamente, enquanto elas não\nestão olhando. Você lhes diz que a cozinha parece estar em ordem e sai pela porta do lado oposto da\ncozinha.\n')
+    input('''Todo tipo de alimentos estranhos podem ser encontrados nos armários. Globos oculares, línguas,
+lagartixas, frascos de líquidos, ervas e frutos silvestres de diferentes formas e tamanhos. Uma
+garrafa em especial, contendo um líquido verde transparente, chama a sua atenção. Você não tem
+tempo para ler o rótulo no momento, por isso você a põe no bolso rapidamente, enquanto elas não
+estão olhando. Você lhes diz que a cozinha parece estar em ordem e sai pela porta do lado oposto da
+cozinha.
+''')
     n = 93
     return [p, enc, ite, n]
 
