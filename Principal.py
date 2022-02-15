@@ -1701,7 +1701,7 @@ incandescente dele está queimando a sua carne e você está em grande agonia. A
 mantém firme e você desmaia em choque. Você cai no chão para nunca mais acordar, e o Devlin só
 larga quando já tem certeza de que seu corpo está queimado além de qualquer possibilidade de
 recuperação. Afinal, você será mesmo a próxima refeição das criaturas da Torre Negra...''')
-    p[2] = 0
+    p[2], n = 0, 1
     return [p, enc, ite, n]
     
 h = h + [his61]
@@ -1721,25 +1721,63 @@ def his62(p, enc, ite):
 h = h + [his62]
 
 def his63(p, enc, ite):
-    n = 63
+    n = int(input('''Você vai até o índice remissivo e verifica a referência. Ao chegar à página correta, você fica
+decepcionado ao descobrir que a seção foi arrancada do livro! Você pode:
+
+1. Olhar os \033[1mCalacorms\033[m.
+2. Verificar os \033[1mMiks\033[m.
+
+Digite sua opção: '''))
+    n = numcerto(n,1,2)
+    if n == 1:
+        n = 263
+    else :
+        n = 135
     return [p, enc, ite, n]
     
 h = h + [his63]
 
 def his64(p, enc, ite):
-    n = 64
+    n = int(input('''Você ouve junto à porta e consegue escutar vozes esganiçadas rindo e brigando. Você experimenta
+a maçaneta e a porta abre. O lado de dentro é um aposento de cores vivas. Há umas poucas camas
+pequenas em um canto, e, espalhados pelo chão, há pequenos bonecos de várias criaturas brutas.
+Junto à parede do lado direito há uma caixa, e logo adiante da caixa uma porta. No meio do
+assoalho, e olhando para você com curiosidade, estão três pequenas criaturas. Têm aparência
+humana, mas possuem pele verde, orelhas pontudas e olhos muito apertados. Qual será a sua
+atitude? Você:
+1. Desembainhará a sua espada e se preparará para lutar contra eles?
+2. Procurará em sua mochila alguma coisa para oferecer a eles?
+3. Caminhará confiantemente através do aposento para a porta do outro lado?
+
+Digite sua opção: '''))
+    n = numcerto(n,1,3)
+    if n == 1 :
+        n = 286
+    elif n == 2 :
+        n = 3
+    else :
+        n = 366
     return [p, enc, ite, n]
     
 h = h + [his64]
 
 def his65(p, enc, ite):
-    n = 65
+    input('Você se ajoelha diante dele e se curva. Ele é de fato o seu senhor agora. Você falhou na sua missão.')
+    p[2], n = 0, 1
     return [p, enc, ite, n]
     
 h = h + [his65]
 
 def his66(p, enc, ite):
-    n = 66
+    input('''Eles olham um para o outro e conversam. Um deles se adianta e estende a mão com um pequeno
+cubo, que parece ter sido feito de algum tipo de pão ou bolo. A pedido dele, você põe isso na boca e
+mastiga. Quando engole, você se sente subitamente forte de novo. Retorne a seus níveis Iniciais de
+HABILIDADE e ENERGIA e acrescente um ponto de SORTE. Você agradece a ele pela comida e
+a todos pela companhia, depois parte na direção das portas.''')
+    n = 270
+    p[1] = pers0[1].copy()
+    p[2] = pers0[2].copy()
+    p[3] = p[3] + 1
     return [p, enc, ite, n]
     
 h = h + [his66]
