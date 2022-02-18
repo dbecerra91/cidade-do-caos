@@ -26,15 +26,19 @@ def sino(str: str):
         str = str.upper()
     return str
 
-def numcerto(n: int, min: int, max: int):
-    while (n in range(min,max+1)) == False:
-        n = int(input('Opção inválida, digite um número entre {} e {}: '.format(min, max)))
-    return n
+def esnumero(variavel) :
+    vf = variavel.isdigit()
+    while vf == False :
+        variavel = input('Digite um número: ')
+        vf = variavel.isdigit()
+    return variavel
 
-def escolcerta(num,lis):
-    while (num in lis) == False:
-        num = input('Opção inválida, digite uma opção certa: ')
-    return num
+def numcerto(n, min: int, max: int) :
+    n = esnumero(n)
+    while (n in range(min,max+1)) == False:
+        n = input('Opção inválida, digite um número entre {} e {}: '.format(min, max))
+        n = esnumero(n)
+    return n
 
 def estado(p):
     print('{:10} HABILIDADE {:2}    ENERGIA {:2}    SORTE {:2}'.format(p[0], p[1], p[2], p[3]))
@@ -67,71 +71,6 @@ def ENERGIA(p,i):
         p[2] = i[2].copy()
     return p
 
-def batalCPD(p,c):
-    aux = p
-    p[0], p[1], p[2] = 'Copia de {}'.format(c[0]), c[1], c[2]
-    p = batalha(p,c)
-    p[0], p[1], p[2] = aux[0], aux[1], aux[2]
-    if c[2] > 0:
-        p = batalha(p,c)
-    return p
-
-def batalha(p,c):
-    while p[2] > 0 and c[2] > 0:
-        limpa()
-        estado(p)
-        estado(c)
-        input('\nEnter para jogar dois dados da criatura.')
-        n = rodar(2)
-        print('{} tem força de ataque {}'.format(c[0], n + c[1]))
-        gc = n + c[1]
-        input('\nEnter para jogar dois dados para {}'.format(p[0]))
-        n = rodar(2)
-        print('{} tem força de ataque {}'.format(p[0], n + p[1]))
-        gp = n + p[1]
-        if gc < gp:
-            print('\n{} feriu a criatura'.format(p[0]))
-            sn = str(input('Deseja testar sorte para tentar aumentar o dano? [s/n]'))
-            sn = sino(sn) 
-            if sn in ['S', 'SIM']:
-                so = sorte(p)
-                p[3] = p[3] - 1
-                if so:
-                    s = 2
-                else:
-                    s = - 1
-            elif sn in ['N', 'NAO', 'NÃO']:
-                s = 0
-            input('{} perde {} pontos de energia'.format(c[0], 2 + s))
-            c[2] = c[2] - 2 - s
-        elif gp < gc:
-            print('\n{} feriu a {}'.format(c[0], p[0]))
-            sn = str(input('Deseja testar sorte para tentar diminuir o dano? [s/n]'))
-            sn = sino(sn)
-            if sn in ['S', 'SIM']:
-                so = sorte(p)
-                p[3] = p[3] - 1
-                if so:
-                    s = 1
-                else:
-                    s = - 1
-            elif sn in ['N', 'NAO', 'NÃO']:
-                s = 0
-            input('{} perde {} pontos de energia'.format(p[0], 2 - s))
-            p[2] = p[2] - 2 + s
-        else:
-            input('\nAmbos se defenderam dos golpes')
-    return p
-
-def batalmult(p,cr):
-    n = 0
-    while (n + 1 < len(cr)) and p[2] > 0:
-        c = cr[n]
-        p = batalha(p,c)
-        n = n + 1
-            
-    return p
-
 def fujasorte(p):
     sn = input('{} esta tentando fugir e foi ferido na tentativa.\nQuer testar sorte para determinar a gravidade do ferimento? [s/n]'.format(p[0]))
     sn = sino(sn)
@@ -155,7 +94,7 @@ def criarpersonagem():
     limpa()
     print('Criando personagem')
     nome = 'Dennis'
-    #nome = input('Digite o nome do personagem: ')
+    #nome = srt(input('Digite o nome do personagem: '))
     #input('\nEnter para jogar um dado.')
     n = rodar(1)
     print('Sua HABILIDADE inicial é {}'.format(n + 6))
@@ -407,7 +346,22 @@ input('Enter para continuar.')
 # Historia
 
 def his1(p,enc,ite):
-    n = int(input('O sol se põe. Enquanto o crepúsculo se transforma em escuridão, você começa a subir a colina na direção da ameaçadora forma que se desenha contra o céu noturno. A Cidadela fica a menos de uma hora de escalada.\n\nA uma certa distância de seus muros, você pára para descansar - um erro, uma vez que, dessa posição, ela parece um espectro medonho do qual não se pode escapar. Os cabelos no seu pescoço se arrepiam enquanto você a observa.\n\nMas você se envergonha de seus medos. Com inflexível decisão, você marcha adiante na direção do portão principal, onde você sabe que encontrará guardas à sua espera. Você considera suas opções. Já pensou em se apresentar como um especialista em plantas medicinais que veio tratar de um guarda com febre. Poderia também se dizer um comerciante ou artesão - talvez um carpinteiro. Poderia até mesmo ser um nômade que buscasse abrigo para a noite.\n\nEnquanto você pondera as possibilidades, e as histórias que terá que contar aos guardas, acaba chegando à trilha principal que conduz aos portões. Duas lanternas brilham em cada um dos lados da porta levadiça.\n\nVocê ouve grunhidos abafados ao se aproximar, e vê duas criaturas de aparência absurda. Do lado esquerdo está uma criatura horrível, com a cabeça de um cachorro e o corpo de um grande macaco, flexionando seus braços fortíssimos. Do outro lado, encontra-se de fato o seu oposto, com a cabeça de um macaco no corpo de um cachorro grande. Este último guarda se aproxima nas suas quatro patas. Pára a alguns metros de distância diante de você, ergue-se sobre as patas traseiras e dirige a palavra a você.\n\nPor qual das histórias você optará?\n1. Você se apresentará como um especialista em plantas medicinais?\n2. Você dirá que é um comerciante?\n3. Você pedirá abrigo para pernoitar?\n\nDigite o número da sua história: '))
+    n = int(input('''O sol se põe. Enquanto o crepúsculo se transforma em escuridão, você começa a subir a colina na direção da ameaçadora forma que se desenha contra o céu noturno. A Cidadela fica a menos de uma hora de escalada.
+    
+A uma certa distância de seus muros, você pára para descansar - um erro, uma vez que, dessa posição, ela parece um espectro medonho do qual não se pode escapar. Os cabelos no seu pescoço se arrepiam enquanto você a observa.
+
+Mas você se envergonha de seus medos. Com inflexível decisão, você marcha adiante na direção do portão principal, onde você sabe que encontrará guardas à sua espera. Você considera suas opções. Já pensou em se apresentar como um especialista em plantas medicinais que veio tratar de um guarda com febre. Poderia também se dizer um comerciante ou artesão - talvez um carpinteiro. Poderia até mesmo ser um nômade que buscasse abrigo para a noite.
+
+Enquanto você pondera as possibilidades, e as histórias que terá que contar aos guardas, acaba chegando à trilha principal que conduz aos portões. Duas lanternas brilham em cada um dos lados da porta levadiça.
+
+Você ouve grunhidos abafados ao se aproximar, e vê duas criaturas de aparência absurda. Do lado esquerdo está uma criatura horrível, com a cabeça de um cachorro e o corpo de um grande macaco, flexionando seus braços fortíssimos. Do outro lado, encontra-se de fato o seu oposto, com a cabeça de um macaco no corpo de um cachorro grande. Este último guarda se aproxima nas suas quatro patas. Pára a alguns metros de distância diante de você, ergue-se sobre as patas traseiras e dirige a palavra a você.
+
+Por qual das histórias você optará?
+
+1. Você se apresentará como um especialista em plantas medicinais?
+2. Você dirá que é um comerciante?\n3. Você pedirá abrigo para pernoitar?
+
+Digite sua opção: '''))
     n = numcerto(n,1,3)
     if n == 1:
         n = 261
@@ -420,7 +374,7 @@ def his1(p,enc,ite):
 h = [his1]
 
 def his2(p,enc,ite):
-    n = int(input('Um pouco adiante na passagem há uma porta do lado direito. Esta porta está coberta por estranhos\ncaracteres, em uma linguagem que você não compreende. Você tentará abrir a porta (escolha 1)\nou continuará seguindo a passagem (escolha 2)?\n\nDigite sua opção: '))
+    n = input('Um pouco adiante na passagem há uma porta do lado direito. Esta porta está coberta por estranhos\ncaracteres, em uma linguagem que você não compreende. Você tentará abrir a porta (escolha 1)\nou continuará seguindo a passagem (escolha 2)?\n\nDigite sua opção: ')
     n = numcerto(n, 1, 2)
     if  n== 1:
         n = 142
