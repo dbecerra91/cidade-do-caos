@@ -1783,19 +1783,65 @@ a todos pela companhia, depois parte na direção das portas.''')
 h = h + [his66]
 
 def his67(p, enc, ite):
-    n = 67
+    print('''Você começa a sua luta contra a criatura. Seu primeiro golpe é certeiro e corta uma das seis
+cabeças. As outras cinco avançam sobre você e, para seu horror, mais duas cabeças crescem onde
+estava antes a cabeça morta! Uma das cabeças morde profundamente o seu braço. Você perde
+quatro pontos de ENERGIA.
+
+ENERGIA = {}
+'''.format(p[2] - 4))
+    p[2] = p[2] - 4
+    if p[2] < 1 :
+        input('Você perdeu a batalha contra a criatura.')
+        n = 1
+    else :
+        print('Sua espada obviamente não vai adiantar muito.') 
+        if enc[0] < 1 :
+            input('Use alguma coisa da sua mochila.')
+            n = 226
+        else :
+            n = int(input('''Você
+
+1. Usará um Encanto de Cópia de Criatura    (Possui {})
+2. Usará alguma coisa de sua mochila?
+
+Digite sua opção: '''.format(enc[0])))
+            n = numcerto(n,1,2)   
+            if n == 1 :
+                enc[0] = enc[0] - 1
+                n = 143
+            else :
+                n = 226
     return [p, enc, ite, n]
     
 h = h + [his67]
 
 def his68(p, enc, ite):
-    n = 68
+    n = int(input('''“Por qual eu iria, hein?" ele considera. "Vamos ver... eu não iria por uma das duas portas à esquerda
+da porta de maçaneta de cobre, nem a porta à direita da de maçaneta de bronze." Qual delas você
+escolherá:
+1. A porta de maçaneta de latão?
+2. A porta de maçaneta de cobre?
+3. A porta de maçaneta de bronze?
+
+Digite sua opção: '''))
+    n = numcerto(n, 1, 3)
+    if n == 1 :
+        n = 207
+    elif n == 2 :
+        n = 22
+    else :
+        n = 354
     return [p, enc, ite, n]
     
 h = h + [his68]
 
 def his69(p, enc, ite):
-    n = 69
+    input('''A criatura não é de muita conversa, mas você consegue descobrir que está nas masmorras dos
+subterrâneos da Torre Negra e que provavelmente nunca será libertado, a não ser que se já dado aos
+Ganjees para o divertimento deles. Quando você pergunta por Balthus Dire, ele fica calado. É
+melhor você tentar usar um Encanto para conseguir sair dessa prisão.''')
+    n = 193
     return [p, enc, ite, n]
     
 h = h + [his69]
