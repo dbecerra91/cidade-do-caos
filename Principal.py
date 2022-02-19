@@ -293,7 +293,7 @@ def criarmagia() :
     return ENCANTOS
 
 ITEM0 = [['Miríade de bolso', 0], ['Aranha em um vidro', 0], ['Pequenas amoras', 0], ['Adaga', 0], ['Velo de Ouro', 0], ['Espelho de Prata', 0], ['Escova de Cabelo', 0], ['Vidro de Unguento', 0], ['Peças de Ouro', 0]]
-CRIATURA = [['GARK', 7, 11, 0], ['FERA DAS GARRAS', 9, 14, 0], ['HOMEM-ARANHA', 7, 5, 0]]
+CRIATURA = [['GARK', 7, 11, 0], ['FERA DAS GARRAS', 9, 14, 0], ['HOMEM-ARANHA', 7, 5, 0], ['TENTÁCULO', 15, 2, 0]]
 
 pers0 = criarpersonagem()
 perso = pers0.copy()
@@ -1183,7 +1183,7 @@ HOMEM-ARANHA        HABILIDADE: 9       ENERGIA: 14''')
         elif gp < gc:
             print('\n{} feriu a {}'.format(c[0], p[0]))
             s = 0
-            '''if p[3] > 0:
+            if p[3] > 0:
                 sn = str(input('Deseja testar sorte para tentar diminuir o dano? [s/n] '))
                 sn = sino(sn)
                 if sn in ['S', 'SIM']:
@@ -1194,7 +1194,7 @@ HOMEM-ARANHA        HABILIDADE: 9       ENERGIA: 14''')
                     else:
                         s = - 1
             input('{} perde {} pontos de energia'.format(p[0], 2 - s))
-            p[2] = p[2] - 2 + s'''
+            p[2] = p[2] - 2 + s
             cont = cont + 1
         else:
             input('\nAmbos se defenderam dos golpes')
@@ -1709,9 +1709,10 @@ mastiga. Quando engole, você se sente subitamente forte de novo. Retorne a seus
 HABILIDADE e ENERGIA e acrescente um ponto de SORTE. Você agradece a ele pela comida e
 a todos pela companhia, depois parte na direção das portas.''')
     n = 270
-    p[1] = pers0[1].copy()
-    p[2] = pers0[2].copy()
-    p[3] = p[3] + 1
+    p[1] = pers0[1]
+    p[2] = pers0[2]
+    if p[3] < pers0[3] :
+        p[3] = p[3] + 1
     return [p, enc, ite, n]
     
 h = h + [his66]
@@ -1736,7 +1737,7 @@ ENERGIA = {}
         else :
             n = input('''Você
 
-1. Usará um Encanto de Cópia de Criatura    (Possui {})
+1. Usará um Encanto de Cópia de Criatura?   (Possui {})
 2. Usará alguma coisa de sua mochila?
 
 Digite sua opção: '''.format(enc[0]))
@@ -1781,13 +1782,79 @@ melhor você tentar usar um Encanto para conseguir sair dessa prisão.''')
 h = h + [his69]
 
 def his70(p, enc, ite):
-    n = 70
+    n = input('''Você voa para cima e mantém-se longe dos botes dele, mas ele não sai do lugar onde está, e não há
+meio de você contorná-lo voando para chegar à porta. O Encanto acaba por se esgotar e você tem
+que enfrentá-lo de novo. Você:
+
+1. Usa um Encanto da Fraqueza?
+2. Usa um Encanto da Força?
+3. Desembainha a sua espada?
+
+Digite sua opção: ''')
+    n = numcerto(n,1,3)
+    if n == 1 :
+        n = 307
+    elif n == 2 :
+        n = 264
+    else :
+        n = 325
     return [p, enc, ite, n]
     
 h = h + [his70]
 
 def his71(p, enc, ite):
-    n = 71
+    input('''Você desembainha a sua espada e golpeia o tentáculo. O tentáculo não ataca de volta, como uma
+criatura normal, mas, ao invés disso, está tentando arrastar você para um grande buraco no chão,
+que está se abrindo em torno da base dele. Você não precisa jogar dados para o Tentáculo, uma vez
+que ele possui uma Força de Ataque de 15 e um índice de ENERGIA de 2. Jogue para o combate de
+maneira normal, mas, se sua própria Força de Ataque ficar abaixo de 15, não subtraia pontos de sua
+própria ENERGIA. Porém, se você não derrotar a criatura em três Séries de Ataque, ela conseguirá
+arrastar você para seu covil, e sua aventura terá terminado. Se você de fato derrotá-la, poderá
+arrancar o tentáculo de sua perna e prosseguir para a entrada principal da Torre Negra. ''')
+    c = CRIATURA[3].copy()
+    cont = 0
+    while c[2] > 0 and cont < 3:
+        if ite[3][1] > 0:
+            sn = str(input('Deseja utilizar a Adaga do cinto? [s/n] '))
+            sn = sino(sn)
+            if sn in ['S', 'SIM']:
+                ite[3][1] = ite[3][1] - 1
+                c[2] = c[2] - 2
+                input('\n{} venceu o {}'.format(p[0], c[0]))
+            else :
+                limpa()
+                estado(p)
+                print('{:10} HABILIDADE {:2}    ENERGIA {:2}'.format(c[0], c[1], c[2]))
+                gc = c[1]
+                input('\nEnter para jogar dois dados para {}'.format(p[0]))
+                n = rodar(2)
+                print('{} tem força de ataque {}'.format(p[0], n + p[1]))
+                gp = n + p[1]
+                if gc < gp:
+                    print('\n{} venceu o {}'.format(p[0], c[0]))
+                    c[2] = 0
+                else :
+                    print('\n{}ro ataque realizado'.format(cont + 1))
+                    cont = cont + 1
+        else :
+            limpa()
+            estado(p)
+            print('{:10} HABILIDADE {:2}    ENERGIA {:2}'.format(c[0], c[1], c[2]))
+            gc = c[1]
+            input('\nEnter para jogar dois dados para {}'.format(p[0]))
+            n = rodar(2)
+            print('{} tem força de ataque {}'.format(p[0], n + p[1]))
+            gp = n + p[1]
+            if gc < gp:
+                print('\n{} venceu o {}'.format(p[0], c[0]))
+                c[2] = 0
+            else :
+                print('\n{}ro ataque realizado'.format(cont + 1))
+                cont = cont + 1
+    if cont == 3:
+        n = 1
+    elif c[2] < 1:
+        n = 218
     return [p, enc, ite, n]
     
 h = h + [his71]
@@ -3809,7 +3876,7 @@ while perso[2] > 0:
         sn = sino(sn)
         if sn == 'S' or sn == 'SIM':
             pers0 = criarpersonagem()
-            perso = pers0
+            perso = pers0.copy()
             ENCANTOS = criarmagia()
             ITEM = ITEM0
             n = 1
