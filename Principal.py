@@ -22,7 +22,7 @@ def rodar(n:int):
 def sino(str: str):
     str = str.upper()
     while (str in ['S', 'N', 'SIM', 'NAO', 'NÃO']) == False :
-        str = input('Opção inválida. Tente novamente: [s/n]')
+        str = input('Opção inválida. Tente novamente: [s/n] ')
         str = str.upper()
     return str
 
@@ -31,6 +31,7 @@ def esnumero(variavel) :
     while vf == False :
         variavel = input('Digite um número: ')
         vf = variavel.isdigit()
+    variavel = int(variavel)
     return variavel
 
 def numcerto(n, min: int, max: int) :
@@ -72,7 +73,7 @@ def ENERGIA(p,i):
     return p
 
 def fujasorte(p):
-    sn = input('{} esta tentando fugir e foi ferido na tentativa.\nQuer testar sorte para determinar a gravidade do ferimento? [s/n]'.format(p[0]))
+    sn = input('{} esta tentando fugir e foi ferido na tentativa.\nQuer testar sorte para determinar a gravidade do ferimento? [s/n] '.format(p[0]))
     sn = sino(sn)
     if sn in ['S', 'SIM']:
         so = sorte(p)
@@ -131,9 +132,9 @@ def criarmagia() :
     print('mesmos poderes do original. Mas a réplica estará sob seu controle, e você poderá, por exemplo,')
     print('instruí-la para que ataque a criatura original e ficar assistindo a batalha de camarote!\n')
     print('Quantos encantos de Copia de criatura você quer?')
-    #CDC = int(input('Restam {}\n'.format(MAGIA)))
+    #CDC = input('Restam {}\n'.format(MAGIA))
     CDC = 1
-    CDC = numcerto(CDC,0,MAGIA)
+    #CDC = numcerto(CDC,0,MAGIA)
     MAGIA = MAGIA - CDC
 
     limpa()
@@ -145,9 +146,9 @@ def criarmagia() :
     print('este encanto pode dar informações equivocadas, se houver mais de uma fonte psíquica perto de uma')
     print('outra.\n')
     print('Quantos encantos de Percepção Extra-Sensorial você quer?')
-    #PES = int(input('Restam {}\n'.format(MAGIA)))
+    #PES = input('Restam {}\n'.format(MAGIA))
     PES = 0
-    PES = numcerto(PES,0,MAGIA)
+    #PES = numcerto(PES,0,MAGIA)
     MAGIA = MAGIA - PES
 
     limpa()
@@ -158,9 +159,9 @@ def criarmagia() :
     print('sua vontade. Você poderá causar uma pequena explosão no chão que queimará por vários segundos')
     print('ou criar uma barreira de fogo para manter criaturas à distância.\n')
     print('Quantos encantos de Fogo você quer?')
-    #Fog = int(input('Restam {}\n'.format(MAGIA)))
+    #Fog = input('Restam {}\n'.format(MAGIA))
     Fog = 0
-    Fog = numcerto(Fog,0,MAGIA)
+    #Fog = numcerto(Fog,0,MAGIA)
     MAGIA = MAGIA - Fog
 
     limpa()
@@ -171,9 +172,9 @@ def criarmagia() :
     print('apenas uma forma de encanto da ilusão - embora mais confiável do que o Encanto da ilusão abaixo')
     print('- e a pilha de ouro logo voltará a ser pedra.\n')
     print('Quantos encantos de Ouro dos Tolos você quer?')
-    #ODT = int(input('Restam {}\n'.format(MAGIA)))
+    #ODT = input('Restam {}\n'.format(MAGIA))
     ODT = 0
-    ODT = numcerto(ODT,0,MAGIA)
+    #ODT = numcerto(ODT,0,MAGIA)
     MAGIA = MAGIA - ODT
 
     limpa()
@@ -187,9 +188,9 @@ def criarmagia() :
     print('que se transformou em uma serpente e então imediatamente atinge sua cabeça com um golpe de')
     print('espada!). É eficiente sobre tudo com criaturas inteligentes.\n')
     print('Quantos encantos de Ilusão você quer?')
-    #I = int(input('Restam {}\n'.format(MAGIA)))
+    #I = input('Restam {}\n'.format(MAGIA))
     I = 0
-    I = numcerto(I,0,MAGIA)
+    #I = numcerto(I,0,MAGIA)
     MAGIA = MAGIA - I
 
     limpa()
@@ -200,9 +201,9 @@ def criarmagia() :
     print('recebe dos efeitos da gravidade e assim fará com que tudo que esteja sob a sua influência flutue')
     print('livremente no ar, sob o seu controle.\n')
     print('Quantos encantos de Levitação você quer?')
-    #L = int(input('Restam {}\n'.format(MAGIA)))
+    #L = input('Restam {}\n'.format(MAGIA))
     L = 1
-    L = numcerto(L,0,MAGIA)
+    #L = numcerto(L,0,MAGIA)
     MAGIA = MAGIA - L
 
     limpa()
@@ -217,9 +218,9 @@ def criarmagia() :
     print('seu nível Inicial Portanto, se você lançar dois encantos da SORTE juntos, o seu índice de SORTE')
     print('voltará apenas a ser igual a seu nível Inicial.\n')
     print('Quantos encantos de Sorte você quer?')
-    #S = int(input('Restam {}\n'.format(MAGIA)))
+    #S = input('Restam {}\n'.format(MAGIA))
     S = 0
-    S = numcerto(S,0,MAGIA)
+    #S = numcerto(S,0,MAGIA)
     MAGIA = MAGIA - S
 
     limpa()
@@ -231,9 +232,9 @@ def criarmagia() :
     print('evidentemente, se nada fora dele pode tocar em você, você também não poderá tocar em nada fora')
     print('dele.\n')
     print('Quantos encantos de Escudo você quer?')
-    #Es = int(input('Restam {}\n'.format(MAGIA)))
+    #Es = input('Restam {}\n'.format(MAGIA))
     Es = 1
-    Es = numcerto(Es,0,MAGIA)
+    #Es = numcerto(Es,0,MAGIA)
     MAGIA = MAGIA - Es
 
     limpa()
@@ -244,9 +245,9 @@ def criarmagia() :
     print('Inicial, e pode ser lançado a qualquer momento durante a sua aventura, a não ser em uma batalha.')
     print('O Encanto da Habilidade funciona exatamente da mesma maneira que a sorte.\n')
     print('Quantos encantos de Habilidade você quer?')
-    #H = int(input('Restam {}\n'.format(MAGIA)))
+    #H = input('Restam {}\n'.format(MAGIA))
     H = 1
-    H = numcerto(H,0,MAGIA)
+    #H = numcerto(H,0,MAGIA)
     MAGIA = MAGIA - H
 
     limpa()
@@ -257,9 +258,9 @@ def criarmagia() :
     print('pode ser lançado a qualquer momento durante a sua aventura. Veja o Encanto da Sorte para')
     print('conhecer as regras completas.\n')
     print('Quantos encantos de Energia você quer?')
-    #En = int(input('Restam {}\n'.format(MAGIA)))
+    #En = input('Restam {}\n'.format(MAGIA))
     En = 1
-    En = numcerto(En,0,MAGIA)
+    #En = numcerto(En,0,MAGIA)
     MAGIA = MAGIA - En
 
     limpa()
@@ -270,9 +271,9 @@ def criarmagia() :
     print('criaturas fortes. Porem, deve ser utilizado com cautela, já que é difícil controlar a sua própria força')
     print('quando ela aumenta demais.\n')
     print('Quantos encantos de Força você quer?')
-    #For = int(input('Restam {}\n'.format(MAGIA)))
+    #For = input('Restam {}\n'.format(MAGIA))
     For = 0
-    For = numcerto(For,0,MAGIA)
+    #For = numcerto(For,0,MAGIA)
     MAGIA = MAGIA - For
 
     limpa()
@@ -282,9 +283,9 @@ def criarmagia() :
     print('Criaturas fortes são reduzidas por este encanto a miseráveis fracotes. Não tem efeito contra todas as')
     print('criaturas, mas, quando tem efeito, a criatura se torna frágil e muito menos perigosa em uma batalha.\n')
     print('Quantos encantos de Fraqueza você quer?')
-    #Fr = int(input('Restam {}\n'.format(MAGIA)))
+    #Fr = input('Restam {}\n'.format(MAGIA))
     Fr = MAGIA
-    Fr = numcerto(Fr,0,MAGIA)
+    #Fr = numcerto(Fr,0,MAGIA)
     MAGIA = MAGIA - Fr
 
     ENCANTOS = [CDC, PES, Fog, ODT, I, L, S, Es, H, En, For,Fr]
@@ -346,7 +347,7 @@ input('Enter para continuar.')
 # Historia
 
 def his1(p,enc,ite):
-    n = int(input('''O sol se põe. Enquanto o crepúsculo se transforma em escuridão, você começa a subir a colina na direção da ameaçadora forma que se desenha contra o céu noturno. A Cidadela fica a menos de uma hora de escalada.
+    n = input('''O sol se põe. Enquanto o crepúsculo se transforma em escuridão, você começa a subir a colina na direção da ameaçadora forma que se desenha contra o céu noturno. A Cidadela fica a menos de uma hora de escalada.
     
 A uma certa distância de seus muros, você pára para descansar - um erro, uma vez que, dessa posição, ela parece um espectro medonho do qual não se pode escapar. Os cabelos no seu pescoço se arrepiam enquanto você a observa.
 
@@ -361,7 +362,7 @@ Por qual das histórias você optará?
 1. Você se apresentará como um especialista em plantas medicinais?
 2. Você dirá que é um comerciante?\n3. Você pedirá abrigo para pernoitar?
 
-Digite sua opção: '''))
+Digite sua opção: ''')
     n = numcerto(n,1,3)
     if n == 1:
         n = 261
@@ -374,7 +375,13 @@ Digite sua opção: '''))
 h = [his1]
 
 def his2(p,enc,ite):
-    n = input('Um pouco adiante na passagem há uma porta do lado direito. Esta porta está coberta por estranhos\ncaracteres, em uma linguagem que você não compreende. Você tentará abrir a porta (escolha 1)\nou continuará seguindo a passagem (escolha 2)?\n\nDigite sua opção: ')
+    n = input('''Um pouco adiante na passagem há uma porta do lado direito. Esta porta está coberta por estranhos
+caracteres, em uma linguagem que você não compreende. Você:
+
+1. tentará abrir a porta?
+2. ontinuará seguindo a passagem?
+
+Digite sua opção: ''')
     n = numcerto(n, 1, 2)
     if  n== 1:
         n = 142
@@ -392,10 +399,10 @@ def his3(p,enc,ite):
 3. Um punhado de Pequenas Amoras? (Possui {})
 '''.format(ite[0][1], ite[1][1], ite[2][1]))
     if ite[0][1] + ite[1][1] + ite[2][1] > 0:
-        n = int(input('Digite sua opção: '))
+        n = input('Digite sua opção: ')
         n = numcerto(n, 1, 3)
         while (n == 1 and ite[0][1] == 0) or (n == 2 and ite[1][1] == 0) or (n == 3 and ite[2][1] == 0):
-            n = int(input('Você não possui esse item, tente outra opção: '))
+            n = input('Você não possui esse item, tente outra opção: ')
             n = numcerto(n, 1, 3)
         if n == 1:
             ite[0][1] = ite[0][1] - 1
@@ -407,12 +414,12 @@ def his3(p,enc,ite):
             ite[1][1] = ite[1][1] - 1
             n = 236
     else :
-        n = int(input('''Você não pode oferecer nenhuma dessas coisas, Você poderá
+        n = input('''Você não pode oferecer nenhuma dessas coisas, Você poderá
     
-    1. Desembainhar a sua espada.
-    2. Se dirigir para a porta mais distante.
+1. Desembainhar a sua espada.
+2. Se dirigir para a porta mais distante.
     
-Digite sua opção'''))
+Digite sua opção: ''')
         n = numcerto(n, 1, 2)
         if n == 1:
             n = 286
@@ -433,7 +440,7 @@ Encantos de Copia Criatura = {}
         input('Você não possui encantos de Copia de Criatura!')
         n = 303
     else:
-        n = int(input('1. Lanzar encanto de Criatura.\n2. Desembainar espada.\n\nDigite sua opção: '))
+        n = input('1. Lanzar encanto de Copia de Criatura.\n2. Desembainar espada.\n\nDigite sua opção: ')
         n = numcerto(n, 1, 2)
         if n == 1:
             enc[0] = enc[0] - 1
@@ -445,15 +452,15 @@ Encantos de Copia Criatura = {}
 h = h + [his4]    
 
 def his5(p, enc, ite):
-    n = int(input('''Você experimenta a maçaneta da porta e ela gira, abrindo para um outro corredor. Logo adiante, a
+    n = input('''Você experimenta a maçaneta da porta e ela gira, abrindo para um outro corredor. Logo adiante, a
 passagem vira para a direita e termina pouco depois em outra porta. Nesta porta há um letreiro que
 diz "Por Favor Toque a Campainha para Chamar o Mordomo". Uma corda - evidentemente a
 campainha - pende ao lado da porta.
 
-1. Você toca a campainha conforme indicado ou
+1. Você toca a campainha conforme indicado?
 2. Você experimenta a maçaneta da porta?
 
-Digite sua opção: '''))
+Digite sua opção: ''')
     n = numcerto(n, 1, 2)
     if n == 1:
         n = 40
@@ -464,7 +471,7 @@ Digite sua opção: '''))
 h = h + [his5]
 
 def his6(p, enc, ite):
-    input('''o caminho segue ao longo do rio por vários metros e depois volta a penetrar na rocha. Você segue o
+    input('''O caminho segue ao longo do rio por vários metros e depois volta a penetrar na rocha. Você segue o
 caminho por algum tempo.''')
     n = 367
     return [p, enc, ite, n]
@@ -479,7 +486,7 @@ pode lançar um Encanto da Força sobre você mesmo e tentar arrancar a porta da
         input('Você não possui encantos de Força')
         n = 268
     else:
-        n = int(input('1. Bater a porta com o ombro.\n2. Usar encanto da Força.\n\nDigite sua opção: '))
+        n = input('1. Bater a porta com o ombro.\n2. Usar encanto da Força.\n\nDigite sua opção: ')
         n = numcerto(n, 1, 2)
         if n == 2:
             enc[10] = enc[10] - 1
@@ -496,8 +503,7 @@ recua um pouco, e você orienta a sua criação para o ataque. Mas, quando elas 
 outra, acontece uma coisa estranha. Elas parecem ser incapazes de chegar perto uma da outra, como
 duas extremidades giratórias, e sempre separam-se bruscamente de um salto. Porém, sua própria
 cópia pelo menos forçou a criatura a se afastar de você para uma certa distância, permitindo que
-você corra para a entrada principal da Cidadela.
-''')
+você corra para a entrada principal da Cidadela.''')
     n = 218
     return [p, enc, ite, n]
 
@@ -506,8 +512,7 @@ h = h + [his8]
 def his9(p, enc, ite):
     input('''Sob o seu Encanto da Ilusão, a multidão de espectadores olha você começar a jogar. Você observa
 umas duas rodadas e a tensão cresce. Você resolve que é melhor sair do aposento sem mais perda de
-tempo.
-    ''')
+tempo.''')
     n = 31
     return [p, enc, ite, n]
 
@@ -517,8 +522,7 @@ def his10(p, enc, ite):
     input('''Você tateia pela rocha e acaba por encontrar uma pequena alavanca. Ao puxar esta alavanca, a face
 da rocha esfarela um pouco e aparece uma pequena abertura. Você sobe por esta abertura e chega a
 uma passagem. Descendo a passagem para a esquerda, você pode ver uma porta e resolve
-investigar.
-''')
+investigar.''')
     n = 249
     return [p, enc, ite, n]
 
@@ -527,21 +531,20 @@ h = h + [his10]
 def his11(p, enc, ite):
     print('''Você pode usar:
 
-1. Um Encanto do Ouro dos Tolos                 (Possui {)}
+1. Um Encanto do Ouro dos Tolos                 (Possui {})
 2. Um Encanto de Cópia de Criatura              (Possui {})
 3. Um Encanto da Percepção Extra-Sensorial      (Possui {})
 4. Um Encanto da Fraqueza                       (Possui {})
 '''.format(enc[3], enc[0], enc[1], enc[11]))
-    print('Se você não tiver nenhum desses encantos, terá que desembainhar a sua espada e lutar.')
     if (enc[3] + enc[0] + enc[1] + enc[11]) == 0:
         n = 249
-        input('Você não possui nenhum desses encantos.!')
+        input('Você não possui nenhum desses encantos, terá que desembainhar a sua espada e lutar.')
     else:
-        n = int(input('Escolha o encanto que deseja usar: '))
+        n = input('Escolha o encanto que deseja usar: ')
         n = numcerto(n, 1, 4)
         e = [enc[3], enc[0], enc[1], enc[11]]
         while e[n - 1] == 0:
-            n = int(input('Você não possui esse encanto, por favor escolha outro: '))
+            n = input('Você não possui esse encanto, por favor escolha outro: ')
             n = numcerto(n, 1, 4)
     if n == 1:
         n = 36
@@ -560,13 +563,13 @@ def his11(p, enc, ite):
 h = h + [his11]
 
 def his12(p, enc, ite):
-    n = int(input('''Ele fica parado diante de você, respirando pesadamente. O Encanto dele evidentemente foi bastante exaustivo. Você pode usar essa oportunidade para:
+    n = input('''Ele fica parado diante de você, respirando pesadamente. O Encanto dele evidentemente foi bastante exaustivo. Você pode usar essa oportunidade para:
     
 1. Deslocar-se rapidamente para o armário das armas.
 2. Pular para debaixo da mesa.
 3. Correr para a janela.
 
-Digite sua opção: '''))
+Digite sua opção: ''')
     n = numcerto(n, 1, 3)
     if n == 1:
         n = 274
@@ -579,7 +582,7 @@ Digite sua opção: '''))
 h = h + [his12]
 
 def his13(p, enc, ite):
-    n = int(input('''A maçaneta gira e você abre a porta para um outro aposento, onde há bastante atividade. Três
+    n = input('''A maçaneta gira e você abre a porta para um outro aposento, onde há bastante atividade. Três
 velhas feias, com narizes e queixos compridos, circulam pelo aposento - que parece ser alguma
 espécie de cozinha - pegando vários ingredientes dos armários e acrescentando-os a um caldo
 dentro de um grande caldeirão. Há um pedaço de carne assando em um espeto, embaixo de uma
@@ -591,7 +594,7 @@ começam a dar gargalhadas e gritos enquanto riem.
 1. Você deixará que elas acreditem que você é o novo empregado que elas estão esperando; ou
 2. Quer investigar o aposento com mais vagar.
 
-Digite sua opção: '''))
+Digite sua opção: ''')
     n = numcerto(n, 1, 2)
     if n == 1:
         n = 302
@@ -603,10 +606,10 @@ h = h + [his13]
 
 def his14(p, enc, ite):
     print('''A sombra do muro dificulta muito a visão. Uma pedra solta desliza, e você perde o equilíbrio,
-    oscilando à beira do que você tem consciência de que deve ser um poço profundo. Teste a sua
-    Sorte. Se você tiver sorte, recupera o equilíbrio e caminha em segurança. Você pode então dar a
-    volta no poço e continuar. Se você não tiver sorte, cai lá dentro.
-    ''')
+oscilando à beira do que você tem consciência de que deve ser um poço profundo. Teste a sua
+Sorte. Se você tiver sorte, recupera o equilíbrio e caminha em segurança. Você pode então dar a
+volta no poço e continuar. Se você não tiver sorte, cai lá dentro.
+''')
     if p[3] == 0:
         so = False
         input('Você não tem sorte!')
@@ -627,8 +630,7 @@ brilhante, e o cabo é de um couro verde peculiar, com pedras incrustadas. Você
 que diz que esta é uma adaga de arremesso encantada que nunca erra. Em um combate futuro, você
 poderá usar esta adaga para arremessar em um adversário. Ela causará automaticamente a perda de
 dois pontos de ENERGIA sem necessidade de jogar dados para conhecer a Força de Ataque. Mas
-você só poderá usá-la uma vez. Você põe a adaga em seu cinturão e parte na direção da Cidadela.
-''')
+você só poderá usá-la uma vez. Você põe a adaga em seu cinturão e parte na direção da Cidadela.''')
     ite[3][1] = ite[3][1] + 1
     n = 245
     return [p, enc, ite, n]
@@ -640,13 +642,12 @@ def his16(p, enc, ite):
     
 GARK        HABILIDADE 7        ENERGIA 11
     
-Depois de quatro Séries de Ataques, você poderá Fugir por uma das portas na extremidade mais distante do aposento.
-''')
+Depois de quatro Séries de Ataques, você poderá Fugir por uma das portas na extremidade mais distante do aposento.''')
     c = CRIATURA[0].copy()
     cont = 0
     while p[2] > 0 and c[2] > 0:
         if ite[3][1] > 0:
-            sn = str(input('Deseja utilizar a Adaga do cinto? [s/n]'))
+            sn = str(input('Deseja utilizar a Adaga do cinto? [s/n] '))
             sn = sino(sn)
             if sn in ['S', 'SIM']:
                 ite[3][1] = ite[3][1] - 1
@@ -667,7 +668,7 @@ Depois de quatro Séries de Ataques, você poderá Fugir por uma das portas na e
             print('\n{} feriu a criatura'.format(p[0]))
             s = 0
             if p[3] > 1:
-                sn = str(input('Deseja testar sorte para tentar aumentar o dano? [s/n]'))
+                sn = str(input('Deseja testar sorte para tentar aumentar o dano? [s/n] '))
                 sn = sino(sn) 
                 if sn in ['S', 'SIM']:
                     so = sorte(p)
@@ -682,7 +683,7 @@ Depois de quatro Séries de Ataques, você poderá Fugir por uma das portas na e
             print('\n{} feriu a {}'.format(c[0], p[0]))
             s = 0
             if p[3] > 0:
-                sn = str(input('Deseja testar sorte para tentar diminuir o dano? [s/n]'))
+                sn = str(input('Deseja testar sorte para tentar diminuir o dano? [s/n] '))
                 sn = sino(sn)
                 if sn in ['S', 'SIM']:
                     so = sorte(p)
@@ -697,7 +698,7 @@ Depois de quatro Séries de Ataques, você poderá Fugir por uma das portas na e
             input('\nAmbos se defenderam dos golpes')
         cont = cont + 1
         if cont > 3 and c[2] > 0:
-            f = str(input('Deseja fugir? [s/n]'))
+            f = str(input('Deseja fugir? [s/n] '))
             f = sino(f)
             if f in ['S', 'SIM']:
                 p = fujasorte(p)
@@ -719,15 +720,14 @@ lagartixas, frascos de líquidos, ervas e frutos silvestres de diferentes formas
 garrafa em especial, contendo um líquido verde transparente, chama a sua atenção. Você não tem
 tempo para ler o rótulo no momento, por isso você a põe no bolso rapidamente, enquanto elas não
 estão olhando. Você lhes diz que a cozinha parece estar em ordem e sai pela porta do lado oposto da
-cozinha.
-''')
+cozinha.''')
     n = 93
     return [p, enc, ite, n]
 
 h = h + [his17]
 
 def his18(p, enc, ite):
-    n= int(input('''Ele aponta para uma seção logo acima do chão, que você examina. Finalmente, você escolhe um
+    n = input('''Ele aponta para uma seção logo acima do chão, que você examina. Finalmente, você escolhe um
 volume e senta para ler. Balthus Dire aparentemente é o terceiro de uma linhagem de Feiticeiros
 Senhores da Guerra que governa a Torre Negra e o Reino da Rocha Escarpada. Chegou ao poder
 depois da morte de seu pai, Craggen Dire, há alguns anos atrás. Os Dires são mestres de Magia
@@ -738,10 +738,10 @@ sobre o Reino da Rocha Escarpada. Ao terminar o livro, você repara que o biblio
 mão junto ao ouvido, aparentemente escutando alguma coisa. Ele dirige a você um olhar
 inquisitivo. Você pode
 
-1. Procurar outro livro útil, que possa ajudá-lo na sua empreitada
+1. Procurar outro livro útil, que possa ajudá-lo na sua empreitada.
 2. Tentar sair da biblioteca pela porta atrás dele.
 
-Digite sua opção: '''))
+Digite sua opção: ''')
     n = numcerto(n, 1, 2)
     if n == 1:
         n = 84
@@ -786,7 +786,7 @@ Você terá que procurar abrigo em outro lugar. Você pode:
         input('Você não possui o encanto de Ouro dos Tolos! Vai ter que lutar.')
         n = 288
     else:
-        n = int(input('Digite sua opção: '))
+        n = input('Digite sua opção: ')
         n = numcerto(n, 1, 2)
         if n == 2:
             enc[3] = enc[3] - 1
@@ -799,29 +799,28 @@ h = h + [his20]
 
 def his21(p, enc, ite):
     print('''"O que traz você a estas paragens?" ela pergunta. Você conta a ela sua história, evitando
-    cuidadosamente revelar a sua verdadeira missão. Ela aconselha você a afastar-se desse lugar, caso
-    conheça alguma magia. As criaturas que você encontrou até agora não se comparam com as que
-    habitam o interior da Torre da Cidadela propriamente dita. Ela diz que você jamais encontrará o
-    senhor sem conseguir primeiro o Velo e deseja sorte para você em sua missão.
-    ''')
+cuidadosamente revelar a sua verdadeira missão. Ela aconselha você a afastar-se desse lugar, caso
+conheça alguma magia. As criaturas que você encontrou até agora não se comparam com as que
+habitam o interior da Torre da Cidadela propriamente dita. Ela diz que você jamais encontrará o
+senhor sem conseguir primeiro o Velo e deseja sorte para você em sua missão.''')
     p[3] = p[3] + 2
-    input('{} ganhou 2 pts de SORTE'.format(p[0]))    
+    input('{} ganhou 2 pts de SORTE.'.format(p[0]))    
     n = 6
     return [p, enc, ite, n]
 
 h = h + [his21]
 
 def his22(p, enc, ite):
-    print('Você abre a porta e sai em um corredor longo e oscuro.') 
+    input('Você abre a porta e sai em um corredor longo e oscuro.') 
     n = 188
     return [p, enc, ite, n]
 
 h = h + [his22]
 
 def his23(p, enc, ite):
-    print('''Você abre a porta e sai em uma passagem que continua direto para frente por algum tempo. Vira
-    para a esquerda, depois para a direita, até que você chega a um arco à sua frente que dá para um
-    grande aposento. Você caminha na direção do aposento e entra nele.''') 
+    input('''Você abre a porta e sai em uma passagem que continua direto para frente por algum tempo. Vira
+para a esquerda, depois para a direita, até que você chega a um arco à sua frente que dá para um
+grande aposento. Você caminha na direção do aposento e entra nele.''') 
     n = 169
     return [p, enc, ite, n]
 
@@ -837,10 +836,10 @@ direções. Você toma consciência de que sua única defesa é usar o Encanto d
 encanto, se você puder.\n''')
     if enc[7] > 0:
         enc[7] = enc[7] - 1
-        input('Você possui agora {} Encantos de escudo.'.format(enc[7]))
+        input('Você usa o encanto e fica com {} Encantos de escudo.'.format(enc[7]))
         n = 372
     else:
-        input('Você não possui encantos de escudo')
+        input('Você não possui encantos de escudo.')
         n = 219
     return [p, enc, ite, n]
 
@@ -853,17 +852,17 @@ por ferrolhos metálicos. O fosso é largo demais para ser pulado e é muito fun
 há um pedaço de corda. Existe uma outra porta do outro lado do aposento, dando para fora dele. Você\n''')
 
     if enc[10] == 0:
-        n = int(input('''1. Ignora a caixa e contorna o fosso até a outra porta?
+        n = input('''1. Ignora a caixa e contorna o fosso até a outra porta?
 2. Pega a corda e formula um plano?
 
-Digite sua opção: '''))
+Digite sua opção: ''')
         n = numcerto(n, 1, 2)
     else:
-        n = int(input('''1. Ignora a caixa e contorna o fosso até a outra porta?
+        n = input('''1. Ignora a caixa e contorna o fosso até a outra porta?
 2. Pega a corda e formula um plano?
 3. Lança um Encanto da Força e salta sobre o fosso?
 
-Digite sua opção: '''))
+Digite sua opção: ''')
         n = numcerto(n, 1, 3)
     if n == 1:
         n = 206
@@ -881,13 +880,13 @@ def his26(p, enc, ite):
         input('Você não pode aplicar nenhum encanto, volte e escolha outra opção.')
         n = 304
     else:
-        n = int(input('''Você lançará:
+        n = input('''Você lançará:
         
 1. Um encanto de Fogo?              (possui {})
 2. Um encanto de Fraqueza?          (possui {})
 3. Um encanto de Cópia de Criatura? (possui {})
 
-Digite sua opção: '''.format(enc[2], enc[11], enc[0])))
+Digite sua opção: '''.format(enc[2], enc[11], enc[0]))
         n = numcerto(n, 1, 3)
     l = True
     while l:
@@ -904,7 +903,7 @@ Digite sua opção: '''.format(enc[2], enc[11], enc[0])))
             n = 101
             l = False
         else:
-            n = int(input('Você não possui esse encanto, digite outra opção: '))
+            n = input('Você não possui esse encanto, digite outra opção: ')
             n = numcerto(n, 1, 3)
     return [p, enc, ite, n]
 
@@ -919,24 +918,24 @@ presente. Se está seguindo adiante, vá pela porta à sua frente, mas tome cuid
 Desejamos sorte para você na sua jornada." Você pode acrescentar um ponto de SORTE pelos votos
 de sucesso dos Miks e sair pela porta à sua frente.\n''')
     p[3] = p[3] + 1
-    input('Sua sorte é {}'.format(p[3]))
+    input('Sua sorte agora é {}.'.format(p[3]))
     n = 206
     return [p, enc, ite, n]
 
 h = h + [his27]
 
 def his28(p, enc, ite):
-    n = int(input('''Você lança o Encanto e faz aparecer uma bola de fogo nas suas mãos. Eles interrompem seu
+    n = input('''Você lança o Encanto e faz aparecer uma bola de fogo nas suas mãos. Eles interrompem seu
 caminho e observam você atentamente. Você joga a bola na direção deles, e eles gritam de medo,
 rolando aterrorizados para longe de você, com medo de seus óbvios poderes. Enquanto você ainda
 tem controle sobre o Encanto, cria mais três bolas de fogo menores e as arremessa sobre cada um
 deles. Eles uivam e se dispersam, rolando pelo corredor para longe de você. Você pode agora
-prosseguir
+prosseguir pela pasagem da
 
-1. pela passagem da esquerda ou
-2. pela passagem da direita.
+1. Esquerda.
+2. Direita.
 
-Digite sua opção: '''))
+Digite sua opção: ''')
     n = numcerto(n, 1, 2)
     if n == 1:
         n = 243
@@ -947,16 +946,16 @@ Digite sua opção: '''))
 h = h + [his28]
 
 def his29(p, enc, ite):
-    n = int(input('''Cautelosamente, você se aproxima do homenzinho. Ao chegar perto, um único olho se abre e olha
+    n = input('''Cautelosamente, você se aproxima do homenzinho. Ao chegar perto, um único olho se abre e olha
 diretamente no seu rosto. Um sorriso largo se espalha de orelha a orelha na criatura e ela
 desaparece! "Bom dia para você!" diz uma vozinha chilreante atrás de você, e, ao voltar-se, você o
 vê ali, ainda sorrindo. "Sou O'Seamus, o Duende!", ele diz, dando risinhos, e estende a mão para
-você. Ele parece suficientemente amigável
+você. Ele parece suficientemente amigável. Você:
 
-1. Você aperta a mão dele e tenta fazer amizade ou
-2. Você desembainha sua espada.
+1. Aperta a mão dele e tenta fazer amizade.
+2. Desembainha sua espada.
 
-Digite sua opção: '''))
+Digite sua opção: ''')
     n = numcerto(n, 1, 2)
     if n == 1:
         n = 271
@@ -967,14 +966,14 @@ Digite sua opção: '''))
 h = h + [his29]
 
 def his30(p, enc, ite):
-    print('''A fera é imensamente poderosa. Você desembainha a sua espada e a batalha começa:
+    input('''A fera é imensamente poderosa. Você desembainha a sua espada e a batalha começa:
 
 FERA DAS GARRAS         HABILIDADE: 9       ENERGIA: 14''')
     c = CRIATURA[1].copy()
     cont = 0
     while p[2] > 0 and c[2] > 0 and cont < 4:
         if ite[3][1] > 0:
-            sn = str(input('Deseja utilizar a Adaga do cinto? [s/n]'))
+            sn = str(input('Deseja utilizar a Adaga do cinto? [s/n] '))
             sn = sino(sn)
             if sn in ['S', 'SIM']:
                 ite[3][1] = ite[3][1] - 1
@@ -985,17 +984,17 @@ FERA DAS GARRAS         HABILIDADE: 9       ENERGIA: 14''')
         print('{:10} HABILIDADE {:2}    ENERGIA {:2}'.format(c[0], c[1], c[2]))
         input('\nEnter para jogar dois dados da criatura.')
         n = rodar(2)
-        print('{} tem força de ataque {}'.format(c[0], n + c[1]))
+        print('{} tem força de ataque {}.'.format(c[0], n + c[1]))
         gc = n + c[1]
-        input('\nEnter para jogar dois dados para {}'.format(p[0]))
+        input('\nEnter para jogar dois dados para {}.'.format(p[0]))
         n = rodar(2)
-        print('{} tem força de ataque {}'.format(p[0], n + p[1]))
+        print('{} tem força de ataque {}.'.format(p[0], n + p[1]))
         gp = n + p[1]
         if gc < gp:
-            print('\n{} feriu a criatura'.format(p[0]))
+            print('\n{} feriu a criatura.'.format(p[0]))
             s = 0
             if p[3] > 1:
-                sn = str(input('Deseja testar sorte para tentar aumentar o dano? [s/n]'))
+                sn = str(input('Deseja testar sorte para tentar aumentar o dano? [s/n] '))
                 sn = sino(sn) 
                 if sn in ['S', 'SIM']:
                     so = sorte(p)
@@ -1004,14 +1003,14 @@ FERA DAS GARRAS         HABILIDADE: 9       ENERGIA: 14''')
                         s = 2
                     else:
                         s = - 1
-            input('{} perde {} pontos de energia'.format(c[0], 2 + s))
+            input('{} perde {} pontos de energia.'.format(c[0], 2 + s))
             c[2] = c[2] - 2 - s
             cont = cont + 1
         elif gp < gc:
             print('\n{} feriu a {}'.format(c[0], p[0]))
             s = 0
             if p[3] > 0:
-                sn = str(input('Deseja testar sorte para tentar diminuir o dano? [s/n]'))
+                sn = str(input('Deseja testar sorte para tentar diminuir o dano? [s/n] '))
                 sn = sino(sn)
                 if sn in ['S', 'SIM']:
                     so = sorte(p)
@@ -1020,14 +1019,16 @@ FERA DAS GARRAS         HABILIDADE: 9       ENERGIA: 14''')
                         s = 1
                     else:
                         s = - 1
-            input('{} perde {} pontos de energia'.format(p[0], 2 - s))
+            input('{} perde {} pontos de energia.'.format(p[0], 2 - s))
             p[2] = p[2] - 2 + s
         else:
-            input('\nAmbos se defenderam dos golpes')
+            input('\nAmbos se defenderam dos golpes.')
     if cont == 4 or c[2] < 1:
+        if cont == 4 :
+            input('Você atingiu a criatura 4 vezes.')
         n = 241
     elif p[2] < 1:
-        input('{} perdeu a batalha. A aventura acaba por aqui\n'.format(p[0]))
+        input('{} perdeu a batalha. A aventura acaba por aqui.\n'.format(p[0]))
     return [p, enc, ite, n]
 
 h = h + [his30]
@@ -1035,9 +1036,7 @@ h = h + [his30]
 def his31(p, enc, ite):
     input('''Você sai do aposento pela porta do outro lado, a qual abre para uma passagem curta que termina em
 uma grande porta de madeira. A maçaneta desta porta gira, deixando que você entre em uma grande
-câmara.
-
-Enter para continuar: ''')
+câmara.''')
     n = 169
     return [p, enc, ite, n]
     
@@ -1046,9 +1045,7 @@ h = h + [his31]
 def his32(p, enc, ite):
     input('''Passando por sobre os corpos, você se aproxima do portão e chama o porteiro, para em seguida se
 esconder na escuridão quando ele se aproxima. Ele vê os corpos e sai para investigar, e, enquanto
-isso, você aproveita para esgueirar-se rapidamente pelo portão e trancá-lo do lado de fora.
-
-Enter para continuar: ''')
+isso, você aproveita para esgueirar-se rapidamente pelo portão e trancá-lo do lado de fora.''')
     n = 251
     return [p, enc, ite, n]
     
@@ -1056,22 +1053,20 @@ h = h + [his32]
 
 def his33(p, enc, ite):
     input('''Quando você tenta se levantar, o Orca e o Goblin agarram você e o seguram no chão, enquanto o
-Anão avança com sua clava.
-
-Enter para continuar: ''')
+Anão avança com sua clava.''')
     n = 213
     return [p, enc, ite, n]
     
 h = h + [his33]
 
 def his34(p, enc, ite):
-    n = int(input('''A chave gira e, retirando a tranca, você abre a caixa, encontrando outra chave, dessa vez talhada em
+    n = input('''A chave gira e, retirando a tranca, você abre a caixa, encontrando outra chave, dessa vez talhada em
 um metal verde cintilante. Você
 
 1. Experimentará esta nova chave na terceira caixa.
 2. Sairá do aposento com as duas chaves.
 
-Digite sua opção: '''))
+Digite sua opção: ''')
     n = numcerto(n, 1, 2)
     if n == 1:
         n = 89
@@ -1082,12 +1077,12 @@ Digite sua opção: '''))
 h = h + [his34]
 
 def his35(p, enc, ite):
-    n = int(input('''Você se concentra na sua Ilusão.
+    n = input('''Você se concentra na sua Ilusão.
     
 1. Você pode convencê-lo de que ele está sendo atacado por um inimigo.
 2. Você pode fazer com que você desapareça, na esperança de que ele virá procurar por você.
 
-Digite sua opção: '''))
+Digite sua opção: ''')
     n = numcerto(n, 1, 2)
     if n == 1:
         n = 364
@@ -1102,9 +1097,7 @@ def his36(p, enc, ite):
 idéia de que, se você está oferecendo um suborno, deve ser um invasor, o que - para um Gark - é
 uma demonstração assombrosa de raciocínio lógico! Ele dá um tapa em você com sua mão enorme,
 jogando você sem sentidos no chão. As últimas palavras que você se lembra antes de desmaiar são
-ditas pelo Gark orgulhoso: "Para a cadeia com esse aqui!".
-
-Enter para continuar: ''')
+ditas pelo Gark orgulhoso: "Para a cadeia com esse aqui!".''')
     n = 234
     return [p, enc, ite, n]
     
@@ -1115,9 +1108,7 @@ def his37(p, enc, ite):
 quieta, observando você. Há uma porta do outro lado do aposento, e você lentamente se desloca na
 direção dela. Quando você está na metade do caminho, uma das cabeças se projeta e arranca o velo
 das suas mãos. Mas, ao invés de atacar você, a Hidra se encolhe de volta em um dos cantos. Você
-segue para a porta cautelosamente.
-
-Enter para continuar: ''')
+segue para a porta cautelosamente.''')
     ite[4][1] = ite[4][1] - 1
     n = 229
     return [p, enc, ite, n]
@@ -1125,7 +1116,7 @@ Enter para continuar: ''')
 h = h + [his37]
 
 def his38(p, enc, ite):
-    n = int(input('''A porta abre para uma passagem curta, calçada com pedras pequenas. A uma pequena distância
+    n = input('''A porta abre para uma passagem curta, calçada com pedras pequenas. A uma pequena distância
 mais adiante, uma porta elaboradamente entalhada assinala o fim da passagem. Mas, logo antes da
 porta, uma passagem lateral sai para a esquerda. Você se aproximada porta, tentando escutar
 quaisquer sinais de vida do lado de dentro. Quando sua mão toca a maçaneta, uma voz diz: "Não
@@ -1134,7 +1125,7 @@ bata; simplesmente entre!" vinda de dentro.
 1. Você entrará no aposento, conforme as instruções.
 2. Você resolverá desistir desse aposento e tomar a passagem que sai para a esquerda.
 
-Digite sua opção: '''))
+Digite sua opção: ''')
     n = numcerto(n, 1, 2)
     if n == 1:
         n = 132
@@ -1145,7 +1136,7 @@ Digite sua opção: '''))
 h = h + [his38]
 
 def his39(p, enc, ite):
-    print('''Você pega o Vidro e, ao fazer isso, os Ganjees ficam ofegantes. "Racknee!" diz uma voz. "Você
+    input('''Você pega o Vidro e, ao fazer isso, os Ganjees ficam ofegantes. "Racknee!" diz uma voz. "Você
 voltou!" E com estas palavras; uma mão invisível arranca o vidro das suas mãos, coloca-o no chão e
 abre a tampa. O Homem-Aranha volta-se na sua direção e solta um pequeno grunhido. Você
 desembainha a sua espada quando a fera avança a passos rápidos para você, furiosamente. Você terá
@@ -1153,11 +1144,11 @@ que lutar contra esta criatura:
 
 HOMEM-ARANHA        HABILIDADE: 9       ENERGIA: 14''')
     ite[1][1] = ite[1][1] - 1
-    c = CRIATURA[1].copy()
+    c = CRIATURA[2].copy()
     cont = 0
     while c[2] > 0 and cont < 1:
         if ite[3][1] > 0:
-            sn = str(input('Deseja utilizar a Adaga do cinto? [s/n]'))
+            sn = str(input('Deseja utilizar a Adaga do cinto? [s/n] '))
             sn = sino(sn)
             if sn in ['S', 'SIM']:
                 ite[3][1] = ite[3][1] - 1
@@ -1178,7 +1169,7 @@ HOMEM-ARANHA        HABILIDADE: 9       ENERGIA: 14''')
             print('\n{} feriu a criatura'.format(p[0]))
             s = 0
             if p[3] > 1:
-                sn = str(input('Deseja testar sorte para tentar aumentar o dano? [s/n]'))
+                sn = str(input('Deseja testar sorte para tentar aumentar o dano? [s/n] '))
                 sn = sino(sn) 
                 if sn in ['S', 'SIM']:
                     so = sorte(p)
@@ -1193,7 +1184,7 @@ HOMEM-ARANHA        HABILIDADE: 9       ENERGIA: 14''')
             print('\n{} feriu a {}'.format(c[0], p[0]))
             s = 0
             '''if p[3] > 0:
-                sn = str(input('Deseja testar sorte para tentar diminuir o dano? [s/n]'))
+                sn = str(input('Deseja testar sorte para tentar diminuir o dano? [s/n] '))
                 sn = sino(sn)
                 if sn in ['S', 'SIM']:
                     so = sorte(p)
@@ -1217,18 +1208,18 @@ HOMEM-ARANHA        HABILIDADE: 9       ENERGIA: 14''')
 h = h + [his39]
 
 def his40(p, enc, ite):
-    n = int(input('''Depois de vários minutos, a porta se abre lentamente, e uma criatura corcunda e deformada, com
+    n = input('''Depois de vários minutos, a porta se abre lentamente, e uma criatura corcunda e deformada, com
 dentes podres, cabelos desgrenhados e roupas esfarrapadas, aparece na sua frente. "Sim senhor (heh,
 heh) - o que posso fazer pelo senhor?" rosna a criatura semi-humana."Estou sendo esperado", você
 responde e passa por ele, atravessando a porta com confiança. Ele fica um pouco surpreso com seu
 comportamento e gagueja, sem saber se entra em conflito com você ou não. "Onde é a recepção?"
 você pergunta. Ele olha para você de soslaio com um dos olhos e faz um gesto na direção de uma
-bifurcação para a esquerda, a pouca distância dali.
+bifurcação para a esquerda, a pouca distância dali. Você:
     
-1. Você acreditará nele e tomará a bifurcação para a esquerda. (vá para 243)
-2. não confiará nesta criatura imprevisível e tomará a bifurcação da direita.
+1. Acreditará nele e tomará a bifurcação para a esquerda.
+2. Não confiará nesta criatura imprevisível e tomará a bifurcação da direita.
 
-Digite sua opção: '''))
+Digite sua opção: ''')
     n = numcerto(n, 1, 2)
     if n == 1:
         n = 243
@@ -1243,9 +1234,7 @@ def his41(p, enc, ite):
 uma delas volta-se para você e diz: "Está bem, estranho, nós vamos ajudá-lo no seu caminho." Ela
 fita você com olhos frios de pedra e aponta primeiro para você, e depois para a parede atrás dela. O
 aposento fica escuro, você sente uma sensação de movimento e, quando a escuridão clareia, você
-está em outro aposento.
-
-Digite Enter para continuar: ''')
+está em outro aposento.''')
     n = 257
     return [p, enc, ite, n]
     
@@ -1259,10 +1248,10 @@ def his42(p, enc, ite):
 3. Um vidro contendo o Homem-Aranha (Possui {})
 '''.format(ite[5][1], ite[6][1], ite[1][1]))
     if ite[5][1] + ite[6][1] + ite[1][1] > 0 :
-        n = int(input('Digite sua opção: '))
+        n = input('Digite sua opção: ')
         n = numcerto(n,1,3)
         while (n == 1 and ite[5][1] == 0) or (n == 2 and ite[6][1] == 0) or (n == 3 and ite[1][1] == 0):
-            n = int(input('Não possui esse item, digite novamente: '))
+            n = input('Não possui esse item, digite novamente: ')
             n = numcerto(n,1,3)
         if n == 1 :
             ite[5][1] = ite[5][1] - 1
@@ -1274,13 +1263,13 @@ def his42(p, enc, ite):
             ite[1][1] = ite[1][1] - 1
             n = 223
     else :
-        n = int(input('''Você não tem nenhuma dessas coisas, terá que dar alguma desculpa, dizendo que perdeu o
+        n = input('''Você não tem nenhuma dessas coisas, terá que dar alguma desculpa, dizendo que perdeu o
 presente, e voltar para a sacada, onde pode escolher
 
-1. a porta do meio.
-2. a porta mais distante.
+1. A porta do meio.
+2. A porta mais distante.
 
-Digite sua opção: '''))
+Digite sua opção: ''')
         n = numcerto(n,1,2)
         if n == 1:
             n = 64
@@ -1296,8 +1285,7 @@ acaba por soltar o aperto e cai para trás, ofegante, no chão. Desconte mais um
 enquanto trata de seu braço ferido. Você pode prosseguir no seu caminho.
 
 ENERGIA = {}
-
-Digite Enter para continuar: '''.format(p(2) - 1))
+'''.format(p[2] - 1))
     p[2] = p[2] - 1
     n = 14
     return [p, enc, ite, n]
@@ -1305,13 +1293,13 @@ Digite Enter para continuar: '''.format(p(2) - 1))
 h = h + [his43]
 
 def his44(p, enc, ite):
-    n = int(input('''O aposento pára de sacudir e você cai no chão. O armário das armas está trancado, mas você pode
+    n = input('''O aposento pára de sacudir e você cai no chão. O armário das armas está trancado, mas você pode
 arrebentar a fechadura. Ou pode tirar a sua mochila e procurar uma arma para usar. O que você fará:
 
 1. Escolher uma arma do armário?
 2. Pegar um artefato na mochila?
 
-Digite sua opção: '''))
+Digite sua opção: ''')
     n = numcerto(n,1,2)
     if n == 1:
         n = 353
@@ -1322,14 +1310,14 @@ Digite sua opção: '''))
 h = h + [his44]
 
 def his45(p, enc, ite):
-    n = int(input('''Se seu estômago aguentar, você poderá experimentar:
+    n = input('''Se seu estômago aguentar, você poderá experimentar:
 
 1. Um pouco de carne pendurada.
 2. Um pedaço de fruta.
 3. Uma fatia de queijo.
 4. Um naco de pão.
 
-Digite sua opção: '''))
+Digite sua opção: ''')
     n = numcerto(n,1,4)
     if n == 1:
         n = 166
@@ -1344,7 +1332,7 @@ Digite sua opção: '''))
 h = h + [his45]
 
 def his46(p, enc, ite):
-    n = int(input('''Com um gesto, você estica a mão para frente e aponta o chão sob os pés do feiticeiro. Fumaça e
+    n = input('''Com um gesto, você estica a mão para frente e aponta o chão sob os pés do feiticeiro. Fumaça e
 chamas irrompem do chão. Balthus Dire salta para trás, um pouco admirado, e em seguida fecha os
 olhos para se concentrar. Ao se abrirem, você vê um fogo que queima dentro das próprias pupilas, e
 ele avança por entre as chamas que você criou. Pegando um punhado de pedras em brasa, ele atira
@@ -1353,7 +1341,7 @@ isso em você.
 1. Você se abaixa para se desviar.
 2. Você pula para o lado.
 
-Digite sua opção: '''))
+Digite sua opção: ''')
     n = numcerto(n,1,2)
     if n == 1:
         n = 195
@@ -1371,10 +1359,10 @@ def his47(p, enc, ite):
 3. Encanto de Levitação             (Possui {})
 '''.format(enc[0], enc[4], enc[5]))
     if enc[0] + enc[4] + enc[5] > 0 :
-        n = int(input('Digite sua opção: '))
+        n = input('Digite sua opção: ')
         n = numcerto(n,1,3)
         while (n == 1 and enc[0] == 0) or (n == 2 and enc[4] == 0) or (n == 3 and enc[5] == 0):
-            n = int(input('Não possui esse Encanto, digite novamente: '))
+            n = input('Não possui esse Encanto, digite novamente: ')
             n = numcerto(n,1,3)
         if n == 1 :
             enc[0] = enc[0] - 1
@@ -1387,16 +1375,14 @@ def his47(p, enc, ite):
             n = 259
     else :
         n = input('''Você não possui nenhum desses encantos, terá que recuar na direção do monumento no centro do
-pátio e se esconder dela.
-
-Enter para continuar.''')
+pátio e se esconder dela.''')
         n = 209
     return [p, enc, ite, n]
     
 h = h + [his47]
 
 def his48(p, enc, ite):
-    n = int(input('''"Nunca!" grita o feiticeiro, voltando das sombras para enfrentar você. Dessa vez, é você quem sente
+    n = input('''"Nunca!" grita o feiticeiro, voltando das sombras para enfrentar você. Dessa vez, é você quem sente
 o tremor do medo, ao ver que ele também se transformou - mas em uma criatura que poderia fazer
 com que um Demônio do Fogo ficasse paralisado. O rosto de Balthus Dire tornou-se feio e com
 feições de bruxa, e seus cabelos agora são pequenas serpentes que se contorcem e soltam silvos.
@@ -1404,7 +1390,7 @@ feições de bruxa, e seus cabelos agora são pequenas serpentes que se contorce
 1. Você fugirá desta criatura.
 2. Você avançará com seu Tridente.
 
-Digite sua opção: '''))
+Digite sua opção: ''')
     n = numcerto(n,1,2)
     if n == 1:
         n = 232
@@ -1416,9 +1402,7 @@ h = h + [his48]
 
 def his49(p, enc, ite):
     input('''A criatura fica olhando fixamente para você com ar inquisitivo, como se estivesse insegura em
-relação a você.
-
-Enter para continuar. ''')
+relação a você.''')
     n = 255
     return [p, enc, ite, n]
 
@@ -1439,12 +1423,12 @@ mágica ou enfrentar uma morte certa, trazida por esta criatura que não se vê.
 1. Lançará um Encanto da Força      (Possui {})
 2. Lançará um Encanto da Fraqueza   (Possui {})'''.format(enc[10], enc[11]))
     if enc[10] + enc[11] > 0 :
-        n = int(input('''3. Não quer lançar nenhum dos dois. 
+        n = input('''3. Não quer lançar nenhum dos dois. 
         
-Digite sua opção: '''))
+Digite sua opção: ''')
         n = numcerto(n,1,3)
         while (n == 1 and enc[10] == 0) or (n == 2 and enc[11] == 0):
-            n = int(input('Não possui esse Encanto, digite novamente: '))
+            n = input('Não possui esse Encanto, digite novamente: ')
             n = numcerto(n,1,3)
         if n == 1 :
             enc[10] = enc[10] - 1
@@ -1455,16 +1439,14 @@ Digite sua opção: '''))
         else :
             n = 280
     else :
-        n = input('''Você não possui nenhum desses encantos
-
-Enter para continuar.''')
+        n = input('''Você não possui nenhum desses encantos.''')
         n = 280
     return [p, enc, ite, n]
     
 h = h + [his51]
 
 def his52(p, enc, ite):
-    n = int(input('''A porta abre e você segue adiante, batendo-a para que se feche atrás de você. Pouca distância à
+    n = input('''A porta abre e você segue adiante, batendo-a para que se feche atrás de você. Pouca distância à
 frente, você chega a um cruzamento de três caminhos, no qual você toma a passagem que vai na
 direção norte. Ela continua por vários metros, conduzindo a uma outra porta. Você pode ouvir risos
 e vozes alegres do outro lado. Cautelosamente, você abre a porta que dá para um grande aposento,
@@ -1474,10 +1456,10 @@ Doz-Fut!", com o que todos eles cumprimentam você, convidando-o para juntar-se 
 Evidentemente eles estão esperando alguém e confundiram você com o convidado que está
 faltando.
 
-1. Você continua fingindo e junta-se a eles
-2. Você dirá a eles que estão enganados e tentará chegar até a porta do outro lado do aposento?
+1. Você continua fingindo e junta-se a eles.
+2. Você dirá a eles que estão enganados e tentará chegar até a porta do outro lado do aposento.
 
-Digite sua opção: '''))
+Digite sua opção: ''')
     n = numcerto(n,1,2)
     if n == 1 :
         n = 385
@@ -1504,10 +1486,10 @@ def his54(p, enc, ite):
 3. Peças de ouro?                   (Possui {})
 '''.format(ite[7][1], ite[0][1], ite[8][1]))
     if ite[7][1] + ite[0][1] + ite[8][1] > 0 :
-        n = int(input('Digite sua opção: '))
+        n = input('Digite sua opção: ')
         n = numcerto(n,1,3)
         while (n == 1 and ite[7][1] == 0) or (n == 2 and ite[0][1] == 0) or (n == 3 and ite[8][1] == 0):
-            n = int(input('Não possui esse item, digite novamente: '))
+            n = input('Não possui esse item, digite novamente: ')
             n = numcerto(n,1,3)
         if n == 1 :
             ite[7][1] = ite[7][1] - 1
@@ -1519,22 +1501,20 @@ def his54(p, enc, ite):
             ite[8][1] = ite[8][1] - 1
             n = 27
     else :
-        input('''Você não tem nenhuma dessas coisas, terá que retornar e escolher de novo.
-
-Enter para continuar: ''')
+        input('Você não tem nenhuma dessas coisas, terá que retornar e escolher de novo.')
         n = 104
     return [p, enc, ite, n]
     
 h = h + [his54]
 
 def his55(p, enc, ite):
-    n = int(input('''Você segue a passagem por algum tempo. Ela vira para a direita e acaba chegando a um beco sem
+    n = input('''Você segue a passagem por algum tempo. Ela vira para a direita e acaba chegando a um beco sem
 saída. Você pode: 
 
 1. Retornar para a bifurcação e tomar a outra passagem.
 2. Procurar passagens secretas.
 
-Digite sua opção: '''))
+Digite sua opção: ''')
     n = numcerto(n,1,2)
     if n == 1 :
         n = 249
@@ -1545,17 +1525,19 @@ Digite sua opção: '''))
 h = h + [his55]
 
 def his56(p, enc, ite):
-    n = int(input('''O ELFO NEGRO que se aproxima de você é raquítico e maltrapilho. Ele pergunta se você é um
+    n = input('''O ELFO NEGRO que se aproxima de você é raquítico e maltrapilho. Ele pergunta se você é um
 convidado ou um aventureiro. Você diz que é um convidado que veio até embaixo para provar o
 vinho que ele guarda em sua famosa Adega de Vinhos. Com um certo orgulho, ele mostra a você as
 garrafas de safras que ele guarda para seu Senhor, o Feiticeiro. Algumas delas, ele afirma, possuem
 poderes mágicos. Ele pergunta se você não quer experimentar o vinho. Você prefere provar:
+
 1. O Vinho Tinto?
 2. O Vinho Branco?
 3. O Vinho Rosé?
+
 4. Recusar a oferta dele e seguir adiante no seu caminho?
 
-Digite sua opção: '''))
+Digite sua opção: ''')
     n = numcerto(n,1,4)
     if n == 1 :
         n = 120
@@ -1581,16 +1563,17 @@ def his57(p, enc, ite):
 h = h + [his57]
 
 def his58(p, enc, ite):
-    n = int(input('''Quando você entra, os Gremlins esvoaçam e guincham excitados, depois voam, passando por você
+    n = input('''Quando você entra, os Gremlins esvoaçam e guincham excitados, depois voam, passando por você
 e saindo pela porta noite adentro. Você agora está sozinho com os cálices. Você se arriscará a beber
 alguma coisa? Se o fizer, escolherá:
+
 1. O líquido claro?
 2. O líquido vermelho?
 3. O líquido leitoso?
 
 4. Ou sairá e prosseguirá na direção da Cidadela?
 
-Digite sua opção: '''))
+Digite sua opção: ''')
     n = numcerto(n,1,4)
     if n == 1 :
         n = 298
@@ -1607,9 +1590,7 @@ h = h + [his58]
 def his59(p, enc, ite):
     input('''Eles ficam revoltados com seu presente e correm para o canto do aposento, se escondendo embaixo
 das camas. Um tanto desconcertado com o comportamento deles, você deixa o vidro no chão e
-segue na direção da porta do outro lado do aposento.
-
-Enter para continuar.''')
+segue na direção da porta do outro lado do aposento.''')
     n = 140
     return [p, enc, ite, n]
     
@@ -1626,15 +1607,13 @@ avançam na sua direção. Você terá que lutar contra eles. Você pode usar um
 3. Ou poderá puxar a sua espada e lutar.
 '''.format(enc[5], enc[4]))
     if enc[4] + enc[5] < 1 :
-        input('''Você não possui nenhúm desses encantos terá puxar sua espada e lutar.
-        
-Enter para continuar.''')
+        input('''Você não possui nenhúm desses encantos terá puxar sua espada e lutar.''')
         n = 213
     else :
-        n = int(input('Digite sua opção: '))
+        n = input('Digite sua opção: ')
         n = numcerto(n,1,3)
         while ( n == 1 and enc[5] < 1 ) or ( n == 2 and enc[4] < 1 ) :
-            n = int(input('Não possui esse encanto, Digite outra opção: '))
+            n = input('Não possui esse encanto, Digite outra opção: ')
             n = numcerto(n,1,3)
         if n == 1 :
             enc[5] = enc[5] - 1
@@ -1675,13 +1654,13 @@ def his62(p, enc, ite):
 h = h + [his62]
 
 def his63(p, enc, ite):
-    n = int(input('''Você vai até o índice remissivo e verifica a referência. Ao chegar à página correta, você fica
+    n = input('''Você vai até o índice remissivo e verifica a referência. Ao chegar à página correta, você fica
 decepcionado ao descobrir que a seção foi arrancada do livro! Você pode:
 
 1. Olhar os \033[1mCalacorms\033[m.
 2. Verificar os \033[1mMiks\033[m.
 
-Digite sua opção: '''))
+Digite sua opção: ''')
     n = numcerto(n,1,2)
     if n == 1:
         n = 263
@@ -1692,18 +1671,19 @@ Digite sua opção: '''))
 h = h + [his63]
 
 def his64(p, enc, ite):
-    n = int(input('''Você ouve junto à porta e consegue escutar vozes esganiçadas rindo e brigando. Você experimenta
+    n = input('''Você ouve junto à porta e consegue escutar vozes esganiçadas rindo e brigando. Você experimenta
 a maçaneta e a porta abre. O lado de dentro é um aposento de cores vivas. Há umas poucas camas
 pequenas em um canto, e, espalhados pelo chão, há pequenos bonecos de várias criaturas brutas.
 Junto à parede do lado direito há uma caixa, e logo adiante da caixa uma porta. No meio do
 assoalho, e olhando para você com curiosidade, estão três pequenas criaturas. Têm aparência
 humana, mas possuem pele verde, orelhas pontudas e olhos muito apertados. Qual será a sua
 atitude? Você:
+
 1. Desembainhará a sua espada e se preparará para lutar contra eles?
 2. Procurará em sua mochila alguma coisa para oferecer a eles?
 3. Caminhará confiantemente através do aposento para a porta do outro lado?
 
-Digite sua opção: '''))
+Digite sua opção: ''')
     n = numcerto(n,1,3)
     if n == 1 :
         n = 286
@@ -1754,12 +1734,12 @@ ENERGIA = {}
             input('Use alguma coisa da sua mochila.')
             n = 226
         else :
-            n = int(input('''Você
+            n = input('''Você
 
 1. Usará um Encanto de Cópia de Criatura    (Possui {})
 2. Usará alguma coisa de sua mochila?
 
-Digite sua opção: '''.format(enc[0])))
+Digite sua opção: '''.format(enc[0]))
             n = numcerto(n,1,2)   
             if n == 1 :
                 enc[0] = enc[0] - 1
@@ -1771,14 +1751,14 @@ Digite sua opção: '''.format(enc[0])))
 h = h + [his67]
 
 def his68(p, enc, ite):
-    n = int(input('''“Por qual eu iria, hein?" ele considera. "Vamos ver... eu não iria por uma das duas portas à esquerda
+    n = input('''“Por qual eu iria, hein?" ele considera. "Vamos ver... eu não iria por uma das duas portas à esquerda
 da porta de maçaneta de cobre, nem a porta à direita da de maçaneta de bronze." Qual delas você
 escolherá:
 1. A porta de maçaneta de latão?
 2. A porta de maçaneta de cobre?
 3. A porta de maçaneta de bronze?
 
-Digite sua opção: '''))
+Digite sua opção: ''')
     n = numcerto(n, 1, 3)
     if n == 1 :
         n = 207
@@ -3797,11 +3777,11 @@ while perso[2] > 0:
 #            sn = input('\nDesejar usar um encantamento agora? [s/n] ')
 #            sn = sino(sn)
 #            if sn in ['S', 'SIM']:
-#                n = int(input('1. Encantos de habilidade = {}\n2. Encantos de energia = {}\n3. Encantos de sorte = {}\n4. Não usar encantoa\n\nDigite sua opção: '.format(ENCANTOS[8], ENCANTOS[9], ENCANTOS[6])))
+#                n = input('1. Encantos de habilidade = {}\n2. Encantos de energia = {}\n3. Encantos de sorte = {}\n4. Não usar encantoa\n\nDigite sua opção: '.format(ENCANTOS[8], ENCANTOS[9], ENCANTOS[6]))
 #                n = numcerto(n,1,4)
 #                enc = [ENCANTOS[8], ENCANTOS[9], ENCANTOS[6], 1]
 #                while enc[n - 1] == 0:
-#                    n = int(input('Você não posue esse encantamento, por favor escolha de novo: '))
+#                    n = input('Você não posue esse encantamento, por favor escolha de novo: ')
 #                    n = numcerto(n,1,3)
 #                if n == 1:
 #                    perso, ENCANTOS[8] = HABILIDADE(perso,pers0), ENCANTOS[8] - 1
@@ -3816,7 +3796,8 @@ while perso[2] > 0:
 #                    sn = 'N'
 
     print(n)
-    n = int(input('A cual capitulo vamos? '))
+    n = input('A cual capitulo vamos? ')
+    n = numcerto(n,1,400)
 
 
     limpa()
@@ -3824,7 +3805,7 @@ while perso[2] > 0:
     print('')
     [perso, ENCANTOS, ITEM, n] = h[n-1](perso,ENCANTOS,ITEM)
     if perso[2] < 1:
-        sn = str(input('Quer jogar novamente? [s/n]'))
+        sn = str(input('Quer jogar novamente? [s/n] '))
         sn = sino(sn)
         if sn == 'S' or sn == 'SIM':
             pers0 = criarpersonagem()
