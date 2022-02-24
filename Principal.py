@@ -483,10 +483,13 @@ def his7(p, enc, ite):
 pode lançar um Encanto da Força sobre você mesmo e tentar arrancar a porta das suas dobradiças.
 ''')
     if enc[10] == 0:
-        input('Você não possui encantos de Força')
+        input('Você não possui encantos de Força.')
         n = 268
     else:
-        n = input('1. Bater a porta com o ombro.\n2. Usar encanto da Força.\n\nDigite sua opção: ')
+        n = input('''1. Bater a porta com o ombro.
+2. Usar encanto da Força.   (Possui {})
+
+Digite sua opção: '''.format(enc[10]))
         n = numcerto(n, 1, 2)
         if n == 2:
             enc[10] = enc[10] - 1
@@ -1976,6 +1979,17 @@ h = h + [his73]
 
 def his74(p, enc, ite):
     n = 74
+
+    print('''Ao pular de lado, os olhos do feiticeiro seguem você – e a bola de fogo dele também. Ela atinge
+você no peito, derrubando-o no chão. A queimadura custará 4 pontos de ENERGIA.
+''')
+    p[2] = p[2] - 4
+    if p[2] > 0 :
+        input('Pode preparar outro Encanto para o seu contra-ataque.')
+        n = 377
+    else :
+        input('Você fica sem energias para continuar.')
+        n = 1
     return [p, enc, ite, n]
     
 h = h + [his74]
