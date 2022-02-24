@@ -160,7 +160,7 @@ def criarmagia() :
     print('ou criar uma barreira de fogo para manter criaturas à distância.\n')
     print('Quantos encantos de Fogo você quer?')
     #Fog = input('Restam {}\n'.format(MAGIA))
-    Fog = 0
+    Fog = 1
     #Fog = numcerto(Fog,0,MAGIA)
     MAGIA = MAGIA - Fog
 
@@ -272,7 +272,7 @@ def criarmagia() :
     print('quando ela aumenta demais.\n')
     print('Quantos encantos de Força você quer?')
     #For = input('Restam {}\n'.format(MAGIA))
-    For = 0
+    For = 1
     #For = numcerto(For,0,MAGIA)
     MAGIA = MAGIA - For
 
@@ -293,7 +293,7 @@ def criarmagia() :
     return ENCANTOS
 
 ITEM0 = [['Miríade de bolso', 0], ['Aranha em um vidro', 0], ['Pequenas amoras', 0], ['Adaga', 0], ['Velo de Ouro', 0], ['Espelho de Prata', 0], ['Escova de Cabelo', 0], ['Vidro de Unguento', 0], ['Peças de Ouro', 0]]
-CRIATURA = [['GARK', 7, 11, 0], ['FERA DAS GARRAS', 9, 14, 0], ['HOMEM-ARANHA', 7, 5, 0], ['TENTÁCULO', 15, 2, 0]]
+CRIATURA = [['GARK', 7, 11, 0], ['FERA DAS GARRAS', 9, 14, 0], ['HOMEM-ARANHA', 7, 5, 0], ['TENTÁCULO', 15, 2, 0], ['COBRA DE ESGOTO', 6, 7, 0]]
 
 pers0 = criarpersonagem()
 perso = pers0.copy()
@@ -383,7 +383,7 @@ caracteres, em uma linguagem que você não compreende. Você:
 
 Digite sua opção: ''')
     n = numcerto(n, 1, 2)
-    if  n== 1:
+    if  n == 1:
         n = 142
     else:
         n = 343
@@ -647,58 +647,62 @@ Depois de quatro Séries de Ataques, você poderá Fugir por uma das portas na e
     cont = 0
     while p[2] > 0 and c[2] > 0:
         if ite[3][1] > 0:
-            sn = str(input('Deseja utilizar a Adaga do cinto? [s/n] '))
+            limpa()
+            estado(p)
+            print('{:10} HABILIDADE {:2}    ENERGIA {:2}'.format(c[0], c[1], c[2]))
+            sn = str(input('\nDeseja utilizar a Adaga do cinto? [s/n] '))
             sn = sino(sn)
             if sn in ['S', 'SIM']:
                 ite[3][1] = ite[3][1] - 1
                 c[2] = c[2] - 2
                 input('{} perde {} pontos de energia'.format(c[0], 2))
-        limpa()
-        estado(p)
-        print('{:10} HABILIDADE {:2}    ENERGIA {:2}'.format(c[0], c[1], c[2]))
-        input('\nEnter para jogar dois dados da criatura.')
-        n = rodar(2)
-        print('{} tem força de ataque {}'.format(c[0], n + c[1]))
-        gc = n + c[1]
-        input('\nEnter para jogar dois dados para {}'.format(p[0]))
-        n = rodar(2)
-        print('{} tem força de ataque {}'.format(p[0], n + p[1]))
-        gp = n + p[1]
-        if gc < gp:
-            print('\n{} feriu a criatura'.format(p[0]))
-            s = 0
-            if p[3] > 1:
-                sn = str(input('Deseja testar sorte para tentar aumentar o dano? [s/n] '))
-                sn = sino(sn) 
-                if sn in ['S', 'SIM']:
-                    so = sorte(p)
-                    p[3] = p[3] - 1
-                    if so:
-                        s = 2
-                    else:
-                        s = - 1
-            input('{} perde {} pontos de energia'.format(c[0], 2 + s))
-            c[2] = c[2] - 2 - s
-        elif gp < gc:
-            print('\n{} feriu a {}'.format(c[0], p[0]))
-            s = 0
-            if p[3] > 0:
-                sn = str(input('Deseja testar sorte para tentar diminuir o dano? [s/n] '))
-                sn = sino(sn)
-                if sn in ['S', 'SIM']:
-                    so = sorte(p)
-                    p[3] = p[3] - 1
-                    if so:
-                        s = 1
-                    else:
-                        s = - 1
-            input('{} perde {} pontos de energia'.format(p[0], 2 - s))
-            p[2] = p[2] - 2 + s
-        else:
-            input('\nAmbos se defenderam dos golpes')
-        cont = cont + 1
+        if c[2] > 0 :
+            limpa()
+            estado(p)
+            print('{:10} HABILIDADE {:2}    ENERGIA {:2}'.format(c[0], c[1], c[2]))
+            input('\nEnter para jogar dois dados da criatura.')
+            n = rodar(2)
+            print('{} tem força de ataque {}'.format(c[0], n + c[1]))
+            gc = n + c[1]
+            input('\nEnter para jogar dois dados para {}'.format(p[0]))
+            n = rodar(2)
+            print('{} tem força de ataque {}'.format(p[0], n + p[1]))
+            gp = n + p[1]
+            if gc < gp:
+                print('\n{} feriu a criatura'.format(p[0]))
+                s = 0
+                if p[3] > 1:
+                    sn = str(input('Deseja testar sorte para tentar aumentar o dano? [s/n] '))
+                    sn = sino(sn) 
+                    if sn in ['S', 'SIM']:
+                        so = sorte(p)
+                        p[3] = p[3] - 1
+                        if so:
+                            s = 2
+                        else:
+                            s = - 1
+                input('{} perde {} pontos de energia'.format(c[0], 2 + s))
+                c[2] = c[2] - 2 - s
+            elif gp < gc:
+                print('\n{} feriu a {}'.format(c[0], p[0]))
+                s = 0
+                if p[3] > 0:
+                    sn = str(input('Deseja testar sorte para tentar diminuir o dano? [s/n] '))
+                    sn = sino(sn)
+                    if sn in ['S', 'SIM']:
+                        so = sorte(p)
+                        p[3] = p[3] - 1
+                        if so:
+                            s = 1
+                        else:
+                            s = - 1
+                input('{} perde {} pontos de energia'.format(p[0], 2 - s))
+                p[2] = p[2] - 2 + s
+            else:
+                input('\nAmbos se defenderam dos golpes')
+            cont = cont + 1
         if cont > 3 and c[2] > 0:
-            f = str(input('Deseja fugir? [s/n] '))
+            f = str(input('Deseja tentar fugir? [s/n] '))
             f = sino(f)
             if f in ['S', 'SIM']:
                 p = fujasorte(p)
@@ -710,6 +714,7 @@ Depois de quatro Séries de Ataques, você poderá Fugir por uma das portas na e
             n = 180
         elif p[2] < 1:
             input('{} perdeu a batalha. A aventura acaba por aqui\n'.format(p[0]))
+            n = 1
     return [p, enc, ite, n]
 
 h = h + [his16]
@@ -973,62 +978,67 @@ FERA DAS GARRAS         HABILIDADE: 9       ENERGIA: 14''')
     cont = 0
     while p[2] > 0 and c[2] > 0 and cont < 4:
         if ite[3][1] > 0:
-            sn = str(input('Deseja utilizar a Adaga do cinto? [s/n] '))
+            limpa()
+            estado(p)
+            print('{:10} HABILIDADE {:2}    ENERGIA {:2}'.format(c[0], c[1], c[2]))
+            sn = str(input('\nDeseja utilizar a Adaga do cinto? [s/n] '))
             sn = sino(sn)
             if sn in ['S', 'SIM']:
                 ite[3][1] = ite[3][1] - 1
                 c[2] = c[2] - 2
                 input('{} perde {} pontos de energia'.format(c[0], 2))
-        limpa()
-        estado(p)
-        print('{:10} HABILIDADE {:2}    ENERGIA {:2}'.format(c[0], c[1], c[2]))
-        input('\nEnter para jogar dois dados da criatura.')
-        n = rodar(2)
-        print('{} tem força de ataque {}.'.format(c[0], n + c[1]))
-        gc = n + c[1]
-        input('\nEnter para jogar dois dados para {}.'.format(p[0]))
-        n = rodar(2)
-        print('{} tem força de ataque {}.'.format(p[0], n + p[1]))
-        gp = n + p[1]
-        if gc < gp:
-            print('\n{} feriu a criatura.'.format(p[0]))
-            s = 0
-            if p[3] > 1:
-                sn = str(input('Deseja testar sorte para tentar aumentar o dano? [s/n] '))
-                sn = sino(sn) 
-                if sn in ['S', 'SIM']:
-                    so = sorte(p)
-                    p[3] = p[3] - 1
-                    if so:
-                        s = 2
-                    else:
-                        s = - 1
-            input('{} perde {} pontos de energia.'.format(c[0], 2 + s))
-            c[2] = c[2] - 2 - s
-            cont = cont + 1
-        elif gp < gc:
-            print('\n{} feriu a {}'.format(c[0], p[0]))
-            s = 0
-            if p[3] > 0:
-                sn = str(input('Deseja testar sorte para tentar diminuir o dano? [s/n] '))
-                sn = sino(sn)
-                if sn in ['S', 'SIM']:
-                    so = sorte(p)
-                    p[3] = p[3] - 1
-                    if so:
-                        s = 1
-                    else:
-                        s = - 1
-            input('{} perde {} pontos de energia.'.format(p[0], 2 - s))
-            p[2] = p[2] - 2 + s
-        else:
-            input('\nAmbos se defenderam dos golpes.')
+        if c[2] > 0 :
+            limpa()
+            estado(p)
+            print('{:10} HABILIDADE {:2}    ENERGIA {:2}'.format(c[0], c[1], c[2]))
+            input('\nEnter para jogar dois dados da criatura.')
+            n = rodar(2)
+            print('{} tem força de ataque {}.'.format(c[0], n + c[1]))
+            gc = n + c[1]
+            input('\nEnter para jogar dois dados para {}.'.format(p[0]))
+            n = rodar(2)
+            print('{} tem força de ataque {}.'.format(p[0], n + p[1]))
+            gp = n + p[1]
+            if gc < gp:
+                print('\n{} feriu a criatura.'.format(p[0]))
+                s = 0
+                if p[3] > 1:
+                    sn = str(input('Deseja testar sorte para tentar aumentar o dano? [s/n] '))
+                    sn = sino(sn) 
+                    if sn in ['S', 'SIM']:
+                        so = sorte(p)
+                        p[3] = p[3] - 1
+                        if so:
+                            s = 2
+                        else:
+                            s = - 1
+                input('{} perde {} pontos de energia.'.format(c[0], 2 + s))
+                c[2] = c[2] - 2 - s
+                cont = cont + 1
+            elif gp < gc:
+                print('\n{} feriu a {}'.format(c[0], p[0]))
+                s = 0
+                if p[3] > 0:
+                    sn = str(input('Deseja testar sorte para tentar diminuir o dano? [s/n] '))
+                    sn = sino(sn)
+                    if sn in ['S', 'SIM']:
+                        so = sorte(p)
+                        p[3] = p[3] - 1
+                        if so:
+                            s = 1
+                        else:
+                            s = - 1
+                input('{} perde {} pontos de energia.'.format(p[0], 2 - s))
+                p[2] = p[2] - 2 + s
+            else:
+                input('\nAmbos se defenderam dos golpes.')
     if cont == 4 or c[2] < 1:
         if cont == 4 :
             input('Você atingiu a criatura 4 vezes.')
         n = 241
     elif p[2] < 1:
         input('{} perdeu a batalha. A aventura acaba por aqui.\n'.format(p[0]))
+        n = 1
     return [p, enc, ite, n]
 
 h = h + [his30]
@@ -1143,61 +1153,64 @@ desembainha a sua espada quando a fera avança a passos rápidos para você, fur
 que lutar contra esta criatura:
 
 HOMEM-ARANHA        HABILIDADE: 9       ENERGIA: 14''')
-    ite[1][1] = ite[1][1] - 1
     c = CRIATURA[2].copy()
     cont = 0
     while c[2] > 0 and cont < 1:
         if ite[3][1] > 0:
-            sn = str(input('Deseja utilizar a Adaga do cinto? [s/n] '))
+            limpa()
+            estado(p)
+            print('{:10} HABILIDADE {:2}    ENERGIA {:2}'.format(c[0], c[1], c[2]))
+            sn = str(input('\nDeseja utilizar a Adaga do cinto? [s/n] '))
             sn = sino(sn)
             if sn in ['S', 'SIM']:
                 ite[3][1] = ite[3][1] - 1
                 c[2] = c[2] - 2
                 input('{} perde {} pontos de energia'.format(c[0], 2))
-        limpa()
-        estado(p)
-        print('{:10} HABILIDADE {:2}    ENERGIA {:2}'.format(c[0], c[1], c[2]))
-        input('\nEnter para jogar dois dados da criatura.')
-        n = rodar(2)
-        print('{} tem força de ataque {}'.format(c[0], n + c[1]))
-        gc = n + c[1]
-        input('\nEnter para jogar dois dados para {}'.format(p[0]))
-        n = rodar(2)
-        print('{} tem força de ataque {}'.format(p[0], n + p[1]))
-        gp = n + p[1]
-        if gc < gp:
-            print('\n{} feriu a criatura'.format(p[0]))
-            s = 0
-            if p[3] > 1:
-                sn = str(input('Deseja testar sorte para tentar aumentar o dano? [s/n] '))
-                sn = sino(sn) 
-                if sn in ['S', 'SIM']:
-                    so = sorte(p)
-                    p[3] = p[3] - 1
-                    if so:
-                        s = 2
-                    else:
-                        s = - 1
-            input('{} perde {} pontos de energia'.format(c[0], 2 + s))
-            c[2] = c[2] - 2 - s
-        elif gp < gc:
-            print('\n{} feriu a {}'.format(c[0], p[0]))
-            s = 0
-            if p[3] > 0:
-                sn = str(input('Deseja testar sorte para tentar diminuir o dano? [s/n] '))
-                sn = sino(sn)
-                if sn in ['S', 'SIM']:
-                    so = sorte(p)
-                    p[3] = p[3] - 1
-                    if so:
-                        s = 1
-                    else:
-                        s = - 1
-            input('{} perde {} pontos de energia'.format(p[0], 2 - s))
-            p[2] = p[2] - 2 + s
-            cont = cont + 1
-        else:
-            input('\nAmbos se defenderam dos golpes')
+        if c[2]> 0 :
+            limpa()
+            estado(p)
+            print('{:10} HABILIDADE {:2}    ENERGIA {:2}'.format(c[0], c[1], c[2]))
+            input('\nEnter para jogar dois dados da criatura.')
+            n = rodar(2)
+            print('{} tem força de ataque {}'.format(c[0], n + c[1]))
+            gc = n + c[1]
+            input('\nEnter para jogar dois dados para {}'.format(p[0]))
+            n = rodar(2)
+            print('{} tem força de ataque {}'.format(p[0], n + p[1]))
+            gp = n + p[1]
+            if gc < gp:
+                print('\n{} feriu a criatura'.format(p[0]))
+                s = 0
+                if p[3] > 1:
+                    sn = str(input('Deseja testar sorte para tentar aumentar o dano? [s/n] '))
+                    sn = sino(sn) 
+                    if sn in ['S', 'SIM']:
+                        so = sorte(p)
+                        p[3] = p[3] - 1
+                        if so:
+                            s = 2
+                        else:
+                            s = - 1
+                input('{} perde {} pontos de energia'.format(c[0], 2 + s))
+                c[2] = c[2] - 2 - s
+            elif gp < gc:
+                print('\n{} feriu a {}'.format(c[0], p[0]))
+                s = 0
+                if p[3] > 0:
+                    sn = str(input('Deseja testar sorte para tentar diminuir o dano? [s/n] '))
+                    sn = sino(sn)
+                    if sn in ['S', 'SIM']:
+                        so = sorte(p)
+                        p[3] = p[3] - 1
+                        if so:
+                            s = 1
+                        else:
+                            s = - 1
+                input('{} perde {} pontos de energia'.format(p[0], 2 - s))
+                p[2] = p[2] - 2 + s
+                cont = cont + 1
+            else:
+                input('\nAmbos se defenderam dos golpes')
     if cont == 1:
         n = 208
     elif c[2] < 1:
@@ -1815,28 +1828,16 @@ arrancar o tentáculo de sua perna e prosseguir para a entrada principal da Torr
     cont = 0
     while c[2] > 0 and cont < 3:
         if ite[3][1] > 0:
-            sn = str(input('Deseja utilizar a Adaga do cinto? [s/n] '))
+            limpa()
+            estado(p)
+            print('{:10} HABILIDADE {:2}    ENERGIA {:2}'.format(c[0], c[1], c[2]))
+            sn = str(input('\nDeseja utilizar a Adaga do cinto? [s/n] '))
             sn = sino(sn)
             if sn in ['S', 'SIM']:
                 ite[3][1] = ite[3][1] - 1
                 c[2] = c[2] - 2
                 input('\n{} venceu o {}'.format(p[0], c[0]))
-            else :
-                limpa()
-                estado(p)
-                print('{:10} HABILIDADE {:2}    ENERGIA {:2}'.format(c[0], c[1], c[2]))
-                gc = c[1]
-                input('\nEnter para jogar dois dados para {}'.format(p[0]))
-                n = rodar(2)
-                print('{} tem força de ataque {}'.format(p[0], n + p[1]))
-                gp = n + p[1]
-                if gc < gp:
-                    print('\n{} venceu o {}'.format(p[0], c[0]))
-                    c[2] = 0
-                else :
-                    print('\n{}ro ataque realizado'.format(cont + 1))
-                    cont = cont + 1
-        else :
+        if c[2] > 0 :
             limpa()
             estado(p)
             print('{:10} HABILIDADE {:2}    ENERGIA {:2}'.format(c[0], c[1], c[2]))
@@ -1846,12 +1847,13 @@ arrancar o tentáculo de sua perna e prosseguir para a entrada principal da Torr
             print('{} tem força de ataque {}'.format(p[0], n + p[1]))
             gp = n + p[1]
             if gc < gp:
-                print('\n{} venceu o {}'.format(p[0], c[0]))
+                input('\n{} venceu o {}.'.format(p[0], c[0]))
                 c[2] = 0
             else :
-                print('\n{}ro ataque realizado'.format(cont + 1))
+                input('\n{}ro ataque realizado.'.format(cont + 1))
                 cont = cont + 1
     if cont == 3:
+        p[2] = 0
         n = 1
     elif c[2] < 1:
         n = 218
@@ -1860,13 +1862,114 @@ arrancar o tentáculo de sua perna e prosseguir para a entrada principal da Torr
 h = h + [his71]
 
 def his72(p, enc, ite):
-    n = 72
+    input('''A sorte não está do seu lado. Seu primeiro olhar na direção da criatura com serpentes na cabeça foi
+suficiente para selar o seu destino. Você grita de angústia ao sentir que suas juntas começam a
+endurecer, e seus membros se tornam pesados e incontroláveis. Sob a ação do olhar da Górgona,
+que transforma tudo em pedra, você luta para manter o equilíbrio - mas acaba perdendo-o e cai no
+chão. Seu corpo petrificado se despedaça com o impacto, e você agora jaz feito em cacos diante de
+Balthus Dire. Você falhou na sua missão.''')
+    p[2] = 0
+    n = 1
     return [p, enc, ite, n]
     
 h = h + [his72]
 
 def his73(p, enc, ite):
-    n = 73
+    print('''Você pode tentar se livrar da Cobra de Esgoto, ou mantê-la a distância com um encanto.
+
+1. Lutar contra a criatura.
+
+COBRA DE ESGOTO     HABILIDADE 6    ENERGIA 7
+
+2. Lançar um Feitiço de Força (Possui {}).
+3. Laçar um Feitiço do Fogo (Possui {}).
+'''.format(enc[10], enc[2]))
+    if enc[10] + enc[2] > 0 :
+        n = input('Digite sua opção: ')
+        n = numcerto(n, 1, 3)
+        while (n == 2 and enc[10] == 0) or (n == 3 and enc[2] == 0) :
+            n = input('Não possui esse fitiço, Digite outra opção: ')
+            n = numcerto(n, 1, 3)
+        if n == 1 :
+            b = True
+            f = 0
+        elif n == 2:
+            b = True
+            f = 3
+            enc[10] = enc[10] - 1
+        else :
+            b = False
+            enc[2] = enc[2] - 1
+            n = 282
+    else :
+        input('Não possui estes feitiços, terá que lutar.\n')
+        b = True
+        f = 0
+    if b :
+        c = CRIATURA[4].copy()
+        p[1] = p[1] + f
+        while c[2] > 0 and p[2] > 0:
+            if ite[3][1] > 0:
+                limpa()
+                estado(p)
+                print('{:10} HABILIDADE {:2}    ENERGIA {:2}'.format(c[0], c[1], c[2]))
+                sn = str(input('\nDeseja utilizar a Adaga do cinto? [s/n] '))
+                sn = sino(sn)
+                if sn in ['S', 'SIM']:
+                    ite[3][1] = ite[3][1] - 1
+                    c[2] = c[2] - 2
+                    input('{} perde {} pontos de energia'.format(c[0], 2))
+            if c[2] > 0 :
+                limpa()
+                estado(p)
+                print('{:10} HABILIDADE {:2}    ENERGIA {:2}'.format(c[0], c[1], c[2]))
+                input('\nEnter para jogar dois dados da criatura.')
+                n = rodar(2)
+                print('{} tem força de ataque {}'.format(c[0], n + c[1]))
+                gc = n + c[1]
+                input('\nEnter para jogar dois dados para {}'.format(p[0]))
+                n = rodar(2)
+                print('{} tem força de ataque {}'.format(p[0], n + p[1]))
+                gp = n + p[1]
+                if gc < gp:
+                    print('\n{} feriu a criatura'.format(p[0]))
+                    s = 0
+                    if p[3] > 1:
+                        sn = str(input('Deseja testar sorte para tentar aumentar o dano? [s/n] '))
+                        sn = sino(sn) 
+                        if sn in ['S', 'SIM']:
+                            so = sorte(p)
+                            p[3] = p[3] - 1
+                            if so:
+                                s = 2
+                            else:
+                                s = - 1
+                    input('{} perde {} pontos de energia'.format(c[0], 2 + s))
+                    c[2] = c[2] - 2 - s
+                elif gp < gc:
+                    print('\n{} feriu a {}'.format(c[0], p[0]))
+                    s = 0
+                    if p[3] > 0:
+                        sn = str(input('Deseja testar sorte para tentar diminuir o dano? [s/n] '))
+                        sn = sino(sn)
+                        if sn in ['S', 'SIM']:
+                            so = sorte(p)
+                            p[3] = p[3] - 1
+                            if so:
+                                s = 1
+                            else:
+                                s = - 1
+                    input('{} perde {} pontos de energia'.format(p[0], 2 - s))
+                    p[2] = p[2] - 2 + s
+                else:
+                    input('\nAmbos se defenderam dos golpes')
+        if p[2] < 1:
+            input('{} venceu a batalha.\nSua aventura acaba por aqui'.format(c[0]))
+            n = 1
+        elif c[2] < 1:
+            input('{} venceu a batalha.\n'.format(p[0]))
+            n = 112
+        p[1] = p[1] - f
     return [p, enc, ite, n]
     
 h = h + [his73]
