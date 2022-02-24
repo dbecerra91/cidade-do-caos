@@ -1995,7 +1995,11 @@ você no peito, derrubando-o no chão. A queimadura custará 4 pontos de ENERGIA
 h = h + [his74]
 
 def his75(p, enc, ite):
-    n = 75
+    input('''Você cruza a soleira, fecha a porta atrás de você e espera algum tempo. Ouve as passadas se
+aproximarem e chegarem até a porta. Uma tagarelice incompreensível do outro lado da porta acaba
+diminuindo até desaparecer, e você ouve novamente as passadas, desta vez se afastando de você.
+Você toca a campainha para chamar o mordomo. ''')
+    n = 40
     return [p, enc, ite, n]
     
 h = h + [his75]
