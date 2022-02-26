@@ -2005,13 +2005,44 @@ Você toca a campainha para chamar o mordomo. ''')
 h = h + [his75]
 
 def his76(p, enc, ite):
-    n = 76
+    input('''Enquanto você estava tirando suas Amoras da mochila, Balthus Dire ficou se concentrando em um
+Encanto. Ele Levanta os olhos e explode numa gargalhada. "Amoras do sono!", ele grita. "O que
+você espera que eu faça? Ponha tudo na boca?" Ele estala os dedos e seu Encanto se materializa. ''')
+    n = 191
     return [p, enc, ite, n]
     
 h = h + [his76]
 
 def his77(p, enc, ite):
-    n = 77
+    print('''Balthus Dire fica surpreso com seu sucesso. "Então!" ele exclama. "Você se acha mais forte do que
+os outros, hein?" Você pode agir rapidamente e lançar um Encanto sobre ele. Qual você escolherá:
+
+1. Um Encanto da Percepção Extra-Sensorial?     (Possui {})187
+2. Um Encanto do Fogo?                          (Possui {})46
+3. Um Encanto de Cópia de Criatura?             (Possui {})349
+'''.format(enc[1], enc[2], enc[0]))
+    if (enc[1] + enc[2] + enc[0]) == 0 :
+        input('No possui nenhum desse encantos.')
+        n = 335
+    else :
+        n = input('''4. Se preferir não lançar nenhum Encanto.
+
+Digite sua opção: ''')
+        n = numcerto(n, 1, 4)
+        while (n == 1 and enc[1] == 0) or (n == 2 and enc[2] == 0) or (n == 3 and enc[0] == 0) :
+            n = input('Não possui esse Encanto, tente outra opção.')
+            n = numcerto(n, 1, 4)
+        if n == 1:
+            enc[1] = enc[1] - 1
+            n = 187
+        elif n == 2:
+            enc[2] = enc[2] - 1
+            n = 46
+        elif n == 3 :
+            enc[0] = enc[0] - 1
+            n = 349
+        else :
+            n = 335
     return [p, enc, ite, n]
     
 h = h + [his77]
