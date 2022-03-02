@@ -394,9 +394,9 @@ h = h + [his2]
 def his3(p,enc,ite):
     print('''O que você oferecerá a eles?
 
-1. Uma Miríade de Bolso? (Possui {})
-2. Uma Aranha em um Vidro? (Possui {})
-3. Um punhado de Pequenas Amoras? (Possui {})
+1. Uma Miríade de Bolso?            (Possui {})
+2. Uma Aranha em um Vidro?          (Possui {})
+3. Um punhado de Pequenas Amoras?   (Possui {})
 '''.format(ite[0][1], ite[1][1], ite[2][1]))
     if ite[0][1] + ite[1][1] + ite[2][1] > 0:
         n = input('Digite sua opção: ')
@@ -2082,25 +2082,50 @@ Cidadela. ''')
 h = h + [his79]
 
 def his80(p, enc, ite):
-    n = 80
+    n = input('''Quando, você salta por cima da mesa, o feiticeiro gira em torno de si mesmo. Você tropeça e desaba
+no chão, ao ver que ele se transformou em uma criatura bem mais perigosa do que você. Seu rosto
+agora é o de uma bruxa, e seu cabelo uma massa de serpentes que se contorcem e silvam para você.
+Você:
+
+1. Continua o seu ataque.
+2. Foge dele.
+
+Digite sua opção: ''')
+    n = numcerto(n, 1, 2)
+    if n == 1 :
+        n = 199
+    else :
+        n = 232
     return [p, enc, ite, n]
     
 h = h + [his80]
 
 def his81(p, enc, ite):
-    n = 81
+    input('''O Macaco-Cachorro ri e diz a você que Kylltrog é um preguiçoso que não serve para nada, e que
+não vale a pena salvá-lo. Você solta um suspiro de alívio quando ele caminha de volta e grita para
+chamar o porteiro. Alguns momentos depois, o porteiro aparece e abre uma pequena porta para
+deixar você entrar. ''')
+    n = 251
     return [p, enc, ite, n]
     
 h = h + [his81]
 
 def his82(p, enc, ite):
-    n = 82
+    input('''Você cai no fosso. Freneticamente, você tenta agarrar a borda ao cair, mas sem êxito. Você
+despenca pelo poço de ponta cabeça, e sua última lembrança é sua queda final ao chocar-se contra o
+solo lá embaixo, o que mata você instantaneamente. Você falhou na sua missão. ''')
+    p[2] = 0
+    n = 1
     return [p, enc, ite, n]
     
 h = h + [his82]
 
 def his83(p, enc, ite):
-    n = 83
+    input('''O homem é um comerciante. Você diz a ele que vocês são companheiros de profissão, e vocês
+conversam por algum tempo sobre preços e lucros dentro da Torre Negra. Ele diz que nunca
+permitiram que ele entrasse nos andares acima do térreo da Cidadela, uma vez que os comerciantes
+são bastante desprezados lá dentro. Você se despede e segue adiante. ''')
+    n = 245
     return [p, enc, ite, n]
     
 h = h + [his83]
