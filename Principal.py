@@ -411,7 +411,7 @@ def his3(p,enc,ite):
             ite[1][1] = ite[1][1] - 1
             n = 59
         elif n == 3:
-            ite[1][1] = ite[1][1] - 1
+            ite[2][1] = ite[2][1] - 1
             n = 236
     else :
         n = input('''Você não pode oferecer nenhuma dessas coisas, Você poderá
@@ -2017,9 +2017,9 @@ def his77(p, enc, ite):
     print('''Balthus Dire fica surpreso com seu sucesso. "Então!" ele exclama. "Você se acha mais forte do que
 os outros, hein?" Você pode agir rapidamente e lançar um Encanto sobre ele. Qual você escolherá:
 
-1. Um Encanto da Percepção Extra-Sensorial?     (Possui {})187
-2. Um Encanto do Fogo?                          (Possui {})46
-3. Um Encanto de Cópia de Criatura?             (Possui {})349
+1. Um Encanto da Percepção Extra-Sensorial?     (Possui {})
+2. Um Encanto do Fogo?                          (Possui {})
+3. Um Encanto de Cópia de Criatura?             (Possui {})
 '''.format(enc[1], enc[2], enc[0]))
     if (enc[1] + enc[2] + enc[0]) == 0 :
         input('No possui nenhum desse encantos.')
@@ -2048,13 +2048,35 @@ Digite sua opção: ''')
 h = h + [his77]
 
 def his78(p, enc, ite):
-    n = 78
+    n = input('''Seus olhos seguem você até a janela. Suas pupilas tornaram-se brancas como o leite. Ele inclina sua
+cabeça para trás, pisca uma vez e geme. Jogando a cabeça para frente, ele agora olha fixamente para
+você com olhos que se tornaram cor de prata brilhante! Seu olhar é hipnótico, e você terá que agir
+rapidamente. Você:
+
+1. Esconde-se por trás de uma das cortinas?
+2. Arranca uma das cortinas e joga por cima da cabeça dele?
+3. Procura em sua mochila alguma coisa que possa usar?
+
+Digite sua opção: ''')
+    n = numcerto(n, 1, 3)
+    if n == 1 :
+        n = 324
+    elif n == 2 :
+        n = 124
+    else :
+        n = 277
     return [p, enc, ite, n]
     
 h = h + [his78]
 
 def his79(p, enc, ite):
-    n = 79
+    input('''No canto mais distante do pátio, você encontra um arbusto diferente, com galhos contorcidos a
+partir da haste central, como se estivesse em agonia. As folhas têm a forma de diamantes, com
+pequenas amoras por baixo, chatas e com forma de pastilhas. Você pode levar algumas amoras com
+você na sua aventura e avançar um pouco mais ao longo do muro para a entrada principal da
+Cidadela. ''')
+    ite[2][1] = ite[2][1] + 1
+    n = 218
     return [p, enc, ite, n]
     
 h = h + [his79]
