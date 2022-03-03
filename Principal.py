@@ -2172,13 +2172,25 @@ Digite sua opção: '''.format(enc[4]))
 h = h + [his85]
 
 def his86(p, enc, ite):
-    n = 86
+    input('''Quando você lança o encanto, as duas criaturas ficam olhando espantadas enquanto você flutua no
+ar, passa sobre suas cabeças na direção do portão, sobre a muralha e para o interior da Cidadela.
+Você aterrissa do lado de dentro e olha à sua volta. Mas tome cuidado! Eles com certeza avisarão
+os guardas da Cidadela.''')
+    n = 251
     return [p, enc, ite, n]
     
 h = h + [his86]
 
 def his87(p, enc, ite):
-    n = 87
+    input('''Você cria uma grande bola de fogo nas suas mãos e a lança sobre a criatura. Não adianta nada. O
+Gárgula dá um soco em você, e o golpe joga você no chão.''')
+    p[2] = p[2] - 2
+    if p[2] > 0 :
+        input('É melhor evitar esta fera, sair do aposento e tentar a porta do meio da sacada. ')
+        n = 64
+    else :
+        input('Você não consegue se levantar mais do chão. Sua história acaba aqui.\n')
+        n = 1
     return [p, enc, ite, n]
     
 h = h + [his87]
