@@ -2196,7 +2196,55 @@ Gárgula dá um soco em você, e o golpe joga você no chão.''')
 h = h + [his87]
 
 def his88(p, enc, ite):
-    n = 88
+    n = input('''A porta é extremamente forte, mas cede mo pouco quando você a golpeia. Você pode tentar golpeá-
+la tanto tempo quanto quiser, até que ela ceda de todo. Jogue um dado para cada tentativa. Se
+obtiver um seis, você consegue. Para cada tentativa sem êxito, você perderá um ponto
+de ENERGIA.
+
+1. Jogar um dado.
+2. Usar o Encanto da Força (Possui {}).
+3. Tentar a porta do meio.
+4. Tentar a porta na outra extremidade da sacada.
+
+Digite sua opção: '''.format(enc[10]))
+    n = numcerto(n, 1, 4)
+    while (n == 1 and p[2] > 0) or (n == 2 and enc[10] == 0) :
+        if n == 1 :
+            d = rodar(1)
+            if d == 6 :
+                input('Você conseguiu.')
+                n = 292
+            else :
+                p[2] = p[2] - 1
+                if p[2] > 0 :
+                    n = input('Sua ENERGIA é {}\n\nDigite novamente: '.format(p[2]))
+                    n = numcerto(n, 1, 4)
+                    limpa()
+                    estado(p)
+                    print('''
+A porta é extremamente forte, mas cede mo pouco quando você a golpeia. Você pode tentar golpeá-
+la tanto tempo quanto quiser, até que ela ceda de todo. Jogue um dado para cada tentativa. Se
+obtiver um seis, você consegue. Para cada tentativa sem êxito, você perderá um ponto
+de ENERGIA.
+
+1. Jogar um dado.
+2. Usar o Encanto da Força (Possui {}).
+3. Tentar a porta do meio.
+4. Tentar a porta na outra extremidade da sacada.
+'''.format(enc[10]))
+                else :
+                    input('Sua Energia acabou. Falhou na sua misão.')
+                    n = 1
+        else :
+            n = input('Não possui encantos de Força, Digite outra opção: ')
+            n = numcerto(n, 1, 4)
+    if n == 2 :
+        enc[10] = enc[10] - 1
+        n = 170
+    elif n == 3 :
+        n = 64
+    elif n == 4 :
+        n = 304
     return [p, enc, ite, n]
     
 h = h + [his88]
