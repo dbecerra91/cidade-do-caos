@@ -1738,9 +1738,7 @@ def his67(p, enc, ite):
 cabeças. As outras cinco avançam sobre você e, para seu horror, mais duas cabeças crescem onde
 estava antes a cabeça morta! Uma das cabeças morde profundamente o seu braço. Você perde
 quatro pontos de ENERGIA.
-
-ENERGIA = {}
-'''.format(p[2] - 4))
+''')
     p[2] = p[2] - 4
     if p[2] < 1 :
         input('Você perdeu a batalha contra a criatura.')
@@ -2131,13 +2129,44 @@ são bastante desprezados lá dentro. Você se despede e segue adiante. ''')
 h = h + [his83]
 
 def his84(p, enc, ite):
-    n = 84
+    input('''Ao examinar as prateleiras, você ouve uma grande movimentação atrás de você. Você se vira
+rapidamente, a tempo de ver criaturas semelhantes a Orcas, armadas e em guarda, materializaram-se
+uma após a outra diante de você. Elas avançam e cercam você. O mais alto chega o rosto perto do
+seu e solta um bafo de respiração diretamente sobre os seus olhos. O aposento gira e você desaba no
+chão, inconsciente. ''')
+    n = 234
     return [p, enc, ite, n]
     
 h = h + [his84]
 
 def his85(p, enc, ite):
-    n = 85
+    input('''Você lança seu Feitiço e espera que a bola de fogo apareça na ponta da sua tocha. A tocha se
+acende, apenas o suficiente para que você veja que há uma porta do outro lado do aposento, mas
+depois se apaga de novo. Os Ganjees riem mais uma vez dos seus esforços para enganá-los. Você
+sente uma pancada na cabeça que volta a derrubá-lo no chão. Você perde dois pontos de ENERGIA. ''')
+    p[2] = p[2] - 2
+    if p[2] < 0 :
+        input('Você não tinha energia suficiente para aguentar a pancada. Sua misão acaba por aqui.\n')
+        n = 1
+    else :
+        n = input('''Você:
+
+1. Tentará um Encanto da Ilusão?            (Possui {})
+2. Pegará alguma coisa na sua mochila?
+3. Desembainhará a sua espada?
+
+Digite sua opção: '''.format(enc[4]))
+        n = numcerto(n, 1, 3)
+        if n == 1 and enc[4] < 1 :
+            n = input('Não possui Encantos de Ilusão, digite outra opção: ')
+            n = numcerto(n, 2, 3)
+        if n == 1 :
+            enc[4] = enc[4] - 1
+            n = 395
+        elif n == 2 :
+            n = 322
+        else :
+            n = 248
     return [p, enc, ite, n]
     
 h = h + [his85]
