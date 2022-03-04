@@ -292,7 +292,7 @@ def criarmagia() :
 
     return ENCANTOS
 
-ITEM0 = [['Miríade de bolso', 0], ['Aranha em um vidro', 0], ['Pequenas amoras', 0], ['Adaga', 0], ['Velo de Ouro', 0], ['Espelho de Prata', 0], ['Escova de Cabelo', 0], ['Vidro de Unguento', 0], ['Peças de Ouro', 0]]
+ITEM0 = [['Miríade de bolso', 0], ['Aranha em um vidro', 0], ['Pequenas amoras', 0], ['Adaga', 0], ['Velo de Ouro', 0], ['Espelho de Prata', 0], ['Escova de Cabelo', 0], ['Vidro de Unguento', 0], ['Peças de Ouro', 0], ['Essência de Erva de Porco', 0]]
 CRIATURA = [['GARK', 7, 11, 0], ['FERA DAS GARRAS', 9, 14, 0], ['HOMEM-ARANHA', 7, 5, 0], ['TENTÁCULO', 15, 2, 0], ['COBRA DE ESGOTO', 6, 7, 0]]
 
 pers0 = criarpersonagem()
@@ -2314,13 +2314,23 @@ você e sair de qualquer modo.''')
 h = h + [his91]
 
 def his92(p, enc, ite):
-    n = 92
+    input('''O líquido leitoso cheira bem. Você toma um gole e começa a sorrir. Dá um gole maior e explode
+em gargalhadas - por motivo nenhum! Não é de se estranhar que os pequenos Grernlins estivessem
+gostando tanto. Com a cabeça leve e de bom humor, você sai do aposento para continuar em seu
+caminho para a Cidadela. 2 pontos de ENERGIA foram acresentados por este incidente reconfortante. ''')
+    p[2] = p[2] + 2
+    n = 156
     return [p, enc, ite, n]
     
 h = h + [his92]
 
 def his93(p, enc, ite):
-    n = 93
+    input('''Do lado de fora, você olha para sua garrafa. É uma garrafa de Essência de Erva de Porco,
+aparentemente útil para repelir criaturas de base em pedra. Isso pode ser útil, e você a guarda
+cuidadosamente em sua mochila. Seguindo em frente pelo corredor, você chega a uma outra porta,
+que abre, deixando que você passe para um grande aposento. ''')
+    ite[9][1] = ite[9][1] + 1
+    n = 169
     return [p, enc, ite, n]
     
 h = h + [his93]
