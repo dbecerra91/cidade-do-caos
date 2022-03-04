@@ -1122,7 +1122,6 @@ quieta, observando você. Há uma porta do outro lado do aposento, e você lenta
 direção dela. Quando você está na metade do caminho, uma das cabeças se projeta e arranca o velo
 das suas mãos. Mas, ao invés de atacar você, a Hidra se encolhe de volta em um dos cantos. Você
 segue para a porta cautelosamente.''')
-    ite[4][1] = ite[4][1] - 1
     n = 229
     return [p, enc, ite, n]
     
@@ -2283,7 +2282,33 @@ Digite sua opção: ''')
 h = h + [his90]
 
 def his91(p, enc, ite):
-    n = 91
+    print('''Ela olha para a sua oferta e seus olhos se arregalam. "Deixe-me ver isso, ela ordena. Você avança
+cuidadosamente na direção dela e mostra a escova. Ela pega o objeto e passa vários minutos
+admirando-o. - "Isto é de fato uma obra de arte", ela diz, e se levanta da cama para experimentá-la
+em frente ao espelho. Ao escovar os cabelos dela, eles assumem um brilho incomum, cintilando
+suavemente. Ela fica fascinada com seu presente, e esta é a sua chance de sair sem ser notado pela
+porta existente no canto mais distante. Você pode tentar levar com você um Velo de Ouro que se
+encontra sobre a cama. Teste a sua Sorte. Se tiver sorte, consegue apanhá-lo rapidamente e pode
+sair pela outra porta. Se não tiver sorte, você pode Testar a sua Sorte de novo até que
+finalmente tenha sorte. Ou, se a sorte não estiver do seu lado, poderá ignorar o objeto que atrapalha
+você e sair de qualquer modo.''')
+    sn = 'S'
+    while p[3] > 1 and sn in ['S', 'SIM'] :
+        sn = str(input('\nTestar sorte [s/n] '))
+        sn = sino(sn)
+        if sn in ['S', 'SIM']:
+            so = sorte(p)
+            p[3] = p[3] - 1
+            if so:
+                ite[4][1] = ite[4][1] + 1
+                sn = 'N'
+                input('Conseguiu apanhar o Velo de Ouro. ')
+            elif p[3] < 2 :
+                sn = 'N'
+                input('Acabou sua sorte. ')
+        else :
+            input('Conseguiu sair do aposento.')
+    n = 140
     return [p, enc, ite, n]
     
 h = h + [his91]
