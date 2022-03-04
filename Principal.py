@@ -2250,13 +2250,34 @@ de ENERGIA.
 h = h + [his88]
 
 def his89(p, enc, ite):
-    n = 89
+    input('''A chave gira, a fechadura se abre e você olha dentro da caixa. Lá dentro há um vidro grande que
+contém uma aranha. Mas não é uma aranha comum; esta criatura tem o rosto de um velho. Ele está
+falando com você, mas você não consegue entender o que ele está dizendo. Um barulho chama a
+sua atenção, você se vira e vê que a porta por onde você entrou está começando a abrir. Você põe o
+vidro na sua mochila e parte para a outra porta. ''')
+    ite[1][1] = ite[1][1] + 1
+    n = 237
     return [p, enc, ite, n]
     
 h = h + [his89]
 
 def his90(p, enc, ite):
-    n = 90
+    n = input('''A passagem se alarga, e você está agora andando ao longo de um rio que corre. Bem à frente, há
+uma mulher que parece estar lavando roupa. Ela tem uma cesta com roupas a seu lado, e há vários
+conjuntos de ceroula e camiseta de baixo pendurados em um varal atrás dela. Você:
+
+1. Desembainhará a sua espada e avançará, pronto para a luta.
+2. Cumprimentará ela e tentará estabelecer uma conversação.
+3. Usará um Encanto de Percepção Extra-Sensorial para descobrir quem ela é.
+
+Digite sua opção: ''')
+    n = numcerto(n, 1, 3)
+    if n == 1 :
+        n = 176
+    elif n == 2 :
+        n = 21
+    else :
+        n = 329
     return [p, enc, ite, n]
     
 h = h + [his90]
