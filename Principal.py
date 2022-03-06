@@ -2336,19 +2336,31 @@ que abre, deixando que você passe para um grande aposento. ''')
 h = h + [his93]
 
 def his94(p, enc, ite):
-    n = 94
+    print('''Você sente o seu próprio poder crescendo. Você corre na direção da porta e a golpeia firme como
+ombro... mas ela nem se mexe! Você perde um ponto de ENERGIA pela contusão''', end= '' )
+    p[2] = p[2] - 1
+    if p[2] < 1 :
+        n = 1
+        input('. Você perde seu\núltimo ponto de energia.')
+    else :
+        input(' e bate com força\npára chamar o guarda.')
+        n = 118
     return [p, enc, ite, n]
     
 h = h + [his94]
 
 def his95(p, enc, ite):
-    n = 95
+    input('''No lado mais distante da Adega de Vinhos, há uma porta de madeira, que você experimenta. Ela
+abre para uma passagem que conduz adiante por vários metros. ''')
+    n = 367
     return [p, enc, ite, n]
     
 h = h + [his95]
 
 def his96(p, enc, ite):
-    n = 96
+    input('''Eles aceitam a sua oferta e convocam o porteiro, que abre uma pequena porta dentro da porta
+levadiça para deixar você entrar. Você os deixa discutindo por causa da pepita de ouro.''')
+    n = 251
     return [p, enc, ite, n]
     
 h = h + [his96]
