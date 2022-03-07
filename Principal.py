@@ -2366,7 +2366,22 @@ levadiça para deixar você entrar. Você os deixa discutindo por causa da pepit
 h = h + [his96]
 
 def his97(p, enc, ite):
-    n = 97
+    print('''O pão está bastante seco e sem gosto. Na verdade, está muito seco - tão seco que logo você está
+desesperado por alguma coisa para beber! Sua boca está ressequida e você procura freneticamente
+entre os alimentos do aposento algum líquido. Mas não há nada para aplacar a sua sede. Você tem
+que deduzir um ponto de HABILIDADE de seu índice atual.''')
+    p[1] = p[1] - 1
+    n = input('''Você pode agora sair do aposento
+
+1. Pela porta da parede do lado esquerdo.
+2. Pela porta oposta à que você usou para entrar.
+
+Digite sua opção: ''')
+    n = numcerto(n, 1, 2)
+    if n == 1 :
+        n = 13
+    else :
+        n = 281
     return [p, enc, ite, n]
     
 h = h + [his97]
